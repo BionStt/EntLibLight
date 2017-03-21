@@ -332,7 +332,7 @@ namespace EntLibExtensions.SemanticLogging.Tests.Formatters
             {
                 base.Given();
                 listener.Formatter = new JsonEventTextFormatter(EventTextFormatting.Indented);
-                listener.EnableEvents(DifferentEnumsEventSource.Log, EventLevel.LogAlways, Keywords.All);
+                listener.EnableEvents(DifferentEnumsEventSource.Log, EventLevel.LogAlways, EventKeywords.All);
             }
 
             protected override void When()
@@ -356,7 +356,7 @@ namespace EntLibExtensions.SemanticLogging.Tests.Formatters
             {
                 base.Given();
                 listener.Formatter = new JsonEventTextFormatter(EventTextFormatting.Indented);
-                listener.EnableEvents(DifferentEnumsEventSource.Log, EventLevel.LogAlways, Keywords.All);
+                listener.EnableEvents(DifferentEnumsEventSource.Log, EventLevel.LogAlways, EventKeywords.All);
             }
 
             protected override void When()

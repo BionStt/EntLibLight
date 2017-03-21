@@ -25,6 +25,6 @@ namespace EntLibExtensions.SemanticLogging
         /// <summary>
         /// Keyword flags to enable all the events. 
         /// </summary>
-        public const EventKeywords All = EventKeywords.All;
+        public const EventKeywords NetworkCommunication = (EventKeywords)1;
     }
 }

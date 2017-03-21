@@ -40,7 +40,7 @@ namespace EntLibExtensions.SemanticLogging.Tests.Etw
             Assert.AreEqual(MyCompanyEventSource.Log.Name, sut.Name);
             Assert.AreEqual(MyCompanyEventSource.Log.Guid, sut.EventSourceId);
             Assert.AreEqual(EventLevel.LogAlways, sut.Level);
-            Assert.AreEqual(Keywords.All, sut.MatchAnyKeyword);
+            Assert.AreEqual(EventKeywords.All, sut.MatchAnyKeyword);
         }
 
         [TestMethod]
@@ -51,7 +51,7 @@ namespace EntLibExtensions.SemanticLogging.Tests.Etw
             Assert.AreEqual(MyCompanyEventSource.Log.Guid.ToString(), sut.Name);
             Assert.AreEqual(MyCompanyEventSource.Log.Guid, sut.EventSourceId);
             Assert.AreEqual(EventLevel.LogAlways, sut.Level);
-            Assert.AreEqual(Keywords.All, sut.MatchAnyKeyword);
+            Assert.AreEqual(EventKeywords.All, sut.MatchAnyKeyword);
         }
 
         [TestMethod]

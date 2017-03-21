@@ -34,7 +34,7 @@ namespace EntLibExtensions.SemanticLogging.Tests
         {
             using (var listener = new InMemoryEventListener())
             {
-                listener.EnableEvents(SemanticLoggingEventSource.Log, EventLevel.LogAlways, Keywords.All);
+                listener.EnableEvents(SemanticLoggingEventSource.Log, EventLevel.LogAlways, EventKeywords.All);
 
                 SemanticLoggingEventSource.Log.DatabaseSinkPublishEventsFailed("test");
 
@@ -51,7 +51,7 @@ namespace EntLibExtensions.SemanticLogging.Tests
         {
             using (var listener = new InMemoryEventListener())
             {
-                listener.EnableEvents(SemanticLoggingEventSource.Log, EventLevel.Error, Keywords.All);
+                listener.EnableEvents(SemanticLoggingEventSource.Log, EventLevel.Error, EventKeywords.All);
 
                 SemanticLoggingEventSource.Log.ConsoleSinkWriteFailed("test");
 

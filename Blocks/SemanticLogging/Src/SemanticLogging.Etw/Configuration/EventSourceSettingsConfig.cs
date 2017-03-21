@@ -34,7 +34,7 @@ namespace EntLibExtensions.SemanticLogging.Etw.Configuration
         /// <param name="level">The level.</param>
         /// <param name="matchAnyKeyword">The match any keyword.</param>
         /// <exception cref="ConfigurationException">A validation exception.</exception>
-        public EventSourceSettingsConfig(string name = null, Guid? eventSourceId = null, EventLevel level = EventLevel.LogAlways, EventKeywords matchAnyKeyword = Keywords.All)
+        public EventSourceSettingsConfig(string name = null, Guid? eventSourceId = null, EventLevel level = EventLevel.LogAlways, EventKeywords matchAnyKeyword = EventKeywords.All)
         {
             // If no Id, Name should not be optional so we may derive an Id from it.
             if (!eventSourceId.HasValue || eventSourceId == Guid.Empty)

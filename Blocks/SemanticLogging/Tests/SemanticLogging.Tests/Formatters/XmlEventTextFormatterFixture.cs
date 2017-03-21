@@ -197,7 +197,7 @@ namespace EntLibExtensions.SemanticLogging.Tests.Formatters
         {
             protected override void When()
             {
-                base.listener.EnableEvents(DifferentEnumsEventSource.Log, EventLevel.LogAlways, Keywords.All);
+                base.listener.EnableEvents(DifferentEnumsEventSource.Log, EventLevel.LogAlways, EventKeywords.All);
                 DifferentEnumsEventSource.Log.UsingEnumArguments(MyLongEnum.Value1, MyIntEnum.Value2, MyShortEnum.Value3);
             }
 
@@ -223,7 +223,7 @@ namespace EntLibExtensions.SemanticLogging.Tests.Formatters
         {
             protected override void When()
             {
-                base.listener.EnableEvents(DifferentEnumsEventSource.Log, EventLevel.LogAlways, Keywords.All);
+                base.listener.EnableEvents(DifferentEnumsEventSource.Log, EventLevel.LogAlways, EventKeywords.All);
                 DifferentEnumsEventSource.Log.UsingAllEnumArguments(MyLongEnum.Value1, MyIntEnum.Value2, MyShortEnum.Value3,
                     MyByteEnum.Value1, MySByteEnum.Value2, MyUShortEnum.Value3, MyUIntEnum.Value1, MyULongEnum.Value2);
             }
@@ -288,7 +288,7 @@ namespace EntLibExtensions.SemanticLogging.Tests.Formatters
             protected override void Given()
             {
                 base.Given();
-                listener.EnableEvents(MyCompanyEventSource.Log, EventLevel.LogAlways, Keywords.All);
+                listener.EnableEvents(MyCompanyEventSource.Log, EventLevel.LogAlways, EventKeywords.All);
             }
 
             protected override void When()

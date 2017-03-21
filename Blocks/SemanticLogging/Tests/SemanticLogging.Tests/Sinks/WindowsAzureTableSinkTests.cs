@@ -81,7 +81,7 @@ namespace EntLibExtensions.SemanticLogging.Tests.Sinks
             using (var sink = new WindowsAzureTableSink("instanceName", validNotExisting, "Table", TimeSpan.FromSeconds(1), 5000, TimeSpan.FromSeconds(20)))
             using (var collectErrorsListener = new MockEventListener())
             {
-                collectErrorsListener.EnableEvents(SemanticLoggingEventSource.Log, EventLevel.Error, Keywords.All);
+                collectErrorsListener.EnableEvents(SemanticLoggingEventSource.Log, EventLevel.Error, EventKeywords.All);
 
                 sink.OnNext(new CloudEventEntry());
                 try
@@ -108,7 +108,7 @@ namespace EntLibExtensions.SemanticLogging.Tests.Sinks
             using (var sink = new WindowsAzureTableSink("instanceName", validNotExisting, "Table", TimeSpan.FromSeconds(1), 5000, TimeSpan.FromSeconds(20)))
             using (var collectErrorsListener = new MockEventListener())
             {
-                collectErrorsListener.EnableEvents(SemanticLoggingEventSource.Log, EventLevel.Error, Keywords.All);
+                collectErrorsListener.EnableEvents(SemanticLoggingEventSource.Log, EventLevel.Error, EventKeywords.All);
 
                 sink.OnNext(new CloudEventEntry());
                 Assert.IsTrue(Task.Run(() => sink.OnCompleted()).Wait(TimeSpan.FromSeconds(15)));

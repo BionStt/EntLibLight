@@ -37,7 +37,7 @@ namespace EntLibExtensions.SemanticLogging.Tests.Formatters
             var formatter = new EventTextFormatter(EventTextFormatter.DashSeparator) { VerbosityThreshold = EventLevel.Critical };
             using (var listener = new InMemoryEventListener(formatter))
             {
-                listener.EnableEvents(Logger, EventLevel.LogAlways, Keywords.All);
+                listener.EnableEvents(Logger, EventLevel.LogAlways, EventKeywords.All);
 
                 Logger.Failure("Failure message");
                 formatter.VerbosityThreshold = EventLevel.Informational;
@@ -87,7 +87,7 @@ Payload : [color : 0]");
             var formatter = new EventTextFormatter(EventTextFormatter.DashSeparator, verbosityThreshold: EventLevel.LogAlways);
             using (var listener = new InMemoryEventListener(formatter))
             {
-                listener.EnableEvents(Logger, EventLevel.LogAlways, Keywords.All);
+                listener.EnableEvents(Logger, EventLevel.LogAlways, EventKeywords.All);
 
                 Logger.DBQueryStart("select * from table");
                 Logger.WithOpcodeAndNoTaskSpecfied(4);
@@ -104,7 +104,7 @@ Payload : [color : 0]");
             var formatter = new EventTextFormatter("*** header ***");
             using (var listener = new InMemoryEventListener(formatter))
             {
-                listener.EnableEvents(Logger, EventLevel.LogAlways, Keywords.All);
+                listener.EnableEvents(Logger, EventLevel.LogAlways, EventKeywords.All);
 
                 Logger.DBQueryStart("select * from table");
 
@@ -118,7 +118,7 @@ Payload : [color : 0]");
             var formatter = new EventTextFormatter(null, "___footer___");
             using (var listener = new InMemoryEventListener(formatter))
             {
-                listener.EnableEvents(Logger, EventLevel.LogAlways, Keywords.All);
+                listener.EnableEvents(Logger, EventLevel.LogAlways, EventKeywords.All);
 
                 Logger.Startup();
 
@@ -132,7 +132,7 @@ Payload : [color : 0]");
             var formatter = new EventTextFormatter("---header---", "___footer___");
             using (var listener = new InMemoryEventListener(formatter))
             {
-                listener.EnableEvents(Logger, EventLevel.LogAlways, Keywords.All);
+                listener.EnableEvents(Logger, EventLevel.LogAlways, EventKeywords.All);
 
                 Logger.Startup();
 
@@ -148,7 +148,7 @@ Payload : [color : 0]");
             var formatter = new EventTextFormatter(EventTextFormatter.DashSeparator) { VerbosityThreshold = EventLevel.Critical };
             using (var listener = new InMemoryEventListener(formatter))
             {
-                listener.EnableEvents(Logger, EventLevel.LogAlways, Keywords.All);
+                listener.EnableEvents(Logger, EventLevel.LogAlways, EventKeywords.All);
 
                 Logger.Failure("Summary");
                 formatter.VerbosityThreshold = EventLevel.Error;
@@ -180,7 +180,7 @@ EventName : FailureInfo");
             var formatter = new EventTextFormatter(EventTextFormatter.DashSeparator);
             using (var listener = new InMemoryEventListener(formatter))
             {
-                listener.EnableEvents(Logger, EventLevel.LogAlways, Keywords.All);
+                listener.EnableEvents(Logger, EventLevel.LogAlways, EventKeywords.All);
                 Logger.Failure("error");
 
                 var logged = listener.ToString();
@@ -197,7 +197,7 @@ EventName : FailureInfo");
             var formatter = new EventTextFormatter(EventTextFormatter.DashSeparator) { DateTimeFormat = "yyyy'-'MM'-'dd'T'HH':'mm':'ss'.'fffZ" };
             using (var listener = new InMemoryEventListener(formatter))
             {
-                listener.EnableEvents(Logger, EventLevel.LogAlways, Keywords.All);
+                listener.EnableEvents(Logger, EventLevel.LogAlways, EventKeywords.All);
                 Logger.Failure("error");
 
                 var logged = listener.ToString();
@@ -214,7 +214,7 @@ EventName : FailureInfo");
             var formatter = new EventTextFormatter(EventTextFormatter.DashSeparator) { DateTimeFormat = null };
             using (var listener = new InMemoryEventListener(formatter))
             {
-                listener.EnableEvents(Logger, EventLevel.LogAlways, Keywords.All);
+                listener.EnableEvents(Logger, EventLevel.LogAlways, EventKeywords.All);
                 Logger.Failure("error");
 
                 var logged = listener.ToString();

@@ -285,7 +285,7 @@ namespace EntLibExtensions.SemanticLogging.Etw.Service
                 level = EventLevel.LogAlways;
             }
 
-            this.slabNonTransientErrors.EnableEvents(SemanticLoggingEventSource.Log, level, Keywords.All);
+            this.slabNonTransientErrors.EnableEvents(SemanticLoggingEventSource.Log, level, EventKeywords.All);
 
             // Capture any unhandled error in worker threads
             AppDomain.CurrentDomain.UnhandledException += this.OnAppDomainUnhandledException;

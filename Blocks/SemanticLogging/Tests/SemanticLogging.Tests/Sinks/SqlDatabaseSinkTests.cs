@@ -62,7 +62,7 @@ namespace EntLibExtensions.SemanticLogging.Tests.Sinks
             using (var sink = new SqlDatabaseSink("test", validNotExisting, "tableName", Buffering.DefaultBufferingInterval, Buffering.DefaultBufferingCount, Buffering.DefaultMaxBufferSize, TimeSpan.FromSeconds(20)))
             using (var collectErrorsListener = new MockEventListener())
             {
-                collectErrorsListener.EnableEvents(SemanticLoggingEventSource.Log, EventLevel.Error, Keywords.All);
+                collectErrorsListener.EnableEvents(SemanticLoggingEventSource.Log, EventLevel.Error, EventKeywords.All);
 
                 sink.OnNext(new EventRecord());
                 try
@@ -87,7 +87,7 @@ namespace EntLibExtensions.SemanticLogging.Tests.Sinks
             using (var sink = new SqlDatabaseSink("test", validNotExisting, "tableName", Buffering.DefaultBufferingInterval, Buffering.DefaultBufferingCount, Buffering.DefaultMaxBufferSize, TimeSpan.FromSeconds(20)))
             using (var collectErrorsListener = new MockEventListener())
             {
-                collectErrorsListener.EnableEvents(SemanticLoggingEventSource.Log, EventLevel.Error, Keywords.All);
+                collectErrorsListener.EnableEvents(SemanticLoggingEventSource.Log, EventLevel.Error, EventKeywords.All);
 
                 sink.OnNext(new EventRecord());
                 Assert.IsTrue(Task.Run(() => sink.OnCompleted()).Wait(TimeSpan.FromSeconds(5)));
@@ -140,7 +140,7 @@ namespace EntLibExtensions.SemanticLogging.Tests.Sinks
             base.Given();
             this.sink = new SqlDatabaseSink("TestInstanceName", this.GetSqlConnectionString(), SqlDatabaseLog.DefaultTableName, Buffering.DefaultBufferingInterval, NumberOfEntries, Buffering.DefaultMaxBufferSize, Timeout.InfiniteTimeSpan);
             this.collectErrorsListener = new MockEventListener();
-            this.collectErrorsListener.EnableEvents(SemanticLoggingEventSource.Log, EventLevel.Error, Keywords.All);
+            this.collectErrorsListener.EnableEvents(SemanticLoggingEventSource.Log, EventLevel.Error, EventKeywords.All);
         }
 
         protected override void OnCleanup()
@@ -456,7 +456,7 @@ namespace EntLibExtensions.SemanticLogging.Tests.Sinks
         //            Buffering.DefaultMaxBufferSize,
         //            Timeout.InfiniteTimeSpan);
 
-        //        this.listener.EnableEvents(SemanticLoggingEventSource.Log, EventLevel.Error, Keywords.All);
+        //        this.listener.EnableEvents(SemanticLoggingEventSource.Log, EventLevel.Error, EventKeywords.All);
         //    }
 
         //    protected override void When()

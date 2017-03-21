@@ -155,7 +155,7 @@ namespace EntLibExtensions.SemanticLogging.Tests.EventListeners
             var formatter = new MockFormatter();
             listener.LogToFlatFile(this.fileName, formatter);
             listener.EnableEvents(Logger, EventLevel.LogAlways, EventKeywords.None);
-            listener.EnableEvents(MyCompanyEventSource.Log, EventLevel.LogAlways, Keywords.All);
+            listener.EnableEvents(MyCompanyEventSource.Log, EventLevel.LogAlways, EventKeywords.All);
 
             Logger.Informational("From TestEventSource");
             Logger.EventWithoutPayloadNorMessage();
@@ -170,7 +170,7 @@ namespace EntLibExtensions.SemanticLogging.Tests.EventListeners
             var formatter = new MockFormatter();
             listener.LogToFlatFile(this.fileName, formatter);
             listener.EnableEvents(Logger, EventLevel.LogAlways, EventKeywords.None);
-            listener.EnableEvents(MyCompanyEventSource.Log, EventLevel.LogAlways, Keywords.All);
+            listener.EnableEvents(MyCompanyEventSource.Log, EventLevel.LogAlways, EventKeywords.All);
 
             Logger.Informational("From TestEventSource");
             Logger.EventWithoutPayloadNorMessage();
