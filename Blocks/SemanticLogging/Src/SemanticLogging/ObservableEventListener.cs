@@ -13,13 +13,15 @@
 
 using System;
 using System.Diagnostics.CodeAnalysis;
-using System.Diagnostics.Tracing;
+
 using Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Observable;
 using Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Schema;
 using Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Utility;
 
 namespace Microsoft.Practices.EnterpriseLibrary.SemanticLogging
 {
+    using Microsoft.Diagnostics.Tracing;
+
     /// <summary>
     /// An <see cref="EventListener"/> that can be observed.
     /// </summary>    

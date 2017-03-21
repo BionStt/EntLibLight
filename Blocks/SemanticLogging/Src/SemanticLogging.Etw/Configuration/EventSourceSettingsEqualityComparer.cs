@@ -16,7 +16,7 @@ using Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Utility;
 
 namespace Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Etw.Configuration
 {
-    internal class EventSourceSettingsEqualityComparer : IEqualityComparer<EventSourceSettings>
+    internal class EventSourceSettingsEqualityComparer : IEqualityComparer<EventSourceSettingsConfig>
     {
         private bool nameOnly;
 
@@ -25,7 +25,7 @@ namespace Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Etw.Configuratio
             this.nameOnly = nameOnly;
         }
 
-        public bool Equals(EventSourceSettings x, EventSourceSettings y)
+        public bool Equals(EventSourceSettingsConfig x, EventSourceSettingsConfig y)
         {
             if (x == null || y == null)
             {
@@ -37,7 +37,7 @@ namespace Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Etw.Configuratio
         }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1062:Validate arguments of public methods", MessageId = "0", Justification = "Validated with Guard class")]
-        public int GetHashCode(EventSourceSettings obj)
+        public int GetHashCode(EventSourceSettingsConfig obj)
         {
             Guard.ArgumentNotNull(obj, "obj");
 

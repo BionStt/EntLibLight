@@ -13,7 +13,7 @@
 
 using System;
 using System.Collections.Generic;
-using System.Diagnostics.Tracing;
+
 using System.IO;
 using System.Linq;
 using System.Xml.Schema;
@@ -44,7 +44,7 @@ namespace Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Tests.Etw
         {
             var sinks = new List<SinkSettings>();
 
-            var sources = new List<EventSourceSettings>() { new EventSourceSettings("test"), new EventSourceSettings("test") };
+            var sources = new List<EventSourceSettingsConfig>() { new EventSourceSettingsConfig("test"), new EventSourceSettingsConfig("test") };
             var sink = new SinkSettings("test", new Lazy<IObserver<EventEntry>>(() => new InMemoryEventListener()), sources);
             sinks.Add(sink);
             sinks.Add(sink);

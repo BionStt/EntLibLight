@@ -12,7 +12,7 @@
 #endregion
 
 using System.Data.SqlClient;
-using System.Diagnostics.Tracing;
+
 using Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Sinks;
 using Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Tests.TestObjects;
 using Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Tests.Properties;

@@ -12,7 +12,7 @@
 #endregion
 
 using System;
-using System.Diagnostics.Tracing;
+
 using System.Globalization;
 using System.IO;
 using System.Text;
@@ -20,6 +20,8 @@ using Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Utility;
 
 namespace Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Formatters
 {
+    using Microsoft.Diagnostics.Tracing;
+
     /// <summary>
     /// A <see cref="IEventTextFormatter"/> implementation that writes out formatted text.
     /// </summary>

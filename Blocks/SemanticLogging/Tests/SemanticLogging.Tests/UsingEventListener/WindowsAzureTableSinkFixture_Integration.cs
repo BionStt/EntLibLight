@@ -12,7 +12,7 @@
 #endregion
 
 using System;
-using System.Diagnostics.Tracing;
+
 using System.Linq;
 using Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Sinks;
 using Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Tests.TestObjects;

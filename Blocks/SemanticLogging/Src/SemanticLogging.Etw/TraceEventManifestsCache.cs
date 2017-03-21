@@ -12,10 +12,11 @@
 #endregion
 
 using System.IO;
-using Diagnostics.Tracing.Parsers;
 
 namespace Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Etw
 {
+    using Microsoft.Diagnostics.Tracing.Parsers;
+
     internal class TraceEventManifestsCache
     {
         private const string ManifestExtension = ".manifest.xml";

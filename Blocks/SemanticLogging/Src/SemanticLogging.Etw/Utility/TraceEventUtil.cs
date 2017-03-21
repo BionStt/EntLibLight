@@ -13,14 +13,17 @@
 
 using System;
 using System.Collections.Generic;
-using System.Diagnostics.Tracing;
+
 using System.Globalization;
 using System.Linq;
-using Diagnostics.Tracing;
+
 using Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Utility;
 
 namespace Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Etw.Utility
 {
+    using Microsoft.Diagnostics.Tracing;
+    using Microsoft.Diagnostics.Tracing.Session;
+
     internal static class TraceEventUtil
     {
         internal const TraceEventID ManifestEventID = (TraceEventID)0xFFFE;
@@ -42,9 +45,13 @@ namespace Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Etw.Utility
         internal static void EnableProvider(TraceEventSession session, Guid providerId, EventLevel level, EventKeywords matchAnyKeyword, bool sendManifest = true)
         {
             // Make explicit the invocation for requesting the manifest from the EventSource (Provider).
-            var values = sendManifest ? new Dictionary<string, string>() { { "Command", "SendManifest" } } : null;
+            var values = sendManifest ? new Dictionary<string, string> { { "Command", "SendManifest" } } : null;            
 
-            session.EnableProvider(providerId, (TraceEventLevel)level, (ulong)matchAnyKeyword, 0, TraceEventOptions.None, values);
+            session.EnableProvider(
+                providerId,
+                (TraceEventLevel)level,
+                (ulong)matchAnyKeyword,
+                new TraceEventProviderOptions { Arguments = values });
         }
     }
 }

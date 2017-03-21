@@ -14,7 +14,7 @@
 using System;
 using System.Configuration;
 using System.Data.SqlClient;
-using System.Diagnostics.Tracing;
+
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;

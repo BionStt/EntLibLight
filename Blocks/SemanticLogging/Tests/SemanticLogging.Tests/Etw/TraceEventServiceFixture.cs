@@ -14,17 +14,18 @@
 extern alias TraceEvent;
 using System;
 using System.Collections.Generic;
-using System.Diagnostics.Tracing;
+
 using System.Linq;
 using Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Etw;
 using Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Etw.Configuration;
 using Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Tests.TestObjects;
 using Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Tests.TestSupport;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Tracing = TraceEvent::Diagnostics.Tracing;
 
 namespace Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Tests.Etw
 {
+    using Microsoft.Diagnostics.Tracing;
+
     [TestClass]
     public class given_traceEventService_instance
     {
@@ -40,9 +41,9 @@ namespace Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Tests.Etw
     {
         protected readonly TimeSpan AsyncProcessTimeout = TimeSpan.FromSeconds(15);
         protected TraceEventService Sut;
-        protected List<EventSourceSettings> eventSources;
+        protected List<EventSourceSettingsConfig> eventSources;
         protected List<SinkSettings> sinkSettings;
-        protected EventSourceSettings sourceSettings;
+        protected EventSourceSettingsConfig SourceSettingsConfig;
         protected InMemoryEventListener inMemoryListener;
         protected MockFormatter formatter;
         protected TraceEventServiceConfiguration configuration;
@@ -53,8 +54,8 @@ namespace Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Tests.Etw
             this.formatter = new MockFormatter();
             this.inMemoryListener = new InMemoryEventListener(this.formatter);
             var sink = new Lazy<IObserver<EventEntry>>(() => this.inMemoryListener);
-            this.sourceSettings = this.sourceSettings ?? new EventSourceSettings(EventSource.GetName(typeof(MyCompanyEventSource)));
-            this.eventSources = new List<EventSourceSettings>() { { this.sourceSettings } };
+            this.SourceSettingsConfig = this.SourceSettingsConfig ?? new EventSourceSettingsConfig(EventSource.GetName(typeof(MyCompanyEventSource)));
+            this.eventSources = new List<EventSourceSettingsConfig>() { { this.SourceSettingsConfig } };
             this.sinkSettings = new List<SinkSettings>() { { new SinkSettings("test", sink, this.eventSources) } };
             this.configuration = new TraceEventServiceConfiguration(sinkSettings, this.serviceSettings);
 
@@ -209,7 +210,7 @@ namespace Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Tests.Etw
                 Assert.IsNotNull(entry);
 
                 Assert.AreEqual(MyCompanyEventSource.Log.Name, entry.Schema.ProviderName);
-                Assert.AreEqual(sourceSettings.EventSourceId, entry.ProviderId);
+                Assert.AreEqual(this.SourceSettingsConfig.EventSourceId, entry.ProviderId);
                 Assert.AreEqual("loading page test activityID=10", entry.FormattedMessage);
                 Assert.AreEqual(EventOpcode.Start, entry.Schema.Opcode);
                 Assert.AreEqual(3, entry.EventId);
@@ -223,8 +224,8 @@ namespace Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Tests.Etw
             {
                 base.Given();
                 var sink = new Lazy<IObserver<EventEntry>>(() => inMemoryListener);
-                sourceSettings = new EventSourceSettings(EventSource.GetName(typeof(MyCompanyEventSource)), level: EventLevel.Warning);
-                eventSources = new List<EventSourceSettings>() { { sourceSettings } };
+                this.SourceSettingsConfig = new EventSourceSettingsConfig(EventSource.GetName(typeof(MyCompanyEventSource)), level: EventLevel.Warning);
+                eventSources = new List<EventSourceSettingsConfig>() { { this.SourceSettingsConfig } };
                 sinkSettings = new List<SinkSettings>() { { new SinkSettings("test", sink, eventSources) } };
                 configuration = new TraceEventServiceConfiguration(sinkSettings);
                 this.Sut = new TraceEventService(configuration);
@@ -249,7 +250,7 @@ namespace Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Tests.Etw
                 Assert.IsNotNull(entry);
 
                 Assert.AreEqual(MyCompanyEventSource.Log.Name, entry.Schema.ProviderName);
-                Assert.AreEqual(sourceSettings.EventSourceId, entry.ProviderId);
+                Assert.AreEqual(this.SourceSettingsConfig.EventSourceId, entry.ProviderId);
                 Assert.AreEqual("Application Failure: failure", entry.FormattedMessage);
                 Assert.AreEqual(EventOpcode.Info, entry.Schema.Opcode);
                 Assert.AreEqual(1, entry.EventId);
@@ -263,8 +264,8 @@ namespace Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Tests.Etw
             {
                 base.Given();
                 var sink = new Lazy<IObserver<EventEntry>>(() => inMemoryListener);
-                sourceSettings = new EventSourceSettings(EventSource.GetName(typeof(MyCompanyEventSource)), level: EventLevel.Warning, matchAnyKeyword: MyCompanyEventSource.Keywords.Diagnostic);
-                eventSources = new List<EventSourceSettings>() { { sourceSettings } };
+                this.SourceSettingsConfig = new EventSourceSettingsConfig(EventSource.GetName(typeof(MyCompanyEventSource)), level: EventLevel.Warning, matchAnyKeyword: MyCompanyEventSource.Keywords.Diagnostic);
+                eventSources = new List<EventSourceSettingsConfig>() { { this.SourceSettingsConfig } };
                 sinkSettings = new List<SinkSettings>() { { new SinkSettings("test", sink, eventSources) } };
                 configuration = new TraceEventServiceConfiguration(sinkSettings);
                 this.Sut = new TraceEventService(configuration);
@@ -289,7 +290,7 @@ namespace Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Tests.Etw
                 Assert.IsNotNull(entry);
 
                 Assert.AreEqual(MyCompanyEventSource.Log.Name, entry.Schema.ProviderName);
-                Assert.AreEqual(sourceSettings.EventSourceId, entry.ProviderId);
+                Assert.AreEqual(this.SourceSettingsConfig.EventSourceId, entry.ProviderId);
                 Assert.AreEqual("Application Failure: failure", entry.FormattedMessage);
                 Assert.AreEqual(EventOpcode.Info, entry.Schema.Opcode);
                 Assert.AreEqual(1, entry.EventId);
@@ -339,7 +340,7 @@ namespace Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Tests.Etw
                 base.Given();
                 inMemoryListener.WaitSignalCondition = () => inMemoryListener.EventWrittenCount == 2;
                 var sink = new Lazy<IObserver<EventEntry>>(() => inMemoryListener);
-                var sourceSettings = new EventSourceSettings(EventSource.GetName(typeof(TestEventSource)));
+                var sourceSettings = new EventSourceSettingsConfig(EventSource.GetName(typeof(TestEventSource)));
                 this.eventSources.Add(sourceSettings);
                 sinkSettings = new List<SinkSettings>() { { new SinkSettings("test", sink, eventSources) } };
                 configuration = new TraceEventServiceConfiguration(sinkSettings);
@@ -384,8 +385,8 @@ namespace Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Tests.Etw
                 base.Given();
                 inMemoryListener = new InMemoryEventListener(new MockFormatter() { BeforeWriteEventAction = (f) => { throw new Exception("unhandled_exception_test"); } });
                 var sink = new Lazy<IObserver<EventEntry>>(() => inMemoryListener);
-                sourceSettings = new EventSourceSettings(EventSource.GetName(typeof(MyCompanyEventSource)));
-                eventSources = new List<EventSourceSettings>() { { sourceSettings } };
+                this.SourceSettingsConfig = new EventSourceSettingsConfig(EventSource.GetName(typeof(MyCompanyEventSource)));
+                eventSources = new List<EventSourceSettingsConfig>() { { this.SourceSettingsConfig } };
                 sinkSettings = new List<SinkSettings>() { { new SinkSettings("test", sink, eventSources) } };
                 configuration = new TraceEventServiceConfiguration(sinkSettings);
                 this.Sut = new TraceEventService(configuration);
@@ -432,8 +433,8 @@ namespace Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Tests.Etw
 
                 inMemoryListener2 = new InMemoryEventListener(formatter);
                 var sink = new Lazy<IObserver<EventEntry>>(() => inMemoryListener2);
-                var sourceSettings = new EventSourceSettings(EventSource.GetName(typeof(MyCompanyEventSource)), level: EventLevel.Informational, matchAnyKeyword: MyCompanyEventSource.Keywords.Page);
-                var eventSources = new List<EventSourceSettings>() { { sourceSettings } };
+                var sourceSettings = new EventSourceSettingsConfig(EventSource.GetName(typeof(MyCompanyEventSource)), level: EventLevel.Informational, matchAnyKeyword: MyCompanyEventSource.Keywords.Page);
+                var eventSources = new List<EventSourceSettingsConfig>() { { sourceSettings } };
                 var sinkSettings = new List<SinkSettings>() { { new SinkSettings("test", sink, eventSources) } };
                 var configuration = new TraceEventServiceConfiguration(sinkSettings, new TraceEventServiceSettings() { SessionNamePrefix = SessionName2 });
                 this.Sut2 = new TraceEventService(configuration);
@@ -527,8 +528,8 @@ namespace Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Tests.Etw
             protected override void When()
             {
                 var current = this.configuration.SinkSettings[0];
-                List<EventSourceSettings> newSources = new List<EventSourceSettings>(current.EventSources);
-                newSources.Add(new EventSourceSettings(EventSource.GetName(typeof(TestEventSource))));
+                List<EventSourceSettingsConfig> newSources = new List<EventSourceSettingsConfig>(current.EventSources);
+                newSources.Add(new EventSourceSettingsConfig(EventSource.GetName(typeof(TestEventSource))));
                 var newSink = new SinkSettings(current.Name, current.Sink, newSources);
 
                 // will trigger changed event
@@ -570,8 +571,8 @@ namespace Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Tests.Etw
                 inMemoryListener.WaitSignalCondition = () => inMemoryListener.EventWrittenCount == 3;
 
                 var sink = new Lazy<IObserver<EventEntry>>(() => inMemoryListener);
-                var sourceSettings = new EventSourceSettings(EventSource.GetName(typeof(MyCompanyEventSource)), level: EventLevel.Warning);
-                var eventSources = new List<EventSourceSettings>() { { sourceSettings } };
+                var sourceSettings = new EventSourceSettingsConfig(EventSource.GetName(typeof(MyCompanyEventSource)), level: EventLevel.Warning);
+                var eventSources = new List<EventSourceSettingsConfig>() { { sourceSettings } };
                 this.configuration.SinkSettings.Add(new SinkSettings("test2", sink, eventSources));
             }
 
@@ -603,7 +604,7 @@ namespace Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Tests.Etw
                 this.domain2 = new DisposableDomain();
 
                 var initialManifest = EventSource.GenerateManifest(typeof(MyNewCompanyEventSource), null);
-                this.sourceSettings = new EventSourceSettings(EventSource.GetName(typeof(MyNewCompanyEventSource)));                               
+                this.SourceSettingsConfig = new EventSourceSettingsConfig(EventSource.GetName(typeof(MyNewCompanyEventSource)));                               
                 base.Given();
 
                 // We expect 2 events
@@ -647,13 +648,13 @@ namespace Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Tests.Etw
                 Assert.IsNotNull(entry2);
 
                 Assert.AreEqual(MyNewCompanyEventSource.Logger.Name, entry1.Schema.ProviderName);
-                Assert.AreEqual(sourceSettings.EventSourceId, entry1.ProviderId);
+                Assert.AreEqual(this.SourceSettingsConfig.EventSourceId, entry1.ProviderId);
                 Assert.AreEqual("Event1 ID=11", entry1.FormattedMessage);
                 Assert.AreEqual(EventOpcode.Start, entry1.Schema.Opcode);
                 Assert.AreEqual(1, entry1.EventId);
 
                 Assert.AreEqual(MyNewCompanyEventSource2.Logger.Name, entry2.Schema.ProviderName);
-                Assert.AreEqual(sourceSettings.EventSourceId, entry2.ProviderId);
+                Assert.AreEqual(this.SourceSettingsConfig.EventSourceId, entry2.ProviderId);
                 Assert.AreEqual("Event2 ID=22", entry2.FormattedMessage);
                 Assert.AreEqual(EventOpcode.Start, entry2.Schema.Opcode);
                 Assert.AreEqual(2, entry2.EventId);
@@ -695,7 +696,7 @@ namespace Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Tests.Etw
         {
             protected override void Given()
             {
-                this.sourceSettings = new EventSourceSettings(EventSource.GetName(typeof(MultipleTypesEventSource)));
+                this.SourceSettingsConfig = new EventSourceSettingsConfig(EventSource.GetName(typeof(MultipleTypesEventSource)));
                 base.Given();
                 this.Sut.Start();
             }
@@ -716,7 +717,7 @@ namespace Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Tests.Etw
                 Assert.IsNotNull(entry);
 
                 Assert.AreEqual(MultipleTypesEventSource.Log.Name, entry.Schema.ProviderName);
-                Assert.AreEqual(sourceSettings.EventSourceId, entry.ProviderId);
+                Assert.AreEqual(this.SourceSettingsConfig.EventSourceId, entry.ProviderId);
                 Assert.AreEqual((int)MultipleTypesEventSource.Color.Blue, entry.Payload[entry.Schema.Payload.ToList().FindIndex(m => m == "arg16")]);
             }
         }
@@ -728,7 +729,7 @@ namespace Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Tests.Etw
 
             protected override void Given()
             {
-                this.sourceSettings = new EventSourceSettings(EventSource.GetName(typeof(DifferentEnumsEventSource)));
+                this.SourceSettingsConfig = new EventSourceSettingsConfig(EventSource.GetName(typeof(DifferentEnumsEventSource)));
                 base.Given();
 
                 this.slabListener = new InMemoryEventListener();
@@ -765,7 +766,7 @@ namespace Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Tests.Etw
         {
             protected override void Given()
             {
-                this.sourceSettings = new EventSourceSettings(EventSource.GetName(typeof(LargeManifestEventSource)));
+                this.SourceSettingsConfig = new EventSourceSettingsConfig(EventSource.GetName(typeof(LargeManifestEventSource)));
                 base.Given();
                 this.Sut.Start();
             }
@@ -786,7 +787,7 @@ namespace Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Tests.Etw
                 Assert.IsNotNull(entry);
 
                 Assert.AreEqual(LargeManifestEventSource.Log.Name, entry.Schema.ProviderName);
-                Assert.AreEqual(sourceSettings.EventSourceId, entry.ProviderId);
+                Assert.AreEqual(this.SourceSettingsConfig.EventSourceId, entry.ProviderId);
             }
         }
 
@@ -800,7 +801,7 @@ namespace Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Tests.Etw
             {
                 this.domain1 = new DisposableDomain();
                 this.domain2 = new DisposableDomain();
-                this.sourceSettings = new EventSourceSettings(EventSource.GetName(typeof(LargeManifestEventSource)));
+                this.SourceSettingsConfig = new EventSourceSettingsConfig(EventSource.GetName(typeof(LargeManifestEventSource)));
 
                 base.Given();
 
@@ -840,10 +841,10 @@ namespace Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Tests.Etw
                 var entry1 = formatter.WriteEventCalls.ElementAt(1);
 
                 Assert.AreEqual(LargeManifestEventSource.Log.Name, entry0.Schema.ProviderName);
-                Assert.AreEqual(sourceSettings.EventSourceId, entry0.ProviderId);
+                Assert.AreEqual(this.SourceSettingsConfig.EventSourceId, entry0.ProviderId);
 
                 Assert.AreEqual(LargeManifestEventSource.Log.Name, entry1.Schema.ProviderName);
-                Assert.AreEqual(sourceSettings.EventSourceId, entry1.ProviderId);
+                Assert.AreEqual(this.SourceSettingsConfig.EventSourceId, entry1.ProviderId);
             }
         }
     }

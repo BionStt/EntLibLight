@@ -16,7 +16,7 @@ using Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Tests.TestObjects;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using System.Collections.Generic;
-using System.Diagnostics.Tracing;
+
 
 namespace Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Tests.Etw
 {
@@ -27,13 +27,13 @@ namespace Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Tests.Etw
         [ExpectedException(typeof(ConfigurationException))]
         public void when_creating_instance_with_no_values()
         {
-            new EventSourceSettings();
+            new EventSourceSettingsConfig();
         }
 
         [TestMethod]
         public void when_creating_instance_with_name_only()
         {
-            var sut = new EventSourceSettings(MyCompanyEventSource.Log.Name);
+            var sut = new EventSourceSettingsConfig(MyCompanyEventSource.Log.Name);
 
             Assert.AreEqual(MyCompanyEventSource.Log.Name, sut.Name);
             Assert.AreEqual(MyCompanyEventSource.Log.Guid, sut.EventSourceId);
@@ -44,7 +44,7 @@ namespace Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Tests.Etw
         [TestMethod]
         public void when_creating_instance_with_id_only()
         {
-            var sut = new EventSourceSettings(eventSourceId: MyCompanyEventSource.Log.Guid);
+            var sut = new EventSourceSettingsConfig(eventSourceId: MyCompanyEventSource.Log.Guid);
 
             Assert.AreEqual(MyCompanyEventSource.Log.Guid.ToString(), sut.Name);
             Assert.AreEqual(MyCompanyEventSource.Log.Guid, sut.EventSourceId);
@@ -56,7 +56,7 @@ namespace Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Tests.Etw
         [ExpectedException(typeof(ConfigurationException))]
         public void when_creating_instance_with_both_name_and_id()
         {
-            new EventSourceSettings(MyCompanyEventSource.Log.Name, MyCompanyEventSource.Log.Guid);
+            new EventSourceSettingsConfig(MyCompanyEventSource.Log.Name, MyCompanyEventSource.Log.Guid);
         }
     }
 }

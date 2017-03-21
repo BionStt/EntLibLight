@@ -12,10 +12,12 @@
 #endregion
 
 using System;
-using System.Diagnostics.Tracing;
+
 
 namespace Microsoft.Practices.EnterpriseLibrary.SemanticLogging
 {
+    using Microsoft.Diagnostics.Tracing;
+
     /// <summary>
     /// An <see cref="EventSource"/> class to notify non-transient faults and internal trace information.
     /// </summary>

@@ -18,7 +18,7 @@ using System.ComponentModel;
 using System.Configuration;
 using System.Diagnostics;
 using System.Diagnostics.CodeAnalysis;
-using System.Diagnostics.Tracing;
+
 using System.IO;
 using System.ServiceProcess;
 using System.Text;
@@ -26,6 +26,8 @@ using System.Threading.Tasks;
 
 namespace Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Etw.Service
 {
+    using Microsoft.Diagnostics.Tracing;
+
     /// <summary>
     /// The windows service host class for <see cref="TraceEventService"/> class.
     /// </summary>

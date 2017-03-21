@@ -12,13 +12,15 @@
 #endregion
 
 using System;
-using System.Diagnostics.Tracing;
+
 using Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Formatters;
 using Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Sinks;
 using Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Utility;
 
 namespace Microsoft.Practices.EnterpriseLibrary.SemanticLogging
 {
+    using Microsoft.Diagnostics.Tracing;
+
     /// <summary>
     /// Factories and helpers for using the <see cref="ConsoleSink"/>.
     /// </summary>

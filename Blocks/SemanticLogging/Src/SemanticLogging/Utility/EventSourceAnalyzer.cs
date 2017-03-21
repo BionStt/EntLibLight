@@ -13,7 +13,7 @@
 
 using System;
 using System.Collections.Generic;
-using System.Diagnostics.Tracing;
+
 using System.Globalization;
 using System.Linq;
 using System.Reflection;
@@ -22,6 +22,8 @@ using Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Schema;
 
 namespace Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Utility
 {
+    using Microsoft.Diagnostics.Tracing;
+
     /// <summary>
     /// Helper class to validate the correctness of <see cref="EventSource"/> instances. Useful in unit tests.
     /// </summary>

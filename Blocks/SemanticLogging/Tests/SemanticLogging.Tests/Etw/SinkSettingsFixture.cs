@@ -27,14 +27,14 @@ namespace Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Tests.Etw
         [ExpectedException(typeof(ArgumentNullException))]
         public void when_creating_instance_with_null_name()
         {
-            new SinkSettings(null, new InMemoryEventListener(), Enumerable.Empty<EventSourceSettings>());
+            new SinkSettings(null, new InMemoryEventListener(), Enumerable.Empty<EventSourceSettingsConfig>());
         }
 
         [TestMethod]
         [ExpectedException(typeof(ConfigurationException))]
         public void when_creating_instance_with_null_sink()
         {
-            new SinkSettings("name", sink: null, eventSources: Enumerable.Empty<EventSourceSettings>());
+            new SinkSettings("name", sink: null, eventSources: Enumerable.Empty<EventSourceSettingsConfig>());
         }
 
         [TestMethod]
@@ -48,21 +48,21 @@ namespace Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Tests.Etw
         [ExpectedException(typeof(ArgumentOutOfRangeException))]
         public void when_creating_instance_with_max_name_length()
         {
-            new SinkSettings(new string('a', 201), new InMemoryEventListener(), Enumerable.Empty<EventSourceSettings>());
+            new SinkSettings(new string('a', 201), new InMemoryEventListener(), Enumerable.Empty<EventSourceSettingsConfig>());
         }
 
         [TestMethod]
         [ExpectedException(typeof(ConfigurationException))]
         public void when_creating_instance_with_empty_sources()
         {
-            new SinkSettings("test", new InMemoryEventListener(), Enumerable.Empty<EventSourceSettings>());
+            new SinkSettings("test", new InMemoryEventListener(), Enumerable.Empty<EventSourceSettingsConfig>());
         }
 
         [TestMethod]
         [ExpectedException(typeof(ConfigurationException))]
         public void when_creating_instance_with_duplicate_sources_by_name()
         {
-            var sources = new List<EventSourceSettings>() { new EventSourceSettings("test"), new EventSourceSettings("test") };
+            var sources = new List<EventSourceSettingsConfig>() { new EventSourceSettingsConfig("test"), new EventSourceSettingsConfig("test") };
             new SinkSettings("test", new InMemoryEventListener(), sources);
         }
 
@@ -70,14 +70,14 @@ namespace Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Tests.Etw
         [ExpectedException(typeof(ConfigurationException))]
         public void when_creating_instance_with_duplicate_sources_by_id()
         {
-            var sources = new List<EventSourceSettings>() { new EventSourceSettings(eventSourceId: MyCompanyEventSource.Log.Guid), new EventSourceSettings(eventSourceId: MyCompanyEventSource.Log.Guid) };
+            var sources = new List<EventSourceSettingsConfig>() { new EventSourceSettingsConfig(eventSourceId: MyCompanyEventSource.Log.Guid), new EventSourceSettingsConfig(eventSourceId: MyCompanyEventSource.Log.Guid) };
             new SinkSettings("test", new InMemoryEventListener(), sources);
         }
 
         [TestMethod]
         public void when_creating_instance_with_default_values()
         {
-            var sources = new List<EventSourceSettings>() { new EventSourceSettings(MyCompanyEventSource.Log.Name) };
+            var sources = new List<EventSourceSettingsConfig>() { new EventSourceSettingsConfig(MyCompanyEventSource.Log.Name) };
             var sink = new InMemoryEventListener();
             var sut = new SinkSettings("test", sink, sources);
 

@@ -13,13 +13,15 @@
 
 using System;
 using System.Diagnostics;
-using System.Diagnostics.Tracing;
+
 using Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Formatters;
 using Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Schema;
 using Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Utility;
 
 namespace Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Etw.Service
 {
+    using Microsoft.Diagnostics.Tracing;
+
     internal class ServiceEventLogSink : IObserver<EventEntry>
     {
         private readonly IEventTextFormatter formatter;

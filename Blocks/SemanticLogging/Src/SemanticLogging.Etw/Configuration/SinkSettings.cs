@@ -35,7 +35,7 @@ namespace Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Etw.Configuratio
         /// <param name="sink">The sink instance.</param>
         /// <param name="eventSources">The event sources.</param>
         /// <exception cref="ConfigurationException">Validation exceptions.</exception>
-        public SinkSettings(string name, IObserver<EventEntry> sink, IEnumerable<EventSourceSettings> eventSources)
+        public SinkSettings(string name, IObserver<EventEntry> sink, IEnumerable<EventSourceSettingsConfig> eventSources)
             : this(name, eventSources)
         {
             Guard.ArgumentNotNull(sink, "sink");
@@ -43,7 +43,7 @@ namespace Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Etw.Configuratio
             this.Sink = sink;
         }
 
-        internal SinkSettings(string name, Lazy<IObserver<EventEntry>> sinkPromise, IEnumerable<EventSourceSettings> eventSources)
+        internal SinkSettings(string name, Lazy<IObserver<EventEntry>> sinkPromise, IEnumerable<EventSourceSettingsConfig> eventSources)
             : this(name, eventSources)
         {
             Guard.ArgumentNotNull(sinkPromise, "sinkPromise");
@@ -51,7 +51,7 @@ namespace Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Etw.Configuratio
             this.sinkPromise = sinkPromise;
         }
 
-        private SinkSettings(string name, IEnumerable<EventSourceSettings> eventSources)
+        private SinkSettings(string name, IEnumerable<EventSourceSettingsConfig> eventSources)
         {
             Guard.ArgumentNotNullOrEmpty(name, "name");
             Guard.ArgumentLowerOrEqualThan<int>(200, name.Length, "name.Length");
@@ -107,7 +107,7 @@ namespace Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Etw.Configuratio
         /// <value>
         /// The event sources.
         /// </value>
-        public IEnumerable<EventSourceSettings> EventSources { get; set; }
+        public IEnumerable<EventSourceSettingsConfig> EventSources { get; set; }
 
         internal string SinkConfiguration { get; set; }
     }

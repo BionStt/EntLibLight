@@ -14,7 +14,7 @@
 using System;
 using System.Collections.ObjectModel;
 using System.Diagnostics.CodeAnalysis;
-using System.Diagnostics.Tracing;
+
 using System.Globalization;
 using System.Linq;
 using Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Schema;
@@ -22,6 +22,8 @@ using Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Utility;
 
 namespace Microsoft.Practices.EnterpriseLibrary.SemanticLogging
 {
+    using Microsoft.Diagnostics.Tracing;
+
     /// <summary>
     /// Represents a entry to log, with additional context information.
     /// </summary>

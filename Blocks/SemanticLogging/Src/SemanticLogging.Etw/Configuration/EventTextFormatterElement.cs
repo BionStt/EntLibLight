@@ -12,12 +12,14 @@
 #endregion
 
 using System;
-using System.Diagnostics.Tracing;
+
 using System.Xml.Linq;
 using Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Formatters;
 
 namespace Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Etw.Configuration
 {
+    using Microsoft.Diagnostics.Tracing;
+
     /// <summary>
     /// Represents a configuration element that can create an instance of <see cref="EventTextFormatter"/>.
     /// </summary>

@@ -13,11 +13,13 @@
 
 using System;
 using System.Collections.Generic;
-using System.Diagnostics.Tracing;
+
 using System.Linq;
 
 namespace Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Schema
 {
+    using Microsoft.Diagnostics.Tracing;
+
     /// <summary>
     /// Represents an <see cref="EventSource"/> schema.
     /// </summary>

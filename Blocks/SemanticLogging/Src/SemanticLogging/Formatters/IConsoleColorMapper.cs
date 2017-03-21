@@ -12,10 +12,12 @@
 #endregion
 
 using System;
-using System.Diagnostics.Tracing;
+
 
 namespace Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Formatters
 {
+    using Microsoft.Diagnostics.Tracing;
+
     /// <summary>
     /// Provides mapping between an <see cref="EventLevel"/> and a console foreground color.
     /// </summary>

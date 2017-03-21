@@ -98,7 +98,7 @@ namespace Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Etw.Configuratio
 
             foreach (var element in configElement.SinkConfigurationElements)
             {
-                var eventSources = element.EventSources.Select(e => new EventSourceSettings(e.Name, e.EventId, e.Level, e.MatchAnyKeyword));
+                var eventSources = element.EventSources.Select(e => new EventSourceSettingsConfig(e.Name, e.EventId, e.Level, e.MatchAnyKeyword));
                 var sink = createSinks ?
                     new SinkSettings(element.Name, element.SinkPromise.Value, eventSources) :
                     new SinkSettings(element.Name, element.SinkPromise, eventSources);

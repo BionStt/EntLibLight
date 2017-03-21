@@ -12,12 +12,14 @@
 #endregion
 
 using System;
-using System.Diagnostics.Tracing;
+
 using System.Globalization;
 using System.Xml.Linq;
 
 namespace Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Etw.Configuration
 {
+    using Microsoft.Diagnostics.Tracing;
+
     /// <summary>
     /// Represents the configuration class for an event source element.
     /// </summary>

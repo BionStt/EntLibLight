@@ -11,26 +11,30 @@
 // ==============================================================================
 #endregion
 
-using Diagnostics.Tracing;
+
 using System;
-using System.Diagnostics.Tracing;
+
 
 namespace Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Etw.Configuration
 {
+    using Microsoft.Diagnostics.Tracing;
+
+    using Microsoft.Diagnostics.Tracing.Session;
+
     /// <summary>
     /// Represents the event source configuration settings.
     /// </summary>
-    public class EventSourceSettings
+    public class EventSourceSettingsConfig
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="EventSourceSettings"/> class.
+        /// Initializes a new instance of the <see cref="EventSourceSettingsConfig"/> class.
         /// </summary>
         /// <param name="name">The friendly event source name.</param>
         /// <param name="eventSourceId">The event source id.</param>
         /// <param name="level">The level.</param>
         /// <param name="matchAnyKeyword">The match any keyword.</param>
         /// <exception cref="ConfigurationException">A validation exception.</exception>
-        public EventSourceSettings(string name = null, Guid? eventSourceId = null, EventLevel level = EventLevel.LogAlways, EventKeywords matchAnyKeyword = Keywords.All)
+        public EventSourceSettingsConfig(string name = null, Guid? eventSourceId = null, EventLevel level = EventLevel.LogAlways, EventKeywords matchAnyKeyword = Keywords.All)
         {
             // If no Id, Name should not be optional so we may derive an Id from it.
             if (!eventSourceId.HasValue || eventSourceId == Guid.Empty)
@@ -40,7 +44,7 @@ namespace Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Etw.Configuratio
                     throw new ConfigurationException(Properties.Resources.MissingEventSourceNameAndId);
                 }
 
-                eventSourceId = TraceEventSession.GetEventSourceGuidFromName(name);
+                eventSourceId = TraceEventProviders.GetEventSourceGuidFromName(name);
             }
             else if (!string.IsNullOrWhiteSpace(name))
             {

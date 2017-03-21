@@ -14,7 +14,7 @@
 extern alias TraceEvent;
 using System;
 using System.Collections.Generic;
-using System.Diagnostics.Tracing;
+
 using System.Linq;
 using Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Etw;
 using Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Etw.Configuration;
@@ -33,7 +33,7 @@ namespace Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Tests.Etw
 
         protected override void Given()
         {
-            this.sinkSettings = new SinkSettings("test", new InMemoryEventListener(), new EventSourceSettings[] { new EventSourceSettings("Test") });
+            this.sinkSettings = new SinkSettings("test", new InMemoryEventListener(), new EventSourceSettingsConfig[] { new EventSourceSettingsConfig("Test") });
             this.traceEventServiceSettings = new TraceEventServiceSettings();
         }
 
@@ -114,9 +114,9 @@ namespace Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Tests.Etw
             public void then_session_is_updated_with_new_eventSources()
             {
                 var currentEventSource = this.sinkSettings.EventSources.First();
-                var newEventSource = new EventSourceSettings(currentEventSource.Name, level: currentEventSource.Level, matchAnyKeyword: EventKeywords.AuditSuccess);
+                var newEventSource = new EventSourceSettingsConfig(currentEventSource.Name, level: currentEventSource.Level, matchAnyKeyword: EventKeywords.AuditSuccess);
 
-                this.Sut.UpdateSession(new List<EventSourceSettings>() { newEventSource });
+                this.Sut.UpdateSession(new List<EventSourceSettingsConfig>() { newEventSource });
 
                 Assert.AreEqual(newEventSource.MatchAnyKeyword, currentEventSource.MatchAnyKeyword);
             }

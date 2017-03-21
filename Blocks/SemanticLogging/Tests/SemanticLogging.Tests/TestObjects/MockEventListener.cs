@@ -12,7 +12,7 @@
 #endregion
 
 using System.Collections.Concurrent;
-using System.Diagnostics.Tracing;
+
 using Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Schema;
 
 namespace Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Tests.TestObjects

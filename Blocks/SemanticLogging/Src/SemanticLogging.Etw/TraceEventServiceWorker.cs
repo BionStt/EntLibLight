@@ -17,20 +17,23 @@ using System.Collections.ObjectModel;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
-using Diagnostics.Tracing;
-using Diagnostics.Tracing.Parsers;
+
 using Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Etw.Configuration;
 using Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Etw.Utility;
 using Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Utility;
 
 namespace Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Etw
 {
+    using Microsoft.Diagnostics.Tracing;
+    using Microsoft.Diagnostics.Tracing.Parsers;
+    using Microsoft.Diagnostics.Tracing.Session;
+
     internal sealed class TraceEventServiceWorker : IDisposable
     {
         private readonly SemanticLoggingEventSource logger = SemanticLoggingEventSource.Log;
         private readonly TraceEventSchemaCache schemaCache = new TraceEventSchemaCache();
         private readonly IObserver<EventEntry> sink;
-        private readonly List<EventSourceSettings> eventSources;
+        private readonly List<EventSourceSettingsConfig> eventSources;
         private readonly string sessionName;
         private TraceEventManifestsCache manifestCache;
         private ETWTraceEventSource source;
@@ -46,12 +49,12 @@ namespace Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Etw
             Guard.ArgumentNotNull(serviceSettings, "serviceSettings");
 
             this.sink = sinkSettings.Sink;
-            this.eventSources = new List<EventSourceSettings>(sinkSettings.EventSources);
+            this.eventSources = new List<EventSourceSettingsConfig>(sinkSettings.EventSources);
             this.sessionName = serviceSettings.SessionNamePrefix + "-" + sinkSettings.Name;
             this.Initialize();
         }
 
-        public void UpdateSession(IEnumerable<EventSourceSettings> updatedEventSources)
+        public void UpdateSession(IEnumerable<EventSourceSettingsConfig> updatedEventSources)
         {
             Guard.ArgumentNotNull(updatedEventSources, "updatedEventSources");
 
@@ -125,11 +128,11 @@ namespace Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Etw
             this.source.Dynamic.All += e => this.ProcessEvent(e);
 
             // listen to new manifests
-            this.source.Dynamic.ManifestReceived += m => this.OnManifestReceived(m);
-
+            //this.source.Dynamic.ManifestReceived += m => this.OnManifestReceived(m);
+            
             // We collect all the manifests and save/terminate process when done
-            this.source.UnhandledEvent += e => this.ProcessUnhandledEvent(e);
-
+            this.source.UnhandledEvents += e => this.ProcessUnhandledEvent(e);
+            
             foreach (var eventSource in this.eventSources)
             {
                 // Bind the provider (EventSource/EventListener) with the session
@@ -145,7 +148,7 @@ namespace Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Etw
         private void ProcessEvent(TraceEvent evt)
         {
             try
-            {
+            {                
                 this.sink.OnNext(this.CreateEventEntry(evt));
             }
             catch (Exception exception)
@@ -156,12 +159,16 @@ namespace Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Etw
 
         private void OnManifestReceived(ProviderManifest providerManifest)
         {
-            if (providerManifest.Error != null)
+            try
             {
-                this.logger.TraceEventServiceManifestGenerationFault(providerManifest.Guid, providerManifest.Error.ToString());
+                providerManifest.ValidateManifest();
+            }
+            catch (Exception exception)
+            {
+                this.logger.TraceEventServiceManifestGenerationFault(providerManifest.Guid, exception.ToString());
                 return;
             }
-
+            
             // Update schemas for this provider 
             this.schemaCache.UpdateSchemaFromManifest(providerManifest.Guid, providerManifest.Manifest);
 
@@ -177,6 +184,10 @@ namespace Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Etw
                 // Simply notify and count lost events since we don't have a manifest yet to parse this event.
                 this.NotifyEventLost();
             }
+            else
+            {
+                
+            }
         }
 
         private EventEntry CreateEventEntry(TraceEvent traceEvent)
@@ -185,7 +196,7 @@ namespace Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Etw
                 (int)traceEvent.ID,
                 traceEvent.FormattedMessage,
                 this.CreatePayload(traceEvent),
-                DateTimeOffset.FromFileTime(traceEvent.TimeStamp100ns),
+                traceEvent.TimeStamp.ToUniversalTime(),
                 this.schemaCache.GetSchema(traceEvent));
         }
 

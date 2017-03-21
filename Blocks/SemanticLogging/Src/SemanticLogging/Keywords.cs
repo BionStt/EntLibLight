@@ -11,10 +11,12 @@
 // ==============================================================================
 #endregion
 
-using System.Diagnostics.Tracing;
+
 
 namespace Microsoft.Practices.EnterpriseLibrary.SemanticLogging
 {
+    using Microsoft.Diagnostics.Tracing;
+
     /// <summary>
     /// EventKeywords additional constants for <see cref="System.Diagnostics.Tracing.EventKeywords"/>.
     /// </summary>

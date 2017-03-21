@@ -12,7 +12,7 @@
 #endregion
 
 using System;
-using System.Diagnostics.Tracing;
+
 using System.Globalization;
 using System.IO;
 using System.Xml;
@@ -20,6 +20,8 @@ using Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Utility;
 
 namespace Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Formatters
 {
+    using Microsoft.Diagnostics.Tracing;
+
     /// <summary>
     /// A <see cref="IEventTextFormatter"/> implementation that writes out text formatted as XML compliant with the 
     /// <a href="http://msdn.microsoft.com/en-us/library/windows/desktop/aa385201(v=vs.85).aspx">Event Schema</a>.

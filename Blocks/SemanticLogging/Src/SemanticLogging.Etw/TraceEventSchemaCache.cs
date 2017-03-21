@@ -13,12 +13,14 @@
 
 using System;
 using System.Collections.Generic;
-using System.Diagnostics.Tracing;
-using Diagnostics.Tracing;
+
+
 using Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Schema;
 
 namespace Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Etw
 {
+    using Microsoft.Diagnostics.Tracing;
+
     /// <summary>
     /// Used for caching <see cref="EventSchema"/> by event provider.
     /// </summary>
@@ -66,7 +68,7 @@ namespace Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Etw
                         traceEvent.TaskName,
                         (EventOpcode)traceEvent.Opcode,
                         traceEvent.OpcodeName,
-                        (EventKeywords)traceEvent.Keyword,
+                        (EventKeywords)traceEvent.Keywords,
                         null,  // Keywords description not parsed by DynamicTraceEventParser
                         traceEvent.Version,
                         traceEvent.PayloadNames);

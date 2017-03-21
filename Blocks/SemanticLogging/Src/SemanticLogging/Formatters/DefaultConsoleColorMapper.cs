@@ -12,10 +12,12 @@
 #endregion
 
 using System;
-using System.Diagnostics.Tracing;
+
 
 namespace Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Formatters
 {
+    using Microsoft.Diagnostics.Tracing;
+
     /// <summary>
     /// Default console color mapper class.
     /// </summary>

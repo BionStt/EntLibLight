@@ -11,7 +11,7 @@
 // ==============================================================================
 #endregion
 
-using System.Diagnostics.Tracing;
+
 
 namespace Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Tests.TestObjects
 {
