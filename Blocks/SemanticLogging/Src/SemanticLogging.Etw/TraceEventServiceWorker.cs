@@ -24,6 +24,9 @@ using Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Utility;
 
 namespace Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Etw
 {
+    using System.Text;
+    using System.Xml.Linq;
+
     using Microsoft.Diagnostics.Tracing;
     using Microsoft.Diagnostics.Tracing.Parsers;
     using Microsoft.Diagnostics.Tracing.Session;
@@ -67,7 +70,7 @@ namespace Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Etw
                 if (updatedSource.Level != currentSource.Level ||
                     updatedSource.MatchAnyKeyword != currentSource.MatchAnyKeyword)
                 {
-                    TraceEventUtil.EnableProvider(this.session, updatedSource.EventSourceId, updatedSource.Level, updatedSource.MatchAnyKeyword, sendManifest: false);
+                    TraceEventUtil.EnableProvider(this.session, updatedSource.EventSourceId, updatedSource.Level, updatedSource.MatchAnyKeyword);
                     currentSource.Level = updatedSource.Level;
                     currentSource.MatchAnyKeyword = updatedSource.MatchAnyKeyword;
                 }
@@ -76,7 +79,7 @@ namespace Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Etw
             // new sources
             foreach (var newSource in updatedEventSources.Except(this.eventSources, eventSourceComparer).ToArray())
             {
-                TraceEventUtil.EnableProvider(this.session, newSource.EventSourceId, newSource.Level, newSource.MatchAnyKeyword, sendManifest: true);
+                TraceEventUtil.EnableProvider(this.session, newSource.EventSourceId, newSource.Level, newSource.MatchAnyKeyword);
                 this.eventSources.Add(newSource);
             }
 
@@ -148,8 +151,19 @@ namespace Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Etw
         private void ProcessEvent(TraceEvent evt)
         {
             try
-            {                
-                this.sink.OnNext(this.CreateEventEntry(evt));
+            {
+                if (evt.ID == TraceEventUtil.ManifestEventID)
+                {
+                    XElement element = XElement.Parse(evt.ToString());
+                    
+                    byte[] eventData = Encoding.UTF8.GetBytes(element.FirstNode.ToString());
+                    ProviderManifest manifest = new ProviderManifest(new MemoryStream(eventData), eventData.Length);
+                    this.OnManifestReceived(manifest);
+                }
+                else
+                {
+                    this.sink.OnNext(this.CreateEventEntry(evt));
+                }
             }
             catch (Exception exception)
             {
