@@ -130,6 +130,9 @@ Global
 		{557F4B70-BFA9-4238-B18B-3E021635F266} = {C764AAB6-7784-4D70-8114-AD6EC541729E}
 		{1735E7F3-65BA-4E29-B319-6C2CA03659D1} = {557F4B70-BFA9-4238-B18B-3E021635F266}
 	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		EnterpriseLibraryConfigurationToolBinariesPathV6 = .nuget\..\packages\EnterpriseLibrary.TransientFaultHandling.6.0.1304.0\lib\portable-net45+win+wp8;.nuget\..\packages\EnterpriseLibrary.TransientFaultHandling.Data.6.0.1304.1\lib\NET45
+	EndGlobalSection
 	GlobalSection(TextTemplating) = postSolution
 		TextTemplating = 1
 	EndGlobalSection
