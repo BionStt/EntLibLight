@@ -21,6 +21,8 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Tests.EventListeners
 {
+    using Microsoft.Diagnostics.Tracing;
+
     [TestClass]
     public class when_receiving_many_events_with_imperative_flush : LocalDatabaseContext
     {

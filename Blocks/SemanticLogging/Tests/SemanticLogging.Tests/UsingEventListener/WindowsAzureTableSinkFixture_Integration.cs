@@ -23,6 +23,8 @@ using Microsoft.WindowsAzure.Storage.Table;
 
 namespace Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Tests.EventListeners.WindowsAzureTableSinkFixture_Integration
 {
+    using Microsoft.Diagnostics.Tracing;
+
     public class given_empty_account : ArrangeActAssert
     {
         protected readonly TestEventSource Logger = TestEventSource.Log;

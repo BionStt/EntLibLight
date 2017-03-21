@@ -24,6 +24,8 @@ using System.Threading.Tasks;
 
 namespace Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Tests.EventListeners
 {
+    using Microsoft.Diagnostics.Tracing;
+
     public abstract class given_console_event_listener : ContextBase
     {
         protected MockDefaultConsoleColorMapper ColorMapper;

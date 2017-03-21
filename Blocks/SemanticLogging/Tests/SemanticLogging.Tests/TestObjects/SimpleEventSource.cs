@@ -15,8 +15,10 @@
 
 namespace Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Tests.TestObjects
 {
+    using Microsoft.Diagnostics.Tracing;
+
     [EventSource(Name = "SimpleEventSource-CustomName")]
-    public class SimpleEventSource : EventSource
+    public sealed class SimpleEventSource : EventSource
     {
         public class Opcodes
         {

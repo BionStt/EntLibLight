@@ -28,6 +28,8 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Tests.Sinks
 {
+    using Microsoft.Diagnostics.Tracing;
+
     [TestClass]
     public class sql_db_sink_given_configuration
     {

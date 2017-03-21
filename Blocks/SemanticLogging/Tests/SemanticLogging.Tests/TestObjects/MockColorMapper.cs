@@ -17,6 +17,8 @@ using System;
 
 namespace Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Tests.TestObjects
 {
+    using Microsoft.Diagnostics.Tracing;
+
     public class MockColorMapper : IConsoleColorMapper
     {
         public MockColorMapper()

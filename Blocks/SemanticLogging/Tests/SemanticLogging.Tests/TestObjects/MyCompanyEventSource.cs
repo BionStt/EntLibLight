@@ -16,10 +16,12 @@ using System;
 
 namespace Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Tests.TestObjects
 {
+    using Microsoft.Diagnostics.Tracing;
+
     public enum MyColor { Red, Yellow, Blue };
 
     [EventSource(Name = "MyCompany")]
-    public class MyCompanyEventSource : EventSource
+    public sealed class MyCompanyEventSource : EventSource
     {
         public class Keywords
         {

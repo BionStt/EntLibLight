@@ -16,8 +16,10 @@ using System;
 
 namespace Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Tests.TestObjects
 {
+    using Microsoft.Diagnostics.Tracing;
+
     [EventSource]
-    internal class MultipleTypesEventSource : EventSource
+    internal sealed class MultipleTypesEventSource : EventSource
     {
         public enum Color
         {

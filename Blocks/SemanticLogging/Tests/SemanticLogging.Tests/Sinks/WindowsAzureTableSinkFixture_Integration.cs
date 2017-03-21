@@ -26,6 +26,8 @@ using Microsoft.WindowsAzure.Storage.Table;
 
 namespace Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Tests.Sinks.WindowsAzureTableSinkFixture_Integration
 {
+    using Microsoft.Diagnostics.Tracing;
+
     public class given_empty_account : ArrangeActAssert
     {
         protected string connectionString;

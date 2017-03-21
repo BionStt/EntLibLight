@@ -27,6 +27,8 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Tests.Formatters
 {
+    using Microsoft.Diagnostics.Tracing;
+
     [TestClass]
     public class given_xml_event_text_formatter_configuration : ContextBase
     {

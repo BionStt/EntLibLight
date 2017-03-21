@@ -28,6 +28,8 @@ using System.Xml.Linq;
 
 namespace Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Tests.EventListeners
 {
+    using Microsoft.Diagnostics.Tracing;
+
     [TestClass]
     public class FlatFileEventListenerTests
     {

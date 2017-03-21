@@ -16,8 +16,10 @@ using System;
 
 namespace Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Tests.TestObjects
 {
+    using Microsoft.Diagnostics.Tracing;
+
     [EventSource]
-    public class DifferentEnumsEventSource : EventSource
+    public sealed class DifferentEnumsEventSource : EventSource
     {
         public static readonly DifferentEnumsEventSource Log = new DifferentEnumsEventSource();
 

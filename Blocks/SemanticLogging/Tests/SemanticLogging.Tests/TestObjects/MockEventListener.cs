@@ -17,6 +17,8 @@ using Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Schema;
 
 namespace Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Tests.TestObjects
 {
+    using Microsoft.Diagnostics.Tracing;
+
     public class MockEventListener : EventListener
     {
         public ConcurrentBag<EventEntry> WrittenEntries = new ConcurrentBag<EventEntry>();

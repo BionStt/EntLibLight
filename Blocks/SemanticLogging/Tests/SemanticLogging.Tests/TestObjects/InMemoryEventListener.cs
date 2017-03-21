@@ -22,6 +22,8 @@ using System.Threading;
 
 namespace Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Tests.TestObjects
 {
+    using Microsoft.Diagnostics.Tracing;
+
     public class InMemoryEventListener : EventListener, IObserver<EventEntry>
     {
         private readonly EventSourceSchemaCache schemaCache = EventSourceSchemaCache.Instance;

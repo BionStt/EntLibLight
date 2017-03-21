@@ -15,8 +15,10 @@
 
 namespace Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Tests.TestObjects
 {
+    using Microsoft.Diagnostics.Tracing;
+
     [EventSource]
-    internal class LargeManifestEventSource : EventSource
+    internal sealed class LargeManifestEventSource : EventSource
     {
         internal static readonly LargeManifestEventSource Log = new LargeManifestEventSource();
 

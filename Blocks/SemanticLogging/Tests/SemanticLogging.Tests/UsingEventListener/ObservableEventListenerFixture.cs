@@ -24,6 +24,8 @@ using System.Threading;
 
 namespace Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Tests.EventListeners
 {
+    using Microsoft.Diagnostics.Tracing;
+
     [TestClass]
     public class ObservableEventListenerFixture : ArrangeActAssert
     {

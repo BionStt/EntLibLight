@@ -11,7 +11,6 @@
 // ==============================================================================
 #endregion
 
-extern alias TraceEvent;
 using System;
 using System.Collections.Generic;
 
@@ -25,6 +24,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 namespace Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Tests.Etw
 {
     using Microsoft.Diagnostics.Tracing;
+    using Microsoft.Diagnostics.Tracing.Session;
 
     [TestClass]
     public class given_traceEventService_instance
@@ -82,15 +82,15 @@ namespace Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Tests.Etw
 
         protected bool IsCreatedSessionAlive()
         {
-            return Tracing.TraceEventSession.GetActiveSessionNames().Any(s =>
+            return TraceEventSession.GetActiveSessionNames().Any(s =>
                 s.StartsWith(this.configuration.Settings.SessionNamePrefix, StringComparison.OrdinalIgnoreCase));
         }
 
         protected void RemoveAnyExistingSession(string sessionName = Constants.DefaultSessionNamePrefix)
         {
-            Tracing.TraceEventSession.GetActiveSessionNames().
+            TraceEventSession.GetActiveSessionNames().
                 Where(s => s.StartsWith(sessionName, StringComparison.OrdinalIgnoreCase)).ToList().
-                ForEach(n => new Tracing.TraceEventSession(n) { StopOnDispose = true }.Dispose());
+                ForEach(n => new TraceEventSession(n) { StopOnDispose = true }.Dispose());
         }
 
         [TestClass]
@@ -661,7 +661,7 @@ namespace Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Tests.Etw
             }
 
             [EventSource(Name = "MyCompany1")]
-            class MyNewCompanyEventSource : EventSource
+            sealed class MyNewCompanyEventSource : EventSource
             {
                 [Event(1, Message = "Event1 ID={0}", Opcode = EventOpcode.Start)]
                 public void Event1(int id)
@@ -673,7 +673,7 @@ namespace Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Tests.Etw
             }
 
             [EventSource(Name = "MyCompany1")]
-            class MyNewCompanyEventSource2 : EventSource
+            sealed class MyNewCompanyEventSource2 : EventSource
             {
                 [Event(1, Message = "Event1 ID={0}", Opcode = EventOpcode.Start)]
                 public void Event1(int id)

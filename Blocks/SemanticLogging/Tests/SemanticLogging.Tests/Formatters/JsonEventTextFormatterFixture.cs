@@ -24,6 +24,8 @@ using Newtonsoft.Json;
 
 namespace Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Tests.Formatters
 {
+    using Microsoft.Diagnostics.Tracing;
+
     [TestClass]
     public class given_json_event_text_formatter_configuration : ContextBase
     {

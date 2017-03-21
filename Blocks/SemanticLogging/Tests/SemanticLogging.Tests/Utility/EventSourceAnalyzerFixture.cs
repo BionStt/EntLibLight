@@ -19,6 +19,8 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Tests.Utility
 {
+    using Microsoft.Diagnostics.Tracing;
+
     [TestClass]
     public class given_eventSourceAnalyzer
     {
@@ -146,7 +148,7 @@ namespace Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Tests.Utility
         #region Test EventSource classes
 
         [EventSource]
-        private class BadFormatEventSource : EventSource
+        private sealed class BadFormatEventSource : EventSource
         {
             internal static readonly BadFormatEventSource Log = new BadFormatEventSource();
 
@@ -157,7 +159,7 @@ namespace Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Tests.Utility
         }
 
         [EventSource]
-        private class NoSingletonEventSource : EventSource
+        private sealed class NoSingletonEventSource : EventSource
         {
             [Event(1)]
             public void SimpleEvent()
@@ -167,7 +169,7 @@ namespace Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Tests.Utility
         }
 
         [EventSource]
-        private class EventIdMismatchEventSource : EventSource
+        private sealed class EventIdMismatchEventSource : EventSource
         {
             internal static readonly EventIdMismatchEventSource Log = new EventIdMismatchEventSource();
 
@@ -179,7 +181,7 @@ namespace Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Tests.Utility
         }
 
         [EventSource]
-        private class NoEventsEventSource : EventSource
+        private sealed class NoEventsEventSource : EventSource
         {
             internal static readonly NoEventsEventSource Log = new NoEventsEventSource();
 
@@ -190,7 +192,7 @@ namespace Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Tests.Utility
         }
 
         [EventSource]
-        private class DuplicateEventsEventSource : EventSource
+        private sealed class DuplicateEventsEventSource : EventSource
         {
             internal static readonly DuplicateEventsEventSource Log = new DuplicateEventsEventSource();
 
@@ -208,7 +210,7 @@ namespace Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Tests.Utility
         }
 
         [EventSource]
-        private class NotDecoratedPublicMethodsEventSource : EventSource
+        private sealed class NotDecoratedPublicMethodsEventSource : EventSource
         {
             internal static readonly NotDecoratedPublicMethodsEventSource Log = new NotDecoratedPublicMethodsEventSource();
 
@@ -229,7 +231,7 @@ namespace Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Tests.Utility
         }
 
         [EventSource]
-        private class MissingWriteEventCallEventSource : EventSource
+        private sealed class MissingWriteEventCallEventSource : EventSource
         {
             internal static readonly MissingWriteEventCallEventSource Log = new MissingWriteEventCallEventSource();
 
@@ -240,7 +242,7 @@ namespace Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Tests.Utility
         }
 
         [EventSource]
-        private class IncorrectLevelFilterEventSource : EventSource
+        private sealed class IncorrectLevelFilterEventSource : EventSource
         {
             internal static readonly IncorrectLevelFilterEventSource Log = new IncorrectLevelFilterEventSource();
 
@@ -255,7 +257,7 @@ namespace Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Tests.Utility
         }
 
         [EventSource]
-        private class IncorrectKeywordsFilterEventSource : EventSource
+        private sealed class IncorrectKeywordsFilterEventSource : EventSource
         {
             public class Keywords
             {
@@ -275,7 +277,7 @@ namespace Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Tests.Utility
         }
 
         [EventSource]
-        private class SameTypeArgumentsOrderMismatchEventSource : EventSource
+        private sealed class SameTypeArgumentsOrderMismatchEventSource : EventSource
         {
             internal static readonly SameTypeArgumentsOrderMismatchEventSource Log = new SameTypeArgumentsOrderMismatchEventSource();
 
@@ -287,7 +289,7 @@ namespace Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Tests.Utility
         }
 
         [EventSource]
-        private class BooleanTypeArgumentsOrderMismatchEventSource : EventSource
+        private sealed class BooleanTypeArgumentsOrderMismatchEventSource : EventSource
         {
             internal static readonly BooleanTypeArgumentsOrderMismatchEventSource Log = new BooleanTypeArgumentsOrderMismatchEventSource();
 
@@ -299,7 +301,7 @@ namespace Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Tests.Utility
         }
 
         [EventSource]
-        private class DifferentTypeArgumentsOrderMismatchEventSource : EventSource
+        private sealed class DifferentTypeArgumentsOrderMismatchEventSource : EventSource
         {
             internal static readonly DifferentTypeArgumentsOrderMismatchEventSource Log = new DifferentTypeArgumentsOrderMismatchEventSource();
 
@@ -311,7 +313,7 @@ namespace Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Tests.Utility
         }
 
         [EventSource]
-        private class NonDefinedOpcodeEventSource : EventSource
+        private sealed class NonDefinedOpcodeEventSource : EventSource
         {
             internal static readonly NonDefinedOpcodeEventSource Log = new NonDefinedOpcodeEventSource();
 
@@ -323,7 +325,7 @@ namespace Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Tests.Utility
         }
 
         [EventSource]
-        private class NullTypeArgumentEventSource : EventSource
+        private sealed class NullTypeArgumentEventSource : EventSource
         {
             internal static readonly NullTypeArgumentEventSource Log = new NullTypeArgumentEventSource();
 
@@ -336,7 +338,7 @@ namespace Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Tests.Utility
         }
 
         [EventSource]
-        private class LessWriteEventArgumentsEventSource : EventSource
+        private sealed class LessWriteEventArgumentsEventSource : EventSource
         {
             internal static readonly LessWriteEventArgumentsEventSource Log = new LessWriteEventArgumentsEventSource();
 
@@ -348,7 +350,7 @@ namespace Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Tests.Utility
         }
 
         [EventSource]
-        private class MoreWriteEventArgumentsEventSource : EventSource
+        private sealed class MoreWriteEventArgumentsEventSource : EventSource
         {
             internal static readonly MoreWriteEventArgumentsEventSource Log = new MoreWriteEventArgumentsEventSource();
 
@@ -361,7 +363,7 @@ namespace Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Tests.Utility
         }
 
         [EventSource]
-        private class DifferentTypeArgumentsWriteEventEventSource : EventSource
+        private sealed class DifferentTypeArgumentsWriteEventEventSource : EventSource
         {
             internal static readonly DifferentTypeArgumentsWriteEventEventSource Log = new DifferentTypeArgumentsWriteEventEventSource();
 

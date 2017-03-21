@@ -28,6 +28,8 @@ using Newtonsoft.Json;
 
 namespace Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Tests.Sinks
 {
+    using Microsoft.Diagnostics.Tracing;
+
     [TestClass]
     public class given_configuration
     {

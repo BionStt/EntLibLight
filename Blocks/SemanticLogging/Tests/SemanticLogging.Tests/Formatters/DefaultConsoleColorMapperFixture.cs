@@ -20,6 +20,8 @@ using System.Collections.Generic;
 
 namespace Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Tests.Formatters
 {
+    using Microsoft.Diagnostics.Tracing;
+
     [TestClass]
     public class DefaultConsoleColorMapperFixture
     {

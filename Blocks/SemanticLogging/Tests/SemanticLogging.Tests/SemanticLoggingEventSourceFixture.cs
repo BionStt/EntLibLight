@@ -18,6 +18,8 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Tests
 {
+    using Microsoft.Diagnostics.Tracing;
+
     [TestClass]
     public class SemanticLoggingEventSourceFixture
     {

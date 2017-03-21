@@ -11,7 +11,6 @@
 // ==============================================================================
 #endregion
 
-extern alias TraceEvent;
 using System;
 using System.Collections.Generic;
 
@@ -21,10 +20,12 @@ using Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Etw.Configuration;
 using Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Tests.TestObjects;
 using Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Tests.TestSupport;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Tracing = TraceEvent::Diagnostics.Tracing;
+using Tracing = Microsoft.Diagnostics.Tracing;
 
 namespace Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Tests.Etw
 {
+    using Microsoft.Diagnostics.Tracing.Session;
+
     public abstract class given_traceEventServiceWorker : ContextBase
     {
         protected SinkSettings sinkSettings;
@@ -81,7 +82,7 @@ namespace Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Tests.Etw
             [TestMethod]
             public void then_session_is_started()
             {
-                bool sessionCreated = Tracing.TraceEventSession.GetActiveSessionNames().
+                bool sessionCreated = TraceEventSession.GetActiveSessionNames().
                     Any(s => s.StartsWith(this.traceEventServiceSettings.SessionNamePrefix, StringComparison.OrdinalIgnoreCase));
 
                 Assert.IsTrue(sessionCreated);
@@ -114,7 +115,7 @@ namespace Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Tests.Etw
             public void then_session_is_updated_with_new_eventSources()
             {
                 var currentEventSource = this.sinkSettings.EventSources.First();
-                var newEventSource = new EventSourceSettingsConfig(currentEventSource.Name, level: currentEventSource.Level, matchAnyKeyword: EventKeywords.AuditSuccess);
+                var newEventSource = new EventSourceSettingsConfig(currentEventSource.Name, level: currentEventSource.Level, matchAnyKeyword: Tracing.EventKeywords.AuditSuccess);
 
                 this.Sut.UpdateSession(new List<EventSourceSettingsConfig>() { newEventSource });
 
