@@ -32,7 +32,7 @@ namespace EntLibExtensions.SemanticLogging.Tests.Utility
         }
 
         [TestMethod] //Note: type in error message comes from ETW internal API
-        [ExpectedException(typeof(ArgumentException))]
+        [ExpectedException(typeof(EventSourceAnalyzerException))]
         public void when_inspecting_event_with_eventId_mismatch()
         {
             EventSourceAnalyzer.InspectAll(EventIdMismatchEventSource.Log);
@@ -46,14 +46,13 @@ namespace EntLibExtensions.SemanticLogging.Tests.Utility
         }
 
         [TestMethod]
-        [ExpectedException(typeof(ArgumentException))]
+        [ExpectedException(typeof(EventSourceAnalyzerException))]
         public void when_inspecting_event_with_duplicate_events()
         {
             EventSourceAnalyzer.InspectAll(DuplicateEventsEventSource.Log);
         }
 
         [TestMethod]
-        [ExpectedException(typeof(EventSourceAnalyzerException))]
         public void when_inspecting_source_with_no_events()
         {
             EventSourceAnalyzer.InspectAll(NoEventsEventSource.Log);
