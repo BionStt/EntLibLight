@@ -11,7 +11,7 @@
 // ==============================================================================
 #endregion
 
-namespace Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Formatters
+namespace EntLibExtensions.SemanticLogging.Formatters
 {
     internal static class PropertyNames
     {

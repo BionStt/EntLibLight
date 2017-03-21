@@ -15,7 +15,7 @@ using System;
 using System.Collections.Generic;
 using System.Xml.Linq;
 
-namespace Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Etw.Configuration
+namespace EntLibExtensions.SemanticLogging.Etw.Configuration
 {
     internal class SinkConfigurationElement
     {

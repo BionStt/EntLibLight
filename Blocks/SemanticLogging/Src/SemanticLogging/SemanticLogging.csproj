@@ -7,8 +7,8 @@
     <ProjectGuid>{2CD4105B-0DD6-4C18-9B37-05D8E8F57303}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Microsoft.Practices.EnterpriseLibrary.SemanticLogging</RootNamespace>
-    <AssemblyName>Microsoft.Practices.EnterpriseLibrary.SemanticLogging</AssemblyName>
+    <RootNamespace>EntLibExtensions.SemanticLogging</RootNamespace>
+    <AssemblyName>EntLibExtensions.SemanticLogging</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <RestorePackages>true</RestorePackages>
@@ -24,7 +24,7 @@
     <DefineConstants>TRACE;DEBUG</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <DocumentationFile>..\..\..\bin\Debug\Microsoft.Practices.EnterpriseLibrary.SemanticLogging.XML</DocumentationFile>
+    <DocumentationFile>..\..\..\bin\Debug\EntLibExtensions.SemanticLogging.xml</DocumentationFile>
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
     <CodeAnalysisRuleSet>..\..\..\EnterpriseLibrary.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
@@ -35,7 +35,7 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <DocumentationFile>..\..\..\bin\Release\Microsoft.Practices.EnterpriseLibrary.SemanticLogging.XML</DocumentationFile>
+    <DocumentationFile>..\..\..\bin\Release\EntLibExtensions.SemanticLogging.xml</DocumentationFile>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.Diagnostics.Tracing.EventSource">

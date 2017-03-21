@@ -17,7 +17,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Etw
+namespace EntLibExtensions.SemanticLogging.Etw
 {
     /// <summary>
     /// Provides data for <see cref="TraceEventService.StatusChanged"/> event.

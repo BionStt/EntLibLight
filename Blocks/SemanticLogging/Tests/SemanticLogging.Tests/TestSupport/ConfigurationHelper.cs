@@ -14,7 +14,7 @@
 using System.Configuration;
 using Microsoft.Win32;
 
-namespace Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Tests.TestSupport
+namespace EntLibExtensions.SemanticLogging.Tests.TestSupport
 {
     internal class ConfigurationHelper
     {

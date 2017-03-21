@@ -13,12 +13,12 @@
 
 using System;
 using System.Xml.Linq;
-using Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Etw.Utility;
-using Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Formatters;
-using Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Observable;
-using Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Utility;
+using EntLibExtensions.SemanticLogging.Etw.Utility;
+using EntLibExtensions.SemanticLogging.Formatters;
+using EntLibExtensions.SemanticLogging.Observable;
+using EntLibExtensions.SemanticLogging.Utility;
 
-namespace Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Etw.Configuration
+namespace EntLibExtensions.SemanticLogging.Etw.Configuration
 {
     /// <summary>
     /// Represents a console configuration element that can create an instance of a console sink.

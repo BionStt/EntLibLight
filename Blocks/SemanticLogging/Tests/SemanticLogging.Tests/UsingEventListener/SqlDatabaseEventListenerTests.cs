@@ -13,13 +13,13 @@
 
 using System.Data.SqlClient;
 
-using Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Sinks;
-using Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Tests.TestObjects;
-using Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Tests.Properties;
-using Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Tests.TestSupport;
+using EntLibExtensions.SemanticLogging.Sinks;
+using EntLibExtensions.SemanticLogging.Tests.TestObjects;
+using EntLibExtensions.SemanticLogging.Tests.Properties;
+using EntLibExtensions.SemanticLogging.Tests.TestSupport;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Tests.EventListeners
+namespace EntLibExtensions.SemanticLogging.Tests.EventListeners
 {
     using Microsoft.Diagnostics.Tracing;
 

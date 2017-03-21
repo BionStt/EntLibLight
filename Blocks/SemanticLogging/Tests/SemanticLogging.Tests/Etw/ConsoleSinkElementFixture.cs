@@ -14,12 +14,12 @@
 using System;
 using System.Collections.Generic;
 using System.Xml.Linq;
-using Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Etw.Configuration;
-using Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Tests.TestObjects;
-using Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Tests.TestSupport;
+using EntLibExtensions.SemanticLogging.Etw.Configuration;
+using EntLibExtensions.SemanticLogging.Tests.TestObjects;
+using EntLibExtensions.SemanticLogging.Tests.TestSupport;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Tests.Etw
+namespace EntLibExtensions.SemanticLogging.Tests.Etw
 {
     public abstract class given_consoleSinkElement : ContextBase
     {

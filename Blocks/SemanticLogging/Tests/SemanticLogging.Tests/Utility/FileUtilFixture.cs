@@ -13,11 +13,11 @@
 
 using System;
 using System.IO;
-using Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Tests.TestSupport;
-using Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Utility;
+using EntLibExtensions.SemanticLogging.Tests.TestSupport;
+using EntLibExtensions.SemanticLogging.Utility;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Tests.Utility
+namespace EntLibExtensions.SemanticLogging.Tests.Utility
 {
     [TestClass]
     public class FileUtilFixture

@@ -17,10 +17,10 @@ using System.Diagnostics.CodeAnalysis;
 
 using System.Globalization;
 using System.Linq;
-using Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Schema;
-using Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Utility;
+using EntLibExtensions.SemanticLogging.Schema;
+using EntLibExtensions.SemanticLogging.Utility;
 
-namespace Microsoft.Practices.EnterpriseLibrary.SemanticLogging
+namespace EntLibExtensions.SemanticLogging
 {
     using Microsoft.Diagnostics.Tracing;
 

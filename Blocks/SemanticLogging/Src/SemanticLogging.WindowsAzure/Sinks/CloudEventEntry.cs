@@ -15,7 +15,7 @@ using System;
 using System.Collections.Generic;
 using System.Globalization;
 
-namespace Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Sinks.WindowsAzure
+namespace EntLibExtensions.SemanticLogging.Sinks.WindowsAzure
 {
     /// <summary>
     /// Represents a log entry in a Windows Azure Table.

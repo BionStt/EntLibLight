@@ -11,7 +11,7 @@
 // ==============================================================================
 #endregion
 
-namespace Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Formatters
+namespace EntLibExtensions.SemanticLogging.Formatters
 {
     /// <summary>
     /// Specifies formatting options .

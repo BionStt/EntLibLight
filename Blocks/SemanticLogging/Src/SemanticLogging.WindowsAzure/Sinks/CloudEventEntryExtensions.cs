@@ -15,11 +15,11 @@ using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
-using Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Utility;
+using EntLibExtensions.SemanticLogging.Utility;
 using Microsoft.WindowsAzure.Storage.Table;
 using Newtonsoft.Json;
 
-namespace Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Sinks.WindowsAzure
+namespace EntLibExtensions.SemanticLogging.Sinks.WindowsAzure
 {
     internal static class CloudEventEntryExtensions
     {

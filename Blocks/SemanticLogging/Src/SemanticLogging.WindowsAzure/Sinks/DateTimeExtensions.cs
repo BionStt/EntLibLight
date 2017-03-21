@@ -14,7 +14,7 @@
 using System;
 using System.Globalization;
 
-namespace Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Sinks.WindowsAzure
+namespace EntLibExtensions.SemanticLogging.Sinks.WindowsAzure
 {
     /// <summary>
     /// Extension methods for <see cref="DateTime"/>.

@@ -11,9 +11,9 @@
 // ==============================================================================
 #endregion
 
-using Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Formatters;
-using Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Tests.TestObjects;
-using Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Tests.TestSupport;
+using EntLibExtensions.SemanticLogging.Formatters;
+using EntLibExtensions.SemanticLogging.Tests.TestObjects;
+using EntLibExtensions.SemanticLogging.Tests.TestSupport;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using System.Collections.Generic;
@@ -22,7 +22,7 @@ using System.Linq;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
-namespace Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Tests.EventListeners
+namespace EntLibExtensions.SemanticLogging.Tests.EventListeners
 {
     using Microsoft.Diagnostics.Tracing;
 

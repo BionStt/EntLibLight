@@ -14,7 +14,7 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 
-namespace Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Tests.TestSupport
+namespace EntLibExtensions.SemanticLogging.Tests.TestSupport
 {
     /// <summary>
     /// A base class for tests written in the BDD style that provide standard

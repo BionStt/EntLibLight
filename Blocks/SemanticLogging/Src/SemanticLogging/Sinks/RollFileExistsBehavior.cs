@@ -13,7 +13,7 @@
 
 using System;
 
-namespace Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Sinks
+namespace EntLibExtensions.SemanticLogging.Sinks
 {
     /// <summary>
     /// Defines the behavior when the roll file is created.

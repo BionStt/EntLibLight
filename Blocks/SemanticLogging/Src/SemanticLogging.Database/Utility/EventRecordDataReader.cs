@@ -16,10 +16,10 @@ using System.Collections.Generic;
 using System.Data;
 using System.Data.Common;
 using System.Linq;
-using Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Sinks.Database;
+using EntLibExtensions.SemanticLogging.Sinks.Database;
 using Microsoft.SqlServer.Server;
 
-namespace Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Utility
+namespace EntLibExtensions.SemanticLogging.Utility
 {
     internal sealed class EventEntryDataReader : IDataReader, IConvertible
     {

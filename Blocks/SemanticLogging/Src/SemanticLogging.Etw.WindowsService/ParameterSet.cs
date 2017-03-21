@@ -16,7 +16,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text.RegularExpressions;
 
-namespace Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Etw.Service
+namespace EntLibExtensions.SemanticLogging.Etw.Service
 {
     internal class ParameterSet : HashSet<Parameter>
     {

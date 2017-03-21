@@ -11,7 +11,7 @@
 // ==============================================================================
 #endregion
 
-using Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Tests.Properties;
+using EntLibExtensions.SemanticLogging.Tests.Properties;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using System.Data.SqlClient;
@@ -20,7 +20,7 @@ using System.Reflection;
 using System.Threading;
 using System.Transactions;
 
-namespace Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Tests.TestSupport
+namespace EntLibExtensions.SemanticLogging.Tests.TestSupport
 {
     public abstract class LocalDatabaseContext : ContextBase
     {

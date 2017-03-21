@@ -7,8 +7,8 @@
     <ProjectGuid>{8440AEA2-CD55-42A0-8724-2ECCE2B32374}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Etw</RootNamespace>
-    <AssemblyName>Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Etw</AssemblyName>
+    <RootNamespace>EntLibExtensions.SemanticLogging.Etw</RootNamespace>
+    <AssemblyName>EntLibExtensions.SemanticLogging.Etw</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <RestorePackages>true</RestorePackages>

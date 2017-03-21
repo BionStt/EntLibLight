@@ -13,7 +13,7 @@
 
 using System;
 
-namespace Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Utility
+namespace EntLibExtensions.SemanticLogging.Utility
 {
     /// <summary>
     /// Buffering constants.

@@ -11,12 +11,12 @@
 // ==============================================================================
 #endregion
 
-using Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Etw.Service.Properties;
+using EntLibExtensions.SemanticLogging.Etw.Service.Properties;
 using System;
 using System.ComponentModel;
 using System.ServiceProcess;
 
-namespace Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Etw.Service
+namespace EntLibExtensions.SemanticLogging.Etw.Service
 {
     internal static class Application
     {

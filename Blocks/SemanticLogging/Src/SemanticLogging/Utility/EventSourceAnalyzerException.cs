@@ -15,7 +15,7 @@ using System;
 using System.Globalization;
 using System.Runtime.Serialization;
 
-namespace Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Utility
+namespace EntLibExtensions.SemanticLogging.Utility
 {
     /// <summary>
     /// Represents errors that occur during <see cref="EventSourceAnalyzer"/> execution.

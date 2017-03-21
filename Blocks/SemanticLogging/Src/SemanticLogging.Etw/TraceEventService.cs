@@ -17,10 +17,10 @@ using System.Collections.Generic;
 using System.Collections.Specialized;
 using System.Linq;
 using System.Security.Principal;
-using Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Etw.Configuration;
-using Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Utility;
+using EntLibExtensions.SemanticLogging.Etw.Configuration;
+using EntLibExtensions.SemanticLogging.Utility;
 
-namespace Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Etw
+namespace EntLibExtensions.SemanticLogging.Etw
 {
     /// <summary>
     /// Class for listening ETW trace events sent by an implementation of <see cref="System.Diagnostics.Tracing.EventSource"/> typed event.

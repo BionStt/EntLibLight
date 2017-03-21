@@ -20,7 +20,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Etw.Configuration
+namespace EntLibExtensions.SemanticLogging.Etw.Configuration
 {
     /// <summary>
     /// Configuration class that provides settings for a <see cref="TraceEventService"/> instance.

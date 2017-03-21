@@ -17,9 +17,9 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-using Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Utility;
+using EntLibExtensions.SemanticLogging.Utility;
 
-namespace Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Observable
+namespace EntLibExtensions.SemanticLogging.Observable
 {
     /// <summary>
     /// A subject that can be observed and publish events.

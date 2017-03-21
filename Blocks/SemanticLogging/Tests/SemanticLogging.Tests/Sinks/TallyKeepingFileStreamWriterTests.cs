@@ -14,10 +14,10 @@
 using System;
 using System.IO;
 using System.Text;
-using Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Sinks;
+using EntLibExtensions.SemanticLogging.Sinks;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Tests.EventListeners
+namespace EntLibExtensions.SemanticLogging.Tests.EventListeners
 {
     [TestClass]
     public class TallyKeepingFileStreamWriterTests

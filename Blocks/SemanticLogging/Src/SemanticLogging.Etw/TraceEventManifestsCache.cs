@@ -13,7 +13,7 @@
 
 using System.IO;
 
-namespace Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Etw
+namespace EntLibExtensions.SemanticLogging.Etw
 {
     using Microsoft.Diagnostics.Tracing.Parsers;
 

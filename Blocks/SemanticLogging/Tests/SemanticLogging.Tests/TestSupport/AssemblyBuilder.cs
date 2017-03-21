@@ -16,7 +16,7 @@ using System.CodeDom.Compiler;
 using System.Linq;
 using System.Text;
 
-namespace Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Tests.TestSupport
+namespace EntLibExtensions.SemanticLogging.Tests.TestSupport
 {
     internal class AssemblyBuilder
     {
@@ -39,7 +39,7 @@ namespace Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Tests.TestSuppor
                 }
             }
 
-            using (CodeDomProvider provider = new CSharp.CSharpCodeProvider())
+            using (CodeDomProvider provider = new Microsoft.CSharp.CSharpCodeProvider())
             {
                 return provider.CompileAssemblyFromSource(parameters, source);
             }

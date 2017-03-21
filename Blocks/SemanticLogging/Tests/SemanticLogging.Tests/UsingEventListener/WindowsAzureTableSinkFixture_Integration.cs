@@ -14,14 +14,14 @@
 using System;
 
 using System.Linq;
-using Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Sinks;
-using Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Tests.TestObjects;
-using Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Tests.TestSupport;
+using EntLibExtensions.SemanticLogging.Sinks;
+using EntLibExtensions.SemanticLogging.Tests.TestObjects;
+using EntLibExtensions.SemanticLogging.Tests.TestSupport;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Microsoft.WindowsAzure.Storage;
 using Microsoft.WindowsAzure.Storage.Table;
 
-namespace Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Tests.EventListeners.WindowsAzureTableSinkFixture_Integration
+namespace EntLibExtensions.SemanticLogging.Tests.EventListeners.WindowsAzureTableSinkFixture_Integration
 {
     using Microsoft.Diagnostics.Tracing;
 

@@ -18,11 +18,11 @@ using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 
-using Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Etw.Configuration;
-using Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Etw.Utility;
-using Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Utility;
+using EntLibExtensions.SemanticLogging.Etw.Configuration;
+using EntLibExtensions.SemanticLogging.Etw.Utility;
+using EntLibExtensions.SemanticLogging.Utility;
 
-namespace Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Etw
+namespace EntLibExtensions.SemanticLogging.Etw
 {
     using System.Text;
     using System.Xml.Linq;

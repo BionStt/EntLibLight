@@ -14,7 +14,7 @@
 using System;
 using System.Xml.Linq;
 
-namespace Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Etw.Configuration
+namespace EntLibExtensions.SemanticLogging.Etw.Configuration
 {
     /// <summary>
     /// Represents the contract for a sink configuration element.

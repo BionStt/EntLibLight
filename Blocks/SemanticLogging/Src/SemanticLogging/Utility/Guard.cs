@@ -16,7 +16,7 @@ using System.Globalization;
 using System.IO;
 using System.Linq;
 
-namespace Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Utility
+namespace EntLibExtensions.SemanticLogging.Utility
 {
     internal static class Guard
     {

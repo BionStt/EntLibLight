@@ -11,12 +11,12 @@
 // ==============================================================================
 #endregion
 
-using Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Formatters;
+using EntLibExtensions.SemanticLogging.Formatters;
 using System;
 using System.Collections.Generic;
 using System.IO;
 
-namespace Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Tests.TestObjects
+namespace EntLibExtensions.SemanticLogging.Tests.TestObjects
 {
     public class MockFormatter : IEventTextFormatter
     {

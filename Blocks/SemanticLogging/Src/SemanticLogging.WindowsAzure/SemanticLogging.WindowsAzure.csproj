@@ -7,8 +7,8 @@
     <ProjectGuid>{D7979E9B-7978-48FE-B345-3C767A20F9A1}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Microsoft.Practices.EnterpriseLibrary.SemanticLogging</RootNamespace>
-    <AssemblyName>Microsoft.Practices.EnterpriseLibrary.SemanticLogging.WindowsAzure</AssemblyName>
+    <RootNamespace>EntLibExtensions.SemanticLogging</RootNamespace>
+    <AssemblyName>EntLibExtensions.SemanticLogging.WindowsAzure</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <RestorePackages>true</RestorePackages>
@@ -25,7 +25,7 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
-    <DocumentationFile>..\..\..\bin\Debug\Microsoft.Practices.EnterpriseLibrary.SemanticLogging.WindowsAzure.XML</DocumentationFile>
+    <DocumentationFile>..\..\..\bin\Debug\EntLibExtensions.SemanticLogging.WindowsAzure.xml</DocumentationFile>
     <CodeAnalysisRuleSet>..\..\..\EnterpriseLibrary.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
@@ -35,7 +35,7 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <DocumentationFile>..\..\..\bin\Release\Microsoft.Practices.EnterpriseLibrary.SemanticLogging.WindowsAzure.XML</DocumentationFile>
+    <DocumentationFile>..\..\..\bin\Release\EntLibExtensions.SemanticLogging.WindowsAzure.xml</DocumentationFile>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.Data.Edm, Version=5.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">

@@ -18,11 +18,11 @@ using System.Data.SqlClient;
 using System.Globalization;
 using System.Threading;
 using System.Threading.Tasks;
-using Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Sinks.Database;
-using Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Utility;
+using EntLibExtensions.SemanticLogging.Sinks.Database;
+using EntLibExtensions.SemanticLogging.Utility;
 using Microsoft.Practices.EnterpriseLibrary.TransientFaultHandling;
 
-namespace Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Sinks
+namespace EntLibExtensions.SemanticLogging.Sinks
 {
     /// <summary>
     /// Sink that asynchronously writes entries to SQL Server database.

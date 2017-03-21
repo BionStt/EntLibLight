@@ -13,11 +13,11 @@
 
 using System;
 
-using Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Tests.TestObjects;
-using Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Utility;
+using EntLibExtensions.SemanticLogging.Tests.TestObjects;
+using EntLibExtensions.SemanticLogging.Utility;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Tests.Utility
+namespace EntLibExtensions.SemanticLogging.Tests.Utility
 {
     using Microsoft.Diagnostics.Tracing;
 

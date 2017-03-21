@@ -13,14 +13,14 @@
 
 using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Etw.Configuration;
+using EntLibExtensions.SemanticLogging.Etw.Configuration;
 using System.Linq;
 using System.Collections.Generic;
 using System.Xml.Schema;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.IO;
 
-namespace Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Tests.Etw
+namespace EntLibExtensions.SemanticLogging.Tests.Etw
 {
     [TestClass]
     public class given_configurationException_initializer

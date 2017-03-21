@@ -14,14 +14,14 @@
 using System;
 
 
-namespace Microsoft.Practices.EnterpriseLibrary.SemanticLogging
+namespace EntLibExtensions.SemanticLogging
 {
     using Microsoft.Diagnostics.Tracing;
 
     /// <summary>
     /// An <see cref="EventSource"/> class to notify non-transient faults and internal trace information.
     /// </summary>
-    [EventSource(Name = "Microsoft-SemanticLogging", LocalizationResources = "Microsoft.Practices.EnterpriseLibrary.SemanticLogging.SemanticLoggingEventSourceResources")]
+    [EventSource(Name = "Microsoft-SemanticLogging", LocalizationResources = "EntLibExtensions.SemanticLogging.SemanticLoggingEventSourceResources")]
     public sealed class SemanticLoggingEventSource : EventSource
     {
         private static readonly Lazy<SemanticLoggingEventSource> Instance = new Lazy<SemanticLoggingEventSource>(() => new SemanticLoggingEventSource());

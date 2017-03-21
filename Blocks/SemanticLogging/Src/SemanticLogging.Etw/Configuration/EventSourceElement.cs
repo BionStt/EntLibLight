@@ -16,7 +16,7 @@ using System;
 using System.Globalization;
 using System.Xml.Linq;
 
-namespace Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Etw.Configuration
+namespace EntLibExtensions.SemanticLogging.Etw.Configuration
 {
     using Microsoft.Diagnostics.Tracing;
 

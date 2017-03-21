@@ -18,16 +18,16 @@ using System.Linq;
 using System.Text.RegularExpressions;
 using System.Threading;
 using System.Threading.Tasks;
-using Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Properties;
-using Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Sinks.WindowsAzure;
-using Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Utility;
+using EntLibExtensions.SemanticLogging.Properties;
+using EntLibExtensions.SemanticLogging.Sinks.WindowsAzure;
+using EntLibExtensions.SemanticLogging.Utility;
 using Microsoft.WindowsAzure.Storage;
 using Microsoft.WindowsAzure.Storage.RetryPolicies;
 using Microsoft.WindowsAzure.Storage.Table;
-using Guard = Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Utility.Guard;
-using WindowsAzureResources = Microsoft.Practices.EnterpriseLibrary.SemanticLogging.WindowsAzure.Properties.Resources;
+using Guard = EntLibExtensions.SemanticLogging.Utility.Guard;
+using WindowsAzureResources = EntLibExtensions.SemanticLogging.WindowsAzure.Properties.Resources;
 
-namespace Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Sinks
+namespace EntLibExtensions.SemanticLogging.Sinks
 {
     /// <summary>
     /// Sink that asynchronously writes entries to a Windows Azure table.

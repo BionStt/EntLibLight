@@ -14,7 +14,7 @@
 using System.IO;
 using System.Text;
 
-namespace Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Sinks
+namespace EntLibExtensions.SemanticLogging.Sinks
 {
     /// <summary>
     /// Represents a file stream writer that keeps a tally of the length of the file.

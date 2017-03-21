@@ -18,15 +18,15 @@ using System.Diagnostics;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-using Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Sinks;
-using Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Sinks.WindowsAzure;
-using Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Tests.TestObjects;
-using Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Tests.TestSupport;
+using EntLibExtensions.SemanticLogging.Sinks;
+using EntLibExtensions.SemanticLogging.Sinks.WindowsAzure;
+using EntLibExtensions.SemanticLogging.Tests.TestObjects;
+using EntLibExtensions.SemanticLogging.Tests.TestSupport;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Microsoft.WindowsAzure.Storage.Table;
 using Newtonsoft.Json;
 
-namespace Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Tests.Sinks
+namespace EntLibExtensions.SemanticLogging.Tests.Sinks
 {
     using Microsoft.Diagnostics.Tracing;
 

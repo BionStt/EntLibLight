@@ -11,12 +11,12 @@
 // ==============================================================================
 #endregion
 
-using Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Etw.Configuration;
-using Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Formatters;
+using EntLibExtensions.SemanticLogging.Etw.Configuration;
+using EntLibExtensions.SemanticLogging.Formatters;
 using System;
 using System.Xml.Linq;
 
-namespace Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Tests.Etw.Configuration
+namespace EntLibExtensions.SemanticLogging.Tests.Etw.Configuration
 {
     public class MySinkElement : ISinkElement
     {

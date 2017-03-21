@@ -14,7 +14,7 @@
 using System;
 
 
-namespace Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Formatters
+namespace EntLibExtensions.SemanticLogging.Formatters
 {
     using Microsoft.Diagnostics.Tracing;
 

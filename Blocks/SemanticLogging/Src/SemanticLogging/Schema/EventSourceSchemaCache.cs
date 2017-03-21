@@ -16,9 +16,9 @@ using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 
-using Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Utility;
+using EntLibExtensions.SemanticLogging.Utility;
 
-namespace Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Schema
+namespace EntLibExtensions.SemanticLogging.Schema
 {
     using Microsoft.Diagnostics.Tracing;
 

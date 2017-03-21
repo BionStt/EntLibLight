@@ -14,11 +14,11 @@
 using System;
 using System.Data;
 using System.Linq;
-using Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Observable;
-using Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Sinks.Database;
+using EntLibExtensions.SemanticLogging.Observable;
+using EntLibExtensions.SemanticLogging.Sinks.Database;
 using Microsoft.SqlServer.Server;
 
-namespace Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Utility
+namespace EntLibExtensions.SemanticLogging.Utility
 {
     /// <summary>
     /// Extensions for <see cref="EventEntry"/>.

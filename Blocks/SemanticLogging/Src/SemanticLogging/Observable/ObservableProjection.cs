@@ -15,7 +15,7 @@ using System;
 using System.Diagnostics.CodeAnalysis;
 using System.Threading;
 
-namespace Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Observable
+namespace EntLibExtensions.SemanticLogging.Observable
 {
     /// <summary>
     /// Very basic implementation of a projection of IObservable to avoid references to Rx when the

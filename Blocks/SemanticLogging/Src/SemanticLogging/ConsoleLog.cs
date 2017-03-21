@@ -13,11 +13,11 @@
 
 using System;
 
-using Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Formatters;
-using Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Sinks;
-using Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Utility;
+using EntLibExtensions.SemanticLogging.Formatters;
+using EntLibExtensions.SemanticLogging.Sinks;
+using EntLibExtensions.SemanticLogging.Utility;
 
-namespace Microsoft.Practices.EnterpriseLibrary.SemanticLogging
+namespace EntLibExtensions.SemanticLogging
 {
     using Microsoft.Diagnostics.Tracing;
 

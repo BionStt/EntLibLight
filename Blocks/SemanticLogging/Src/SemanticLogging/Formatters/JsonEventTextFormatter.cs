@@ -12,10 +12,10 @@
 #endregion
 
 using System.IO;
-using Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Utility;
+using EntLibExtensions.SemanticLogging.Utility;
 using Newtonsoft.Json;
 
-namespace Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Formatters
+namespace EntLibExtensions.SemanticLogging.Formatters
 {
     /// <summary>
     /// A <see cref="IEventTextFormatter"/> implementation that writes out text formatted as JSON.

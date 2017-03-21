@@ -11,14 +11,14 @@
 // ==============================================================================
 #endregion
 
-using Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Formatters;
-using Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Tests.TestSupport;
+using EntLibExtensions.SemanticLogging.Formatters;
+using EntLibExtensions.SemanticLogging.Tests.TestSupport;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using System.Collections.Generic;
 
 
-namespace Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Tests.Formatters
+namespace EntLibExtensions.SemanticLogging.Tests.Formatters
 {
     using Microsoft.Diagnostics.Tracing;
 

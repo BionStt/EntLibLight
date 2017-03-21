@@ -13,7 +13,7 @@
 
 using System;
 
-namespace Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Sinks.Database
+namespace EntLibExtensions.SemanticLogging.Sinks.Database
 {
     /// <summary>
     /// Represents an event entry to be persisted in a database.

@@ -16,10 +16,10 @@ using System.Collections.Concurrent;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-using Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Observable;
+using EntLibExtensions.SemanticLogging.Observable;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Tests.Observable
+namespace EntLibExtensions.SemanticLogging.Tests.Observable
 {
     [TestClass]
     public class ObservableProjectionFixture

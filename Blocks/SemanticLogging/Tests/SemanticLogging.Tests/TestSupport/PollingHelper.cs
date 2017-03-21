@@ -15,7 +15,7 @@ using System;
 using System.Threading;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Tests.TestSupport
+namespace EntLibExtensions.SemanticLogging.Tests.TestSupport
 {
     internal class PollingHelper
     {

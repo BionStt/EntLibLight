@@ -15,9 +15,9 @@ using System;
 using System.Collections.Generic;
 
 
-using Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Schema;
+using EntLibExtensions.SemanticLogging.Schema;
 
-namespace Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Etw
+namespace EntLibExtensions.SemanticLogging.Etw
 {
     using Microsoft.Diagnostics.Tracing;
 

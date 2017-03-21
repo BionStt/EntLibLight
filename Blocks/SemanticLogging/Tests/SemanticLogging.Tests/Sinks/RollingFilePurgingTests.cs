@@ -11,14 +11,14 @@
 // ==============================================================================
 #endregion
 
-using Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Sinks;
-using Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Tests.TestSupport;
+using EntLibExtensions.SemanticLogging.Sinks;
+using EntLibExtensions.SemanticLogging.Tests.TestSupport;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using System.IO;
 using System.Threading;
 
-namespace Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Tests.Sinks
+namespace EntLibExtensions.SemanticLogging.Tests.Sinks
 {
     public class TemporaryFolderBasedTest : ArrangeActAssert
     {

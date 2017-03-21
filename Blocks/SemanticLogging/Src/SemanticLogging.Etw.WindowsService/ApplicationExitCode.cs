@@ -11,7 +11,7 @@
 // ==============================================================================
 #endregion
 
-namespace Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Etw.Service
+namespace EntLibExtensions.SemanticLogging.Etw.Service
 {
     internal enum ApplicationExitCode
     {

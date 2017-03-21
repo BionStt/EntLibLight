@@ -11,13 +11,13 @@
 // ==============================================================================
 #endregion
 
-using Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Formatters;
+using EntLibExtensions.SemanticLogging.Formatters;
 using System;
 using System.Collections.Generic;
 using System.Collections.Specialized;
 using System.Xml.Linq;
 
-namespace Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Etw.Configuration
+namespace EntLibExtensions.SemanticLogging.Etw.Configuration
 {
     /// <summary>
     /// Represents the contract for creating formatters from configuration elements.

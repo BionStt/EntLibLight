@@ -13,11 +13,11 @@
 
 using System;
 using System.Collections.Generic;
-using Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Observable;
-using Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Schema;
-using Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Sinks.WindowsAzure;
+using EntLibExtensions.SemanticLogging.Observable;
+using EntLibExtensions.SemanticLogging.Schema;
+using EntLibExtensions.SemanticLogging.Sinks.WindowsAzure;
 
-namespace Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Utility
+namespace EntLibExtensions.SemanticLogging.Utility
 {
     /// <summary>
     /// Extensions for <see cref="EventEntry"/>.

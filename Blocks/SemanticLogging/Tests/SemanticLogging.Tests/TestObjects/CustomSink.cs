@@ -13,7 +13,7 @@
 
 using System;
 
-namespace Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Tests.TestObjects
+namespace EntLibExtensions.SemanticLogging.Tests.TestObjects
 {
     public class CustomSink : IObserver<EventEntry>
     {

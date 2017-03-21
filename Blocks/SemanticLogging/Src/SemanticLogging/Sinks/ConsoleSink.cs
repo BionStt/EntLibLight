@@ -13,7 +13,7 @@
 
 using System;
 
-namespace Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Sinks
+namespace EntLibExtensions.SemanticLogging.Sinks
 {
     /// <summary>
     /// A sink that writes to the Console.

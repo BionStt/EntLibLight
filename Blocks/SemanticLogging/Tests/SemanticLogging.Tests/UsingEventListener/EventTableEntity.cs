@@ -18,7 +18,7 @@ using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 
-namespace Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Tests.EventListeners
+namespace EntLibExtensions.SemanticLogging.Tests.EventListeners
 {
     /// <summary>
     /// Represents a log entry in a Windows Azure Table.

@@ -11,7 +11,7 @@
 // ==============================================================================
 #endregion
 
-namespace Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Etw
+namespace EntLibExtensions.SemanticLogging.Etw
 {
     internal static class Constants
     {

@@ -18,10 +18,10 @@ using System.Globalization;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-using Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Properties;
-using Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Sinks;
+using EntLibExtensions.SemanticLogging.Properties;
+using EntLibExtensions.SemanticLogging.Sinks;
 
-namespace Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Utility
+namespace EntLibExtensions.SemanticLogging.Utility
 {
     /// <summary>
     /// Buffering and batching capabilities for database sinks.

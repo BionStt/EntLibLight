@@ -14,7 +14,7 @@
 using System;
 using System.ComponentModel;
 
-namespace Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Utility
+namespace EntLibExtensions.SemanticLogging.Utility
 {
     internal static class TypeExtensions
     {

@@ -12,10 +12,10 @@
 #endregion
 
 using System.Xml.Linq;
-using Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Etw.Utility;
-using Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Formatters;
+using EntLibExtensions.SemanticLogging.Etw.Utility;
+using EntLibExtensions.SemanticLogging.Formatters;
 
-namespace Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Etw.Configuration
+namespace EntLibExtensions.SemanticLogging.Etw.Configuration
 {
     internal class CustomFormatterElement : IFormatterElement
     {

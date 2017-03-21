@@ -2,7 +2,7 @@
 <configuration xmlns="http://schemas.microsoft.com/practices/2013/entlib/semanticlogging/etw">
   
   <sinks>
-    <customSink name="incompleteParamSink" type="Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Tests.TestObjects.CustomSink, Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Tests">
+    <customSink name="incompleteParamSink" type="EntLibExtensions.SemanticLogging.Tests.TestObjects.CustomSink, EntLibExtensions.SemanticLogging.Tests">
       <sources>
         <eventSource name="MyCompany"/>
       </sources>

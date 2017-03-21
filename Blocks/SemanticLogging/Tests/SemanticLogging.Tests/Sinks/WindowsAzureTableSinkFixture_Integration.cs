@@ -15,16 +15,16 @@ using System;
 
 using System.Linq;
 using System.Threading;
-using Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Sinks;
-using Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Sinks.WindowsAzure;
-using Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Tests.EventListeners;
-using Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Tests.TestObjects;
-using Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Tests.TestSupport;
+using EntLibExtensions.SemanticLogging.Sinks;
+using EntLibExtensions.SemanticLogging.Sinks.WindowsAzure;
+using EntLibExtensions.SemanticLogging.Tests.EventListeners;
+using EntLibExtensions.SemanticLogging.Tests.TestObjects;
+using EntLibExtensions.SemanticLogging.Tests.TestSupport;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Microsoft.WindowsAzure.Storage;
 using Microsoft.WindowsAzure.Storage.Table;
 
-namespace Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Tests.Sinks.WindowsAzureTableSinkFixture_Integration
+namespace EntLibExtensions.SemanticLogging.Tests.Sinks.WindowsAzureTableSinkFixture_Integration
 {
     using Microsoft.Diagnostics.Tracing;
 

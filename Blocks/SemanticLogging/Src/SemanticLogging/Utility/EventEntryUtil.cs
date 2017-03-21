@@ -17,7 +17,7 @@ using System.Collections.Generic;
 using System.Globalization;
 using System.IO;
 
-namespace Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Utility
+namespace EntLibExtensions.SemanticLogging.Utility
 {
     internal static class EventEntryUtil
     {

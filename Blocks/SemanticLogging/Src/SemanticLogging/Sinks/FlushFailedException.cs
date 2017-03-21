@@ -13,9 +13,9 @@
 
 using System;
 using System.Runtime.Serialization;
-using Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Properties;
+using EntLibExtensions.SemanticLogging.Properties;
 
-namespace Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Sinks
+namespace EntLibExtensions.SemanticLogging.Sinks
 {
     /// <summary>
     /// Represents an error while doing a flush operation.

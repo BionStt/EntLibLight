@@ -17,7 +17,7 @@ using System.IO;
 using System.Text;
 using System.Text.RegularExpressions;
 
-namespace Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Sinks
+namespace EntLibExtensions.SemanticLogging.Sinks
 {
     public partial class RollingFlatFileSink
     {

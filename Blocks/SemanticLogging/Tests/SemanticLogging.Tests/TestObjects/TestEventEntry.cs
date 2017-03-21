@@ -14,7 +14,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Tests.TestObjects
+namespace EntLibExtensions.SemanticLogging.Tests.TestObjects
 {
     public class TestEventEntry
     {

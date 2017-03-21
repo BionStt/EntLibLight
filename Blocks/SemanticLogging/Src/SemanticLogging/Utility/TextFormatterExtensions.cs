@@ -13,9 +13,9 @@
 
 using System.Globalization;
 using System.IO;
-using Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Formatters;
+using EntLibExtensions.SemanticLogging.Formatters;
 
-namespace Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Utility
+namespace EntLibExtensions.SemanticLogging.Utility
 {
     /// <summary>
     /// Extensions for <see cref="IEventTextFormatter"/>.

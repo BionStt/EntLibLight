@@ -16,9 +16,9 @@ using System;
 using System.Globalization;
 using System.IO;
 using System.Text;
-using Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Utility;
+using EntLibExtensions.SemanticLogging.Utility;
 
-namespace Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Formatters
+namespace EntLibExtensions.SemanticLogging.Formatters
 {
     using Microsoft.Diagnostics.Tracing;
 

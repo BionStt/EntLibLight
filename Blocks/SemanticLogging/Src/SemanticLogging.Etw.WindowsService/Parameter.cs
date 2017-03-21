@@ -14,7 +14,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Etw.Service
+namespace EntLibExtensions.SemanticLogging.Etw.Service
 {
     internal class Parameter
     {

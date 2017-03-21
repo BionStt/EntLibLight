@@ -18,11 +18,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Linq;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Etw.Utility;
+using EntLibExtensions.SemanticLogging.Etw.Utility;
 using System.Threading;
-using Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Tests.TestObjects;
+using EntLibExtensions.SemanticLogging.Tests.TestObjects;
 
-namespace Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Tests.Etw
+namespace EntLibExtensions.SemanticLogging.Tests.Etw
 {
     [TestClass]
     public class given_xmlUtil
@@ -54,7 +54,7 @@ namespace Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Tests.Etw
         [TestMethod]
         public void when_creating_instance_from_element()
         {
-            var element = new XElement("test", new XAttribute("type", "Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Tests.TestObjects.InMemoryEventListener, Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Tests"));
+            var element = new XElement("test", new XAttribute("type", "EntLibExtensions.SemanticLogging.Tests.TestObjects.InMemoryEventListener, EntLibExtensions.SemanticLogging.Tests"));
             var sut = XmlUtil.CreateInstance<InMemoryEventListener>(element);
 
             Assert.IsNotNull(sut);
@@ -65,12 +65,12 @@ namespace Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Tests.Etw
         public void when_creating_instance_from_element_with_parameters()
         {
             var doc = XDocument.Parse(
-               @"<customSink name=""custom"" type=""Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Tests.TestObjects.InMemoryEventListener, Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Tests"">
+               @"<customSink name=""custom"" type=""EntLibExtensions.SemanticLogging.Tests.TestObjects.InMemoryEventListener, EntLibExtensions.SemanticLogging.Tests"">
                     <sources>
                       <eventSource name=""MyCompany""/>
                     </sources>
                     <parameters>
-                      <parameter name=""formatter"" type=""Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Tests.TestObjects.MockFormatter, Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Tests""/>
+                      <parameter name=""formatter"" type=""EntLibExtensions.SemanticLogging.Tests.TestObjects.MockFormatter, EntLibExtensions.SemanticLogging.Tests""/>
                     </parameters>
                  </customSink>");
 

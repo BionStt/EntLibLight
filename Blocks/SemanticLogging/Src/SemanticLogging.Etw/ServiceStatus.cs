@@ -11,7 +11,7 @@
 // ==============================================================================
 #endregion
 
-namespace Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Etw
+namespace EntLibExtensions.SemanticLogging.Etw
 {
     /// <summary>
     /// The status of this service instance. 

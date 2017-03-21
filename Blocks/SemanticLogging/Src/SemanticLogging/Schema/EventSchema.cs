@@ -16,7 +16,7 @@ using System.Collections.Generic;
 
 using System.Linq;
 
-namespace Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Schema
+namespace EntLibExtensions.SemanticLogging.Schema
 {
     using Microsoft.Diagnostics.Tracing;
 
@@ -39,7 +39,7 @@ namespace Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Schema
         private readonly string opcodeName;
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Schema.EventSchema"/> class with the specified values.
+        /// Initializes a new instance of the <see cref="EntLibExtensions.SemanticLogging.Schema.EventSchema"/> class with the specified values.
         /// </summary>
         /// <param name="id">The event id.</param>
         /// <param name="providerId">The provider GUID.</param>

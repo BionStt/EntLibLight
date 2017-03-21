@@ -17,9 +17,9 @@ using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
 
-using Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Utility;
+using EntLibExtensions.SemanticLogging.Utility;
 
-namespace Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Etw.Utility
+namespace EntLibExtensions.SemanticLogging.Etw.Utility
 {
     using Microsoft.Diagnostics.Tracing;
     using Microsoft.Diagnostics.Tracing.Session;

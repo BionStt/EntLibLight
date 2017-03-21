@@ -17,7 +17,7 @@ using System.Linq;
 using System.Reflection;
 using System.Text;
 
-namespace Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Etw.Utility
+namespace EntLibExtensions.SemanticLogging.Etw.Utility
 {
     internal static class AssemblyExtensions
     {

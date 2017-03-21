@@ -11,15 +11,15 @@
 // ==============================================================================
 #endregion
 
-using Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Etw.Configuration;
-using Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Tests.TestSupport;
+using EntLibExtensions.SemanticLogging.Etw.Configuration;
+using EntLibExtensions.SemanticLogging.Tests.TestSupport;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 
-namespace Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Tests.Etw
+namespace EntLibExtensions.SemanticLogging.Tests.Etw
 {
     public abstract class given_extensionsloader : ContextBase
     {
@@ -100,9 +100,9 @@ namespace Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Tests.Etw
         {
             private string generatedAssemblyPath;  
             private const string source =
-@"using Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Etw.Configuration;
-using Microsoft.Practices.EnterpriseLibrary.SemanticLogging;
-using Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Formatters;
+@"using EntLibExtensions.SemanticLogging.Etw.Configuration;
+using EntLibExtensions.SemanticLogging;
+using EntLibExtensions.SemanticLogging.Formatters;
 using System;
 using System.Xml.Linq;
 
@@ -162,9 +162,9 @@ namespace Test
         {
             private string generatedAssemblyPath;
             private const string source =
-@"using Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Etw.Configuration;
-using Microsoft.Practices.EnterpriseLibrary.SemanticLogging;
-using Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Formatters;
+@"using EntLibExtensions.SemanticLogging.Etw.Configuration;
+using EntLibExtensions.SemanticLogging;
+using EntLibExtensions.SemanticLogging.Formatters;
 using System;
 using System.Xml.Linq;
 

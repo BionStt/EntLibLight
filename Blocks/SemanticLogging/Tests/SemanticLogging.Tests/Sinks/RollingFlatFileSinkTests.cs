@@ -11,14 +11,14 @@
 // ==============================================================================
 #endregion
 
-using Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Sinks;
-using Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Tests.TestSupport;
+using EntLibExtensions.SemanticLogging.Sinks;
+using EntLibExtensions.SemanticLogging.Tests.TestSupport;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using System.IO;
 using System.Threading.Tasks;
 
-namespace Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Tests.Sinks
+namespace EntLibExtensions.SemanticLogging.Tests.Sinks
 {
     [TestClass]
     public class RollingFlatFileSinkTests

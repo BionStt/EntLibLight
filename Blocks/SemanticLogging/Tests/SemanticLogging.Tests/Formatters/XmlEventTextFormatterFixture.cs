@@ -20,12 +20,12 @@ using System.Linq;
 using System.Xml;
 using System.Xml.Linq;
 using System.Xml.Schema;
-using Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Formatters;
-using Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Tests.TestObjects;
-using Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Tests.TestSupport;
+using EntLibExtensions.SemanticLogging.Formatters;
+using EntLibExtensions.SemanticLogging.Tests.TestObjects;
+using EntLibExtensions.SemanticLogging.Tests.TestSupport;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Tests.Formatters
+namespace EntLibExtensions.SemanticLogging.Tests.Formatters
 {
     using Microsoft.Diagnostics.Tracing;
 
@@ -377,7 +377,7 @@ namespace Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Tests.Formatters
             {
                 try
                 {
-                    formatter.WriteEvent(new EventEntry(Guid.NewGuid(), 0, "", new System.Collections.ObjectModel.ReadOnlyCollection<object>(new object[0]), DateTimeOffset.MaxValue, new Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Schema.EventSourceSchemaReader().GetSchema(Logger).Values.First()), null);
+                    formatter.WriteEvent(new EventEntry(Guid.NewGuid(), 0, "", new System.Collections.ObjectModel.ReadOnlyCollection<object>(new object[0]), DateTimeOffset.MaxValue, new EntLibExtensions.SemanticLogging.Schema.EventSourceSchemaReader().GetSchema(Logger).Values.First()), null);
                     Assert.Fail("should have thrown");
                 }
                 catch (ArgumentNullException e)

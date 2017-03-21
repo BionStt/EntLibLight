@@ -11,13 +11,13 @@
 // ==============================================================================
 #endregion
 
-using Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Etw.Configuration;
+using EntLibExtensions.SemanticLogging.Etw.Configuration;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using System.Linq;
 using System.Xml.Linq;
 
-namespace Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Tests.Configuration
+namespace EntLibExtensions.SemanticLogging.Tests.Configuration
 {
     [TestClass]
     public class given_configurationReaderInstance

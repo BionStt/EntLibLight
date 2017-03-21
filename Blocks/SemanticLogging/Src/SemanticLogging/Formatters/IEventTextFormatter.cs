@@ -13,7 +13,7 @@
 
 using System.IO;
 
-namespace Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Formatters
+namespace EntLibExtensions.SemanticLogging.Formatters
 {
     /// <summary>
     /// Provides a generic interface for an event text formatter used 

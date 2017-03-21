@@ -17,10 +17,10 @@ using System.ComponentModel;
 using System.Linq;
 using System.Threading;
 using System.Xml.Linq;
-using Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Etw.Configuration;
-using Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Utility;
+using EntLibExtensions.SemanticLogging.Etw.Configuration;
+using EntLibExtensions.SemanticLogging.Utility;
 
-namespace Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Etw.Utility
+namespace EntLibExtensions.SemanticLogging.Etw.Utility
 {
     internal static class XmlUtil
     {

@@ -14,7 +14,7 @@
 using System;
 using System.IO;
 
-namespace Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Tests.TestObjects
+namespace EntLibExtensions.SemanticLogging.Tests.TestObjects
 {
     public class MockConsoleOutput : IDisposable
     {

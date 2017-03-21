@@ -18,13 +18,13 @@
       <xmlEventTextFormatter formatting="Indented" dateTimeFormat="o"/>
     </consoleSink>
     
-    <customSink name="custom" type="Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Tests.TestObjects.InMemoryEventListener, Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Tests">
+    <customSink name="custom" type="EntLibExtensions.SemanticLogging.Tests.TestObjects.InMemoryEventListener, EntLibExtensions.SemanticLogging.Tests">
       <sources>
         <eventSource name="MyCompany" level="Error"/>
       </sources>
       <xmlEventTextFormatter formatting="Indented" dateTimeFormat="o"/>
       <parameters>
-        <parameter name="formatter" type="Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Tests.TestObjects.MockFormatter, Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Tests"/>
+        <parameter name="formatter" type="EntLibExtensions.SemanticLogging.Tests.TestObjects.MockFormatter, EntLibExtensions.SemanticLogging.Tests"/>
       </parameters>
     </customSink>
     

@@ -13,7 +13,7 @@
 
 using System.Collections.Generic;
 
-namespace Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Etw.Configuration
+namespace EntLibExtensions.SemanticLogging.Etw.Configuration
 {
     internal class ConfigurationElement
     {

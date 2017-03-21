@@ -14,11 +14,11 @@
 using System;
 using System.Diagnostics.CodeAnalysis;
 
-using Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Observable;
-using Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Schema;
-using Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Utility;
+using EntLibExtensions.SemanticLogging.Observable;
+using EntLibExtensions.SemanticLogging.Schema;
+using EntLibExtensions.SemanticLogging.Utility;
 
-namespace Microsoft.Practices.EnterpriseLibrary.SemanticLogging
+namespace EntLibExtensions.SemanticLogging
 {
     using Microsoft.Diagnostics.Tracing;
 

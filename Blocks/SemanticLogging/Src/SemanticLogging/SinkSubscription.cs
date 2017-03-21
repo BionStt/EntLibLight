@@ -13,7 +13,7 @@
 
 using System;
 
-namespace Microsoft.Practices.EnterpriseLibrary.SemanticLogging
+namespace EntLibExtensions.SemanticLogging
 {
     /// <summary>
     /// This map or container class holds a reference to an instance of a logging sink

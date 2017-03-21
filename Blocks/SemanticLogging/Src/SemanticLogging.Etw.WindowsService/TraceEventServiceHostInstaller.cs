@@ -11,14 +11,14 @@
 // ==============================================================================
 #endregion
 
-using Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Etw.Service.Properties;
+using EntLibExtensions.SemanticLogging.Etw.Service.Properties;
 using System.ComponentModel;
 using System.Configuration.Install;
 using System.Diagnostics;
 using System.Linq;
 using System.ServiceProcess;
 
-namespace Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Etw.Service
+namespace EntLibExtensions.SemanticLogging.Etw.Service
 {
     /// <summary>
     /// The installer class for <see cref="TraceEventServiceHost"/>.

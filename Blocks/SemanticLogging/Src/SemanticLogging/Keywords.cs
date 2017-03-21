@@ -13,7 +13,7 @@
 
 
 
-namespace Microsoft.Practices.EnterpriseLibrary.SemanticLogging
+namespace EntLibExtensions.SemanticLogging
 {
     using Microsoft.Diagnostics.Tracing;
 
@@ -25,6 +25,6 @@ namespace Microsoft.Practices.EnterpriseLibrary.SemanticLogging
         /// <summary>
         /// Keyword flags to enable all the events. 
         /// </summary>
-        public const EventKeywords All = (EventKeywords)(-1);
+        public const EventKeywords All = EventKeywords.All;
     }
 }

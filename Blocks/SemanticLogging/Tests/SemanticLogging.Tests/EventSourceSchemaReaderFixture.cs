@@ -12,11 +12,11 @@
 #endregion
 
 
-using Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Schema;
-using Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Tests.TestObjects;
+using EntLibExtensions.SemanticLogging.Schema;
+using EntLibExtensions.SemanticLogging.Tests.TestObjects;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Tests.Schema
+namespace EntLibExtensions.SemanticLogging.Tests.Schema
 {
     using Microsoft.Diagnostics.Tracing;
 

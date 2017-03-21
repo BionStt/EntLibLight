@@ -12,9 +12,9 @@
 #endregion
 
 using System.Collections.Generic;
-using Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Utility;
+using EntLibExtensions.SemanticLogging.Utility;
 
-namespace Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Etw.Configuration
+namespace EntLibExtensions.SemanticLogging.Etw.Configuration
 {
     internal class EventSourceSettingsEqualityComparer : IEqualityComparer<EventSourceSettingsConfig>
     {

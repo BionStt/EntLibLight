@@ -15,9 +15,9 @@ using System;
 using System.IO;
 using System.Security;
 using System.Text.RegularExpressions;
-using Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Properties;
+using EntLibExtensions.SemanticLogging.Properties;
 
-namespace Microsoft.Practices.EnterpriseLibrary.SemanticLogging.Utility
+namespace EntLibExtensions.SemanticLogging.Utility
 {
     internal class FileUtil
     {
