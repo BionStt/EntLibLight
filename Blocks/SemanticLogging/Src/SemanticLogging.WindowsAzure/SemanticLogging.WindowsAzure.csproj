@@ -32,7 +32,7 @@
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>..\..\..\bin\Release\</OutputPath>
-    <DefineConstants>TRACE</DefineConstants>
+    <DefineConstants>TRACE;SIGN</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <DocumentationFile>..\..\..\bin\Release\EntLibExtensions.SemanticLogging.WindowsAzure.xml</DocumentationFile>
@@ -94,8 +94,6 @@
       <Link>SemanticLogging.licenseheader</Link>
     </None>
     <None Include="packages.config" />
-    <None Include="_EventRegisterUsersGuide.docx" />
-    <None Include="_EventSourceUsersGuide.docx" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\SemanticLogging\SemanticLogging.csproj">
@@ -112,6 +110,12 @@
   </ItemGroup>
   <PropertyGroup>
     <DefineConstants Condition=" '$(SignAssembly)' == 'true' ">$(DefineConstants);SIGN</DefineConstants>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>..\..\..\EntLibLight.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\..\..\.nuget\nuget.targets" />
