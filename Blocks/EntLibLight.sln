@@ -15,8 +15,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Policy Injection Applicatio
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{8D9957D1-1802-4FC8-98EF-9B46FB64E79F}"
 	ProjectSection(SolutionItems) = preProject
+		.nuget\createPackages.bat = .nuget\createPackages.bat
+		EntLibLight.publickey = EntLibLight.publickey
+		generatePublicKey.bat = generatePublicKey.bat
 		..\README.md = ..\README.md
+		SemanticLogging\Src\SemanticLogging.Database\SemanticLogging.Database.nuspec = SemanticLogging\Src\SemanticLogging.Database\SemanticLogging.Database.nuspec
 		SemanticLogging\Src\SemanticLogging\SemanticLogging.nuspec = SemanticLogging\Src\SemanticLogging\SemanticLogging.nuspec
+		SemanticLogging\Src\SemanticLogging.WindowsAzure\SemanticLogging.WindowsAzure.nuspec = SemanticLogging\Src\SemanticLogging.WindowsAzure\SemanticLogging.WindowsAzure.nuspec
 	EndProjectSection
 	ProjectSection(FolderStartupServices) = postProject
 		{B4F97281-0DBD-4835-9ED8-7DFB966E87FF} = {B4F97281-0DBD-4835-9ED8-7DFB966E87FF}
