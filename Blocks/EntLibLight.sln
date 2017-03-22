@@ -16,6 +16,7 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{8D9957D1-1802-4FC8-98EF-9B46FB64E79F}"
 	ProjectSection(SolutionItems) = preProject
 		..\README.md = ..\README.md
+		SemanticLogging\Src\SemanticLogging\SemanticLogging.nuspec = SemanticLogging\Src\SemanticLogging\SemanticLogging.nuspec
 	EndProjectSection
 	ProjectSection(FolderStartupServices) = postProject
 		{B4F97281-0DBD-4835-9ED8-7DFB966E87FF} = {B4F97281-0DBD-4835-9ED8-7DFB966E87FF}
