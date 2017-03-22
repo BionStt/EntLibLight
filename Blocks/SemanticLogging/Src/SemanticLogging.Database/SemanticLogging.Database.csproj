@@ -36,6 +36,7 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <DocumentationFile>..\..\..\bin\Release\EntLibExtensions.SemanticLogging.Database.xml</DocumentationFile>
+    <SignAssembly>true</SignAssembly>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.Diagnostics.Tracing.EventSource">
@@ -100,9 +101,6 @@
   </ItemGroup>
   <PropertyGroup>
     <DefineConstants Condition=" '$(SignAssembly)' == 'true' ">$(DefineConstants);SIGN</DefineConstants>
-  </PropertyGroup>
-  <PropertyGroup>
-    <SignAssembly>true</SignAssembly>
   </PropertyGroup>
   <PropertyGroup>
     <AssemblyOriginatorKeyFile>..\..\..\EntLibLight.snk</AssemblyOriginatorKeyFile>

@@ -111,7 +111,7 @@
   <PropertyGroup>
     <DefineConstants Condition=" '$(SignAssembly)' == 'true' ">$(DefineConstants);SIGN</DefineConstants>
   </PropertyGroup>
-  <PropertyGroup>
+  <PropertyGroup  Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <SignAssembly>true</SignAssembly>
   </PropertyGroup>
   <PropertyGroup>
