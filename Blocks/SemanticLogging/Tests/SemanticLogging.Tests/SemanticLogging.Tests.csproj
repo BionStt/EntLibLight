@@ -89,7 +89,6 @@
     <Compile Include="Etw\ConfigurationReaderFixture.cs" />
     <Compile Include="Etw\ConsoleSinkElementFixture.cs" />
     <Compile Include="Etw\TraceEventServiceWorkerFixture.cs" />
-    <Compile Include="Etw\WindowsAzureTableSinkElementFixture.cs" />
     <Compile Include="Etw\SinkSettingsFixture.cs" />
     <Compile Include="Etw\EventSourceSettingsFixture.cs" />
     <Compile Include="Etw\SqlDatabaseSinkElementFixture.cs" />
