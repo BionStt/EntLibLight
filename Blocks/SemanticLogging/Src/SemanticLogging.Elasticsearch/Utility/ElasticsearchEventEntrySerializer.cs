@@ -152,7 +152,7 @@ namespace EntLibExtensions.SemanticLogging.Utility
 
         private string GetIndexName(DateTime entryDateTime)
         {
-            return string.Format(CultureInfo.InvariantCulture, "{0}-{1:yyyy.MM.dd}", this.indexName, entryDateTime);
+            return string.Format(CultureInfo.InvariantCulture, this.indexName, entryDateTime);
         }
 
         public void Dispose()
