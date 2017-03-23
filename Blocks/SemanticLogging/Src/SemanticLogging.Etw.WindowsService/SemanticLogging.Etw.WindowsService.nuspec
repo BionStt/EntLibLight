@@ -16,13 +16,10 @@
   </metadata>
   <files>
     <!-- Include everything in \build -->
-    <file src="install-packages.ps1" target="tools\install.ps1" />
+    <file src="install-packages.ps1" target="tools\install.ps1" />  
 
-    <file src="SemanticLogging-svc.xml" target="tools\" />
-    <file src="SemanticLogging-svc.xsd" target="tools\" />
     <file src="..\..\..\bin\Release\SemanticLogging-svc.exe" target="tools\" />
-    <file src="..\..\..\bin\Release\SemanticLogging-svc.exe.config" target="tools\" />
-    <file src="..\..\..\bin\Release\EntLibExtensions.SemanticLogging.dll" target="tools\" />
+    <file src="..\..\..\bin\Release\SemanticLogging-svc.exe.config" target="tools\" />    
     <file src="..\..\..\bin\Release\EntLibExtensions.SemanticLogging.Etw.dll" target="tools\" />    
   </files>
 </package>
