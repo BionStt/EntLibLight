@@ -124,6 +124,7 @@
       <SubType>Designer</SubType>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <None Include="install-packages.ps1" />
     <None Include="packages.config" />
     <None Include="_TraceEventProgrammersGuide.docx" />
   </ItemGroup>

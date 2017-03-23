@@ -17,7 +17,6 @@ using System.Globalization;
 using System.Linq;
 using EntLibExtensions.SemanticLogging.Utility;
 using Microsoft.WindowsAzure.Storage.Table;
-using Newtonsoft.Json;
 
 namespace EntLibExtensions.SemanticLogging.Sinks.WindowsAzure
 {
