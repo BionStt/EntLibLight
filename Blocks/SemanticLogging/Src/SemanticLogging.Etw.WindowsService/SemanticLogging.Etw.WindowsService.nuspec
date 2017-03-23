@@ -3,13 +3,21 @@
   <metadata>
     <id>EntLibExtensions.SemanticLogging.Service</id>
     <version>$version$</version>
-    <title>Semantic logging out-of-process logs service application block of Enterprise Library modified to use EventSource from "Microsoft.Diagnostics.Tracing" namespace</title>
+    <title>Semantic logging out-of-process logs service of Enterprise Library modified to use EventSource from "Microsoft.Diagnostics.Tracing" namespace</title>
     <authors>Ihar Yakimush</authors>
     <owners>Ihar Yakimush</owners>
     <licenseUrl>https://github.com/IharYakimush/EntLibLight/blob/develop/LICENSE</licenseUrl>
     <projectUrl>https://github.com/IharYakimush/EntLibLight</projectUrl>
     <requireLicenseAcceptance>true</requireLicenseAcceptance>
-    <description>Semantic Logging out-of-process logs service application block of Enterprise Library modified to use EventSource from "Microsoft.Diagnostics.Tracing" namespace</description>
+    <description>
+      Semantic Logging out-of-process logs service of Enterprise Library modified to use EventSource from "Microsoft.Diagnostics.Tracing" namespace.
+      Currently fillowing sinks supported:
+      - consoleSink
+      - customSink
+      - flatFileSink
+      - rollingFlatFileSink
+      - sqlDatabaseSink
+    </description>
     <releaseNotes>Initial version.</releaseNotes>
     <copyright>Copyright 2017</copyright>
     <tags>EntLibExtensions EnterpriseLibrary SemanticLogging EventSource slab EntLib enterprise library semantic logging out-of-process service event source tracing</tags>
