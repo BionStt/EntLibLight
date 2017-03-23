@@ -45,9 +45,6 @@
       <HintPath>..\..\..\packages\Microsoft.Diagnostics.Tracing.TraceEvent.1.0.41\lib\net40\Microsoft.Diagnostics.Tracing.TraceEvent.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Microsoft.WindowsAzure.Storage, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\..\..\packages\WindowsAzure.Storage.2.0.5.1\lib\net40\Microsoft.WindowsAzure.Storage.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
@@ -82,7 +79,6 @@
     <Compile Include="Configuration\SinkSettingsEqualityComparer.cs" />
     <Compile Include="Configuration\SqlDatabaseSinkElement.cs" />
     <Compile Include="Configuration\TraceEventServiceElement.cs" />
-    <Compile Include="Configuration\WindowsAzureTableSinkElement.cs" />
     <Compile Include="GlobalSuppressions.cs" />
     <Compile Include="TraceEventSchemaCache.cs" />
     <Compile Include="TraceEventManifestsCache.cs" />
@@ -125,10 +121,6 @@
     <ProjectReference Include="..\SemanticLogging.Database\SemanticLogging.Database.csproj">
       <Project>{ac34c8e7-2a5b-412c-aff7-cf7f52ee4569}</Project>
       <Name>SemanticLogging.Database</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\SemanticLogging.WindowsAzure\SemanticLogging.WindowsAzure.csproj">
-      <Project>{d7979e9b-7978-48fe-b345-3c767a20f9a1}</Project>
-      <Name>SemanticLogging.WindowsAzure</Name>
     </ProjectReference>
     <ProjectReference Include="..\SemanticLogging\SemanticLogging.csproj">
       <Project>{2cd4105b-0dd6-4c18-9b37-05d8e8f57303}</Project>
