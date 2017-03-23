@@ -197,21 +197,22 @@ namespace EntLibExtensions.SemanticLogging.Etw
             {
                 // Simply notify and count lost events since we don't have a manifest yet to parse this event.
                 this.NotifyEventLost();
-            }
-            else
-            {
-                
-            }
+            }            
         }
 
         private EventEntry CreateEventEntry(TraceEvent traceEvent)
-        {
-            return new EventEntry(traceEvent.ProviderGuid,
+        {            
+            return new EventEntry(
+                traceEvent.ProviderGuid,
                 (int)traceEvent.ID,
                 traceEvent.FormattedMessage,
                 this.CreatePayload(traceEvent),
                 traceEvent.TimeStamp.ToUniversalTime(),
-                this.schemaCache.GetSchema(traceEvent));
+                this.schemaCache.GetSchema(traceEvent),
+                traceEvent.ActivityID,
+                traceEvent.ProcessID,
+                traceEvent.RelatedActivityID,
+                traceEvent.ThreadID);
         }
 
         private ReadOnlyCollection<object> CreatePayload(TraceEvent traceEvent)

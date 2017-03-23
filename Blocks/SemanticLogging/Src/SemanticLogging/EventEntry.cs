@@ -42,17 +42,55 @@ namespace EntLibExtensions.SemanticLogging
         private readonly ReadOnlyCollection<object> payload;
         private readonly DateTimeOffset timestamp;
         private readonly EventSchema schema;
+        private readonly Guid? activityId;
+        private readonly int processId;
+        private readonly Guid? relatedActivityId;
+        private readonly int threadId;
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="EventEntry" /> class.
+        /// Initializes a new instance of the <see cref="EventEntry"/> class.
         /// </summary>
-        /// <param name="sourceId">The source id.</param>
-        /// <param name="eventId">The event id.</param>
-        /// <param name="formattedMessage">The message.</param>
-        /// <param name="payload">The payload.</param>
-        /// <param name="timestamp">The timestamp.</param>
-        /// <param name="schema">The schema.</param>
-        public EventEntry(Guid sourceId, int eventId, string formattedMessage, ReadOnlyCollection<object> payload, DateTimeOffset timestamp, EventSchema schema)
+        /// <param name="sourceId">
+        /// The source id.
+        /// </param>
+        /// <param name="eventId">
+        /// The event id.
+        /// </param>
+        /// <param name="formattedMessage">
+        /// The message.
+        /// </param>
+        /// <param name="payload">
+        /// The payload.
+        /// </param>
+        /// <param name="timestamp">
+        /// The timestamp.
+        /// </param>
+        /// <param name="schema">
+        /// The schema.
+        /// </param>
+        /// <param name="activityId">
+        /// The activity Id.
+        /// </param>
+        /// <param name="processId">
+        /// The process Id.
+        /// </param>
+        /// <param name="relatedActivityId">
+        /// The related Activity Id.
+        /// </param>
+        /// <param name="threadId">
+        /// The thread Id.
+        /// </param>
+        public EventEntry(
+            Guid sourceId, 
+            int eventId, 
+            string formattedMessage, 
+            ReadOnlyCollection<object> payload, 
+            DateTimeOffset timestamp, 
+            EventSchema schema, 
+            Guid? activityId = null, 
+            int processId = -1,
+            Guid? relatedActivityId = null,
+            int threadId = -1)
         {
             this.providerId = sourceId;
             this.eventId = eventId;
@@ -60,8 +98,12 @@ namespace EntLibExtensions.SemanticLogging
             this.payload = payload;
             this.timestamp = timestamp;
             this.schema = schema;
+            this.activityId = activityId;
+            this.processId = processId;
+            this.relatedActivityId = relatedActivityId;
+            this.threadId = threadId;
         }
-
+        
         /// <summary>
         /// Gets the id of the source originating the event.
         /// </summary>
@@ -119,6 +161,50 @@ namespace EntLibExtensions.SemanticLogging
         }
 
         /// <summary>
+        /// Gets the activity id.
+        /// </summary>
+        public Guid ActivityId
+        {
+            get
+            {
+                return this.activityId ?? Guid.Empty;
+            }
+        }
+
+        /// <summary>
+        /// Gets the process id.
+        /// </summary>
+        public int ProcessId
+        {
+            get
+            {
+                return this.processId;
+            }
+        }
+
+        /// <summary>
+        /// Gets the related activity id.
+        /// </summary>
+        public Guid RelatedActivityId
+        {
+            get
+            {
+                return this.relatedActivityId ?? Guid.Empty;
+            }
+        }
+
+        /// <summary>
+        /// Gets the thread id.
+        /// </summary>
+        public int ThreadId
+        {
+            get
+            {
+                return this.threadId;
+            }
+        }
+
+        /// <summary>
         /// Creates a new <see cref="EventEntry"/> instance based on the <paramref name="args"/> and the <paramref name="schema"/>.
         /// </summary>
         /// <param name="args">The <see cref="EventWrittenEventArgs"/> representing the event to log.</param>
@@ -138,7 +224,7 @@ namespace EntLibExtensions.SemanticLogging
             {
                 formattedMessage = string.Format(CultureInfo.InvariantCulture, args.Message, args.Payload.ToArray());
             }
-
+            
             return new EventEntry(args.EventSource.Guid, args.EventId, formattedMessage, args.Payload, timestamp, schema);
         }
 

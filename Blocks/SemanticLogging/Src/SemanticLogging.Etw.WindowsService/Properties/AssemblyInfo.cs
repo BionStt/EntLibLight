@@ -19,8 +19,8 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyTitle("Enterprise Library Semantic Logging Service")]
 [assembly: AssemblyDescription("Enterprise Library Semantic Logging Service")]
 
-[assembly: AssemblyVersion("1.0.0.0")]
-[assembly: AssemblyFileVersion("1.0.1304.0")]
+[assembly: AssemblyVersion("1.0.1.0")]
+[assembly: AssemblyFileVersion("1.0.1.0")]
 
 [assembly: ComVisible(false)]
 [assembly: NeutralResourcesLanguage("en-US")]

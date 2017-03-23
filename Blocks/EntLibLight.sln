@@ -44,6 +44,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UnitTests", "UnitTests", "{
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SemanticLogging.Tests", "SemanticLogging\Tests\SemanticLogging.Tests\SemanticLogging.Tests.csproj", "{1735E7F3-65BA-4E29-B319-6C2CA03659D1}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SemanticLogging.Elasticsearch", "SemanticLogging\Src\SemanticLogging.Elasticsearch\SemanticLogging.Elasticsearch.csproj", "{5F7F3BFE-6117-43C3-AABB-7195516D9F1C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|.NET = Debug|.NET
@@ -114,6 +116,18 @@ Global
 		{1735E7F3-65BA-4E29-B319-6C2CA03659D1}.Release|Any CPU.Build.0 = Release|Any CPU
 		{1735E7F3-65BA-4E29-B319-6C2CA03659D1}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{1735E7F3-65BA-4E29-B319-6C2CA03659D1}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{5F7F3BFE-6117-43C3-AABB-7195516D9F1C}.Debug|.NET.ActiveCfg = Debug|Any CPU
+		{5F7F3BFE-6117-43C3-AABB-7195516D9F1C}.Debug|.NET.Build.0 = Debug|Any CPU
+		{5F7F3BFE-6117-43C3-AABB-7195516D9F1C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5F7F3BFE-6117-43C3-AABB-7195516D9F1C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5F7F3BFE-6117-43C3-AABB-7195516D9F1C}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{5F7F3BFE-6117-43C3-AABB-7195516D9F1C}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{5F7F3BFE-6117-43C3-AABB-7195516D9F1C}.Release|.NET.ActiveCfg = Release|Any CPU
+		{5F7F3BFE-6117-43C3-AABB-7195516D9F1C}.Release|.NET.Build.0 = Release|Any CPU
+		{5F7F3BFE-6117-43C3-AABB-7195516D9F1C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5F7F3BFE-6117-43C3-AABB-7195516D9F1C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5F7F3BFE-6117-43C3-AABB-7195516D9F1C}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{5F7F3BFE-6117-43C3-AABB-7195516D9F1C}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -126,6 +140,7 @@ Global
 		{D7979E9B-7978-48FE-B345-3C767A20F9A1} = {C764AAB6-7784-4D70-8114-AD6EC541729E}
 		{557F4B70-BFA9-4238-B18B-3E021635F266} = {C764AAB6-7784-4D70-8114-AD6EC541729E}
 		{1735E7F3-65BA-4E29-B319-6C2CA03659D1} = {557F4B70-BFA9-4238-B18B-3E021635F266}
+		{5F7F3BFE-6117-43C3-AABB-7195516D9F1C} = {C764AAB6-7784-4D70-8114-AD6EC541729E}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		EnterpriseLibraryConfigurationToolBinariesPathV6 = .nuget\..\packages\EnterpriseLibrary.TransientFaultHandling.6.0.1304.0\lib\portable-net45+win+wp8;.nuget\..\packages\EnterpriseLibrary.TransientFaultHandling.Data.6.0.1304.1\lib\NET45
