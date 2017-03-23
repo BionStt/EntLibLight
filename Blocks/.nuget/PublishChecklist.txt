@@ -1,0 +1,3 @@
+Remove src folder from all packages
+Adjust Content folder
+Remove lib folder from service
