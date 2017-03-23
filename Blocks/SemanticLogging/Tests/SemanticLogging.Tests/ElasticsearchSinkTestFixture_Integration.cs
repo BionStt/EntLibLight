@@ -13,7 +13,10 @@ namespace EntLibExtensions.SemanticLogging.Sinks.Tests
     using EntLibExtensions.SemanticLogging;
     using EntLibExtensions.SemanticLogging.Sinks;
     using EntLibExtensions.SemanticLogging.Sinks.Tests.TestSupport;
+    using EntLibExtensions.SemanticLogging.Tests.TestObjects;
     using EntLibExtensions.SemanticLogging.Tests.TestSupport;
+
+    using Microsoft.Diagnostics.Tracing;
 
     [TestClass]
     public class given_empty_index : ArrangeActAssert
@@ -141,6 +144,21 @@ namespace EntLibExtensions.SemanticLogging.Sinks.Tests
 
             Assert.IsTrue(GetIndexCount() == msgPropValues.Length);
             Assert.IsTrue(areMsgPropertiesEqual);
+        }
+
+        [TestMethod]
+        public void then_try_write_using_event_source()
+        {
+            SimpleEventSource ses = new SimpleEventSource();
+            ObservableEventListener listener = new ObservableEventListener();
+
+            using (listener)
+            {
+                listener.EnableEvents(ses, EventLevel.LogAlways, EventKeywords.All);
+                listener.LogToElasticsearch(Environment.MachineName, this.elasticsearchUrl, "slabqwe-{0:yyyy.MM}", "etw");
+
+                ses.MyEvent1("qwe1", 2);
+            }            
         }
     }
 

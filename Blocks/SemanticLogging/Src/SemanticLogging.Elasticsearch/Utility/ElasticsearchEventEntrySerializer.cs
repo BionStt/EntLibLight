@@ -64,7 +64,7 @@ namespace EntLibExtensions.SemanticLogging.Utility
             // Write the batch "index" operation header
             this.writer.WriteStartObject();
             // ES index names must be lower case and cannot contain whitespace or any of the following characters \/*?"<>|,
-            WriteValue("_index", this.GetIndexName(entry.Timestamp.UtcDateTime));
+            WriteValue("_index", GetIndexName(this.indexName, entry.Timestamp.UtcDateTime));
             WriteValue("_type", this.entryType);
             this.writer.WriteEndObject();
             this.writer.WriteEndObject();
@@ -150,9 +150,10 @@ namespace EntLibExtensions.SemanticLogging.Utility
             }
         }
 
-        private string GetIndexName(DateTime entryDateTime)
+        public static string GetIndexName(string indexFormat,DateTime entryDateTime)
         {
-            return string.Format(CultureInfo.InvariantCulture, this.indexName, entryDateTime);
+            string result = string.Format(CultureInfo.InvariantCulture, indexFormat, entryDateTime);
+            return result;
         }
 
         public void Dispose()

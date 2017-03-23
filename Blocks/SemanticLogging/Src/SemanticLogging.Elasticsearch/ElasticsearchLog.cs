@@ -50,32 +50,6 @@ namespace EntLibExtensions.SemanticLogging
 
             var subscription = eventStream.Subscribe(sink);
             return new SinkSubscription<ElasticsearchSink>(subscription, sink);
-        }
-        
-        /// <summary>
-        /// Creates an event listener that logs using a <see cref="ElasticsearchSink" />.
-        /// </summary>
-        /// <param name="instanceName">The name of the instance originating the entries.</param>
-        /// <param name="connectionString">The endpoint address for the Elasticsearch Service.</param>
-        /// <param name="index">Index name prefix formatted as index-{0:yyyy.MM.DD}</param>
-        /// <param name="type">The Elasticsearch entry type</param>
-        /// <param name="flattenPayload">Flatten the payload collection when serializing event entries</param>
-        /// <param name="bufferingInterval">The buffering interval between each batch publishing.</param>
-        /// <param name="listenerDisposeTimeout">Defines a timeout interval for the flush operation when the listener is disposed.</param>
-        /// <param name="maxBufferSize">The maximum number of entries that can be buffered while it's sending to Elasticsearch before the sink starts dropping entries.
-        /// This means that if the timeout period elapses, some event entries will be dropped and not sent to the store. Calling <see cref="IDisposable.Dispose" /> on
-        /// the <see cref="EventListener" /> will block until all the entries are flushed or the interval elapses.
-        /// If <see langword="null" /> is specified, then the call will block indefinitely until the flush operation finishes.</param>
-        /// <returns>
-        /// An event listener that uses <see cref="ElasticsearchSink" /> to log events.
-        /// </returns>
-        public static EventListener CreateListener(string instanceName, string connectionString, string index, string type, bool flattenPayload = true,
-            TimeSpan? bufferingInterval = null, TimeSpan? listenerDisposeTimeout = null, int maxBufferSize = Buffering.DefaultMaxBufferSize)
-        {
-            var listener = new ObservableEventListener();
-            listener.LogToElasticsearch(instanceName, connectionString, index, type, flattenPayload, bufferingInterval,
-                listenerDisposeTimeout, maxBufferSize);
-            return listener;
-        }
+        }       
     }
 }

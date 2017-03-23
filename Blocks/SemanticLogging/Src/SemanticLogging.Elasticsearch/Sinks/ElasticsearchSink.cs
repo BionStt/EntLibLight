@@ -65,7 +65,9 @@ namespace EntLibExtensions.SemanticLogging.Sinks
             Guard.ArgumentIsValidTimeout(onCompletedTimeout, "onCompletedTimeout");
             Guard.ArgumentGreaterOrEqualThan(0, bufferingCount, "bufferingCount");
 
-            if (Regex.IsMatch(index, "[\\\\/*?\",<>|\\sA-Z]"))
+            string converted = ElasticsearchEventEntrySerializer.GetIndexName(index, DateTime.UtcNow);
+
+            if (Regex.IsMatch(converted, "[\\\\/*?\",<>|\\sA-Z]"))
             {
                 throw new ArgumentException(Resource.InvalidElasticsearchIndexNameError, "index");
             }
@@ -166,7 +168,6 @@ namespace EntLibExtensions.SemanticLogging.Sinks
 
         internal async Task<int> PublishEventsAsync(IList<EventEntry> collection)
         {
-
             try
             {
                 string logMessages;
