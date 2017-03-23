@@ -12,6 +12,6 @@
     <description>Semantic logging windows azure application block of Enterprise Library modified to use EventSource from "Microsoft.Diagnostics.Tracing" namespace</description>
     <releaseNotes>Initial version.</releaseNotes>
     <copyright>Copyright 2017</copyright>
-    <tags>EnterpriseLibrary SemanticLogging Extensions slab EntLib enterprise library semantic logging azure event source tracing</tags>
+    <tags>EntLibExtensions EnterpriseLibrary SemanticLogging EventSource slab EntLib enterprise library semantic logging azure event source tracing</tags>
   </metadata>
 </package>
