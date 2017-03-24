@@ -16,6 +16,7 @@
       - customSink
       - flatFileSink
       - rollingFlatFileSink
+      - elasticsearchSink
       - sqlDatabaseSink
     </description>
     <releaseNotes>Added support of elastic search sink</releaseNotes>
