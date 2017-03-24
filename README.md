@@ -6,7 +6,7 @@ Modifications and extensions of Enterprise Library "Semantic Logging", "Policy I
 
 
 Nuget packages:
-https://www.nuget.org/packages/EntLibExtensions.SemanticLogging
-https://www.nuget.org/packages/EntLibExtensions.SemanticLogging.Database
-https://www.nuget.org/packages/EntLibExtensions.SemanticLogging.Elasticsearch
-https://www.nuget.org/packages/EntLibExtensions.SemanticLogging.Service
+- https://www.nuget.org/packages/EntLibExtensions.SemanticLogging
+- https://www.nuget.org/packages/EntLibExtensions.SemanticLogging.Database
+- https://www.nuget.org/packages/EntLibExtensions.SemanticLogging.Elasticsearch
+- https://www.nuget.org/packages/EntLibExtensions.SemanticLogging.Service
