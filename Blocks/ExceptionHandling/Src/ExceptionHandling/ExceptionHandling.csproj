@@ -7,8 +7,8 @@
     <ProjectGuid>{935973CC-769B-4D8B-98B3-D404CC17138D}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>ExceptionHandling</RootNamespace>
-    <AssemblyName>ExceptionHandling</AssemblyName>
+    <RootNamespace>EntLibExtensions.ExceptionHandling</RootNamespace>
+    <AssemblyName>EntLibExtensions.ExceptionHandling</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />

@@ -11,10 +11,10 @@
 // ==============================================================================
 #endregion
 
-namespace ExceptionHandling
+namespace EntLibExtensions.ExceptionHandling
 {
     using System;
-    using System.Collections.Generic;    
+    using System.Collections.Generic;
     using System.Linq;
 
     using Microsoft.Practices.EnterpriseLibrary.Common.Utility;

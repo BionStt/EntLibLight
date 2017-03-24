@@ -11,7 +11,7 @@
 // ==============================================================================
 #endregion
 
-namespace ExceptionHandling
+namespace EntLibExtensions.ExceptionHandling
 {
     using System;
     using System.Threading.Tasks;
