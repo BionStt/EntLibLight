@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2013/05/nuspec.xsd">
+  <metadata>
+    <id>$id$</id>
+    <version>$version$</version>
+    <title>Exception handling application block of Enterprise Library extensions for support async operations and default exception shield policy definition</title>
+    <authors>Ihar Yakimush</authors>
+    <owners>Ihar Yakimush</owners>
+    <licenseUrl>https://github.com/IharYakimush/EntLibLight/blob/develop/LICENSE</licenseUrl>
+    <projectUrl>https://github.com/IharYakimush/EntLibLight</projectUrl>
+    <requireLicenseAcceptance>true</requireLicenseAcceptance>
+    <description>
+      Add extension method for ExceptionManager to support exception handling in async actions and functions.
+<![CDATA[
+public static async Task<TResult>ProcessAsync<TResult>(this ExceptionManager exceptionManager, string policyName, Func<Task<TResult>> action, TResult defaultValue)
+public static async Task ProcessAsync(this ExceptionManager exceptionManager, string policyName, Func<Task> action)
+]]>
+      Add "ExceptionPolicyDefinitionFactory" class which is able to create default "ExceptionPolicyDefinition" for implementing exception shielding for component and support customization of it.
+<![CDATA[
+      1. rethrow all exceptions derived from component base exception <typeparamref name="TBaseException"/>
+      2. rethrow <see cref="OperationCanceledException"/>
+      3. wrap generic exceptions to component specific exception <typeparamref name="TBaseException"/>
+]]>
+    </description>
+    <releaseNotes>Initial version.</releaseNotes>
+    <copyright>Copyright 2017</copyright>
+    <tags>EntLibExtensions EnterpriseLibrary EntLib enterprise library exception handling async shielding</tags>
+  </metadata>
+</package>
