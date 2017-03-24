@@ -29,7 +29,7 @@
             var bufferInterval = element.Attribute("bufferingIntervalInSeconds").ToTimeSpan();
 
             return new ElasticsearchSink(
-                (string)element.Attribute("instanceName"),
+                (string)element.Attribute("instanceName") ?? Environment.MachineName,
                 (string)element.Attribute("connectionString"),
                 (string)element.Attribute("index") ?? "logstash",
                 (string)element.Attribute("type") ?? "etw",

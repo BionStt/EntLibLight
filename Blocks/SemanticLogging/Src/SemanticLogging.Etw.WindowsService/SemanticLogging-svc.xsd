@@ -19,6 +19,7 @@
             <xs:element name="windowsAzureTableSink" type="WindowsAzureTableSinkElement" />
             <xs:element name="sqlDatabaseSink" type="SqlDatabaseSinkElement" />
             <xs:element name="consoleSink" type="ConsoleSinkElement" />
+            <xs:element name="elasticsearchSink" type="ElasticSinkElement" />
             <xs:element name="customSink" type="CustomSinkElement" />
             <xs:any namespace="##other" processContents="lax"/>
           </xs:choice>
@@ -131,6 +132,23 @@
     <xs:complexContent mixed="false">
       <xs:extension base="SinkBaseWithFormatters">
         <xs:attribute name="colorMapperType" type="NoEmptyString" use="optional" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="ElasticSinkElement">
+    <xs:complexContent mixed="false">
+      <xs:extension base="SinkBase">
+        <xs:attribute name="instanceName" type="NoEmptyString" use="optional" />
+        <xs:attribute name="connectionString" type="xs:anyURI" use="required" />
+        <xs:attribute name="index" type="NoEmptyString" use="optional" default="logstash" />        
+        <xs:attribute name="type" type="NoEmptyString" use="optional" default="etw" />        
+        <xs:attribute name="flattenPayload" type="xs:boolean" use="optional" default="true" />
+        <xs:attribute name="bufferingIntervalInSeconds" type="etw:PositiveInteger" use="optional" default="30" />
+        <xs:attribute name="bufferingCount" type="etw:PositiveInteger" use="optional" default="1000" />
+        <xs:attribute name="maxBufferSize" type="etw:PositiveInteger" use="optional" default="30000" />
+        <xs:attribute name="bufferingFlushAllTimeoutInSeconds" type="etw:PositiveInteger" use="optional" default="5" />
+        <xs:attribute name="jsonGlobalContextExtension" type="etw:NoEmptyString" use="optional" />
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>

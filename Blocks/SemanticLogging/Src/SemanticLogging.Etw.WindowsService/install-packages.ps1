@@ -29,10 +29,10 @@ pushd $repositoryPath
 
     $dependencies = @(
 		
-		'*\EntLibExtensions.SemanticLogging.1.0.0\lib\net45\*.*',
-		'*\EntLibExtensions.SemanticLogging.WindowsAzure.1.0.0\lib\net45\*.*',
-		'*\EntLibExtensions.SemanticLogging.Database.1.0.0\lib\net45\*.*',		
-		'*\EntLibExtensions.SemanticLogging.Database.1.0.0\content\Scripts\*.*',
+		'*\EntLibExtensions.SemanticLogging.1.0.1\lib\net45\*.*',
+		'*\EntLibExtensions.SemanticLogging.Elasticsearch.1.0.1\lib\net45\*.*',
+		'*\EntLibExtensions.SemanticLogging.Database.1.0.1\lib\net45\*.*',		
+		'*\EntLibExtensions.SemanticLogging.Database.1.0.1\content\Scripts\*.*',
 
 		'*\Microsoft.Diagnostics.Tracing.TraceEvent.1.0.41\lib\net40\*.*',
 		'*\Microsoft.Diagnostics.Tracing.EventSource.Redist.1.1.28\lib\net40\*.*',
