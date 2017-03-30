@@ -8,6 +8,7 @@
     <owners>Ihar Yakimush</owners>
     <licenseUrl>https://github.com/IharYakimush/EntLibLight/blob/develop/LICENSE</licenseUrl>
     <projectUrl>https://github.com/IharYakimush/EntLibLight</projectUrl>
+    <iconUrl>https://raw.githubusercontent.com/IharYakimush/EntLibLight/master/icon.png</iconUrl>
     <requireLicenseAcceptance>true</requireLicenseAcceptance>
     <description>Semantic logging application block of Enterprise Library modified to use EventSource from "Microsoft.Diagnostics.Tracing" namespace</description>
     <releaseNotes>Initial version.</releaseNotes>
