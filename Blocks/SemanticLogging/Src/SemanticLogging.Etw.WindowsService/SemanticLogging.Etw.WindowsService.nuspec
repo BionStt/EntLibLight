@@ -12,7 +12,7 @@
     <requireLicenseAcceptance>true</requireLicenseAcceptance>
     <description>
       Semantic Logging out-of-process logs service of Enterprise Library modified to use EventSource from "Microsoft.Diagnostics.Tracing" namespace.
-      Currently fillowing sinks supported:
+      Currently following sinks supported:
       - consoleSink
       - customSink
       - flatFileSink
