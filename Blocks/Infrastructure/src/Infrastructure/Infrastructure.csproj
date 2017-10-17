@@ -51,6 +51,7 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.ServiceProcess" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -62,7 +63,14 @@
     <Compile Include="..\..\..\IharAssemblyInfo.cs">
       <Link>Properties\IharAssemblyInfo.cs</Link>
     </Compile>
+    <Compile Include="Application.cs" />
+    <Compile Include="InfraEventSource.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="WinService\DefaultService.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="WinService\IWinService.cs" />
+    <Compile Include="WinService\WinServiceOptions.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="..\..\Infrastructure.licenseheader">
