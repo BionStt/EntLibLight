@@ -73,6 +73,7 @@
         /// <summary>
         /// The app start default.
         /// </summary>
+        [NonEvent]
         public void AppStartDefault()
         {
             this.AppStart(
@@ -100,6 +101,7 @@
         /// <summary>
         /// The app end default.
         /// </summary>
+        [NonEvent]
         public void AppEndDefault()
         {
             this.AppEnd(AppDomain.CurrentDomain.FriendlyName, Environment.ExitCode);
@@ -129,6 +131,7 @@
         /// <param name="exception">
         /// The exception.
         /// </param>
+        [NonEvent]
         public void AppCriticalFailure(Exception exception)
         {
             this.AppCriticalFailure(AppDomain.CurrentDomain.FriendlyName, exception.Message, exception.ToString());

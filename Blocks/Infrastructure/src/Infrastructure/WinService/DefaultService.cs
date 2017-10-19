@@ -20,6 +20,7 @@
         /// The win service.
         /// </param>
         /// <exception cref="ArgumentNullException">
+        /// Argument Null Exception
         /// </exception>
         public DefaultService(IWinService winService)
         {
