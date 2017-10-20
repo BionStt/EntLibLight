@@ -39,15 +39,8 @@
     <SignAssembly>true</SignAssembly>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="EntLibExtensions.SemanticLogging, Version=1.0.1.0, Culture=neutral, PublicKeyToken=c4ed0f3638558493, processorArchitecture=MSIL">
-      <HintPath>..\..\..\packages\EntLibExtensions.SemanticLogging.1.0.1\lib\net45\EntLibExtensions.SemanticLogging.dll</HintPath>
-    </Reference>
     <Reference Include="Microsoft.Diagnostics.Tracing.EventSource, Version=1.1.28.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\..\..\packages\Microsoft.Diagnostics.Tracing.EventSource.Redist.1.1.28\lib\net40\Microsoft.Diagnostics.Tracing.EventSource.dll</HintPath>
-    </Reference>
-    <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\packages\Newtonsoft.Json.4.5.11\lib\net40\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Configuration.Install" />
@@ -66,6 +59,7 @@
     </Compile>
     <Compile Include="Application.cs" />
     <Compile Include="InfraEventSource.cs" />
+    <Compile Include="ProcessUtility.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="WinService\DefaultService.cs">
       <SubType>Component</SubType>
