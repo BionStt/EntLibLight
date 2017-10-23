@@ -43,6 +43,7 @@
       <HintPath>..\..\..\packages\Microsoft.Diagnostics.Tracing.EventSource.Redist.1.1.28\lib\net40\Microsoft.Diagnostics.Tracing.EventSource.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Configuration.Install" />
     <Reference Include="System.Core" />
     <Reference Include="System.ServiceProcess" />
@@ -70,6 +71,23 @@
     </Compile>
     <Compile Include="WinService\WinServiceInstallationOptions.cs" />
     <Compile Include="WinService\WinServiceOptions.cs" />
+    <Compile Include="WinService\WorkersHostWinService.cs" />
+    <Compile Include="Workers\Configuration\ParameterConfig.cs" />
+    <Compile Include="Workers\Configuration\ParametersCollection.cs" />
+    <Compile Include="Workers\Configuration\WorkerCollection.cs" />
+    <Compile Include="Workers\Configuration\WorkerConfig.cs" />
+    <Compile Include="Workers\Configuration\WorkerConfigurationSection.cs" />
+    <Compile Include="Workers\Implementation\ActionWorker.cs" />
+    <Compile Include="Workers\Implementation\ActionWorkersProvider.cs" />
+    <Compile Include="Workers\Implementation\Worker.cs" />
+    <Compile Include="Workers\Implementation\WorkerActionConfiguration.cs" />
+    <Compile Include="Workers\Implementation\WorkersHost.cs" />
+    <Compile Include="Workers\IWorker.cs" />
+    <Compile Include="Workers\IWorkerAction.cs" />
+    <Compile Include="Workers\IWorkerActionConfiguration.cs" />
+    <Compile Include="Workers\IWorkerActionFactory.cs" />
+    <Compile Include="Workers\IWorkersHost.cs" />
+    <Compile Include="Workers\IWorkersProvider.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="..\..\Infrastructure.licenseheader">

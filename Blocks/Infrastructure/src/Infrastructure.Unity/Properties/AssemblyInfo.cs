@@ -15,8 +15,8 @@ using System.Resources;
 using System.Runtime.InteropServices;
 using System.Security;
 
-[assembly: AssemblyTitle("Infrastructure Application Block - Tests")]
-[assembly: AssemblyDescription("Infrastructure Application Block - Tests")]
+[assembly: AssemblyTitle("Infrastructure Application Block - Unity integration")]
+[assembly: AssemblyDescription("Infrastructure Application Block- Unity integration")]
 
 //[assembly: SecurityTransparent]
 [assembly: SecurityCritical]

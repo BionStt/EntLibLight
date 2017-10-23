@@ -201,10 +201,10 @@
         /// <param name="errorDialog">
         /// The error dialog.
         /// </param>
-        [Event(4, Message = "Run external process {0}. Token {1}", Level = EventLevel.Informational, Keywords = Keywords.ExternalProcess)]
+        [Event(1001, Message = "Run external process {0}. Token {1}", Level = EventLevel.Informational, Keywords = Keywords.ExternalProcess)]
         public void ExternalProcessRun(string fileName, string token, int milliseconds, string userName, bool createNoWindow, bool loadUserProfile, bool errorDialog)
         {
-            this.WriteEvent(4, fileName, token, milliseconds, userName, createNoWindow, loadUserProfile, errorDialog);
+            this.WriteEvent(1001, fileName, token, milliseconds, userName, createNoWindow, loadUserProfile, errorDialog);
         }
 
         /// <summary>
@@ -222,10 +222,10 @@
         /// <param name="exception">
         /// The exception.
         /// </param>
-        [Event(5, Message = "External process failed {0}. Token {1} Message {2}", Level = EventLevel.Error, Keywords = Keywords.ExternalProcess)]
+        [Event(1002, Message = "External process failed {0}. Token {1} Message {2}", Level = EventLevel.Error, Keywords = Keywords.ExternalProcess)]
         public void ExternalProcessFailedToStart(string fileName, string token, string errorMessage, string exception)
         {
-            this.WriteEvent(5, fileName, token, errorMessage, exception);
+            this.WriteEvent(1002, fileName, token, errorMessage, exception);
         }
 
         /// <summary>
@@ -240,10 +240,10 @@
         /// <param name="output">
         /// The output.
         /// </param>
-        [Event(6, Message = "External process timeout {0}. Token {1}", Level = EventLevel.Warning, Keywords = Keywords.ExternalProcess)]
+        [Event(1003, Message = "External process timeout {0}. Token {1}", Level = EventLevel.Warning, Keywords = Keywords.ExternalProcess)]
         public void ExternalProcessTimeout(string fileName, string token, string output)
         {
-            this.WriteEvent(6, fileName, token, output);
+            this.WriteEvent(1003, fileName, token, output);
         }
 
         /// <summary>
@@ -261,10 +261,10 @@
         /// <param name="output">
         /// The output.
         /// </param>
-        [Event(7, Message = "External process end {0}. Token {1}. Exit code {2}", Level = EventLevel.Warning, Keywords = Keywords.ExternalProcess)]
+        [Event(1004, Message = "External process end {0}. Token {1}. Exit code {2}", Level = EventLevel.Warning, Keywords = Keywords.ExternalProcess)]
         public void ExternalProcessEndWithError(string fileName, string token, int code, string output)
         {
-            this.WriteEvent(7, fileName, token, code, output);
+            this.WriteEvent(1004, fileName, token, code, output);
         }
 
         /// <summary>
@@ -279,10 +279,169 @@
         /// <param name="output">
         /// The output.
         /// </param>
-        [Event(8, Message = "External process end {0}. Token {1}. Exit code {2}", Level = EventLevel.Informational, Keywords = Keywords.ExternalProcess)]
+        [Event(1005, Message = "External process end {0}. Token {1}. Exit code {2}", Level = EventLevel.Informational, Keywords = Keywords.ExternalProcess)]
         public void ExternalProcessEnd(string fileName, string token, string output)
         {
-            this.WriteEvent(8, fileName, token, output);
+            this.WriteEvent(1005, fileName, token, output);
+        }
+
+        /// <summary>
+        /// The host start.
+        /// </summary>
+        /// <param name="currentDomain">
+        /// The current Domain.
+        /// </param>
+        [Event(2001, Message = "{0} Worker host: Start", Level = EventLevel.Informational, Channel = EventChannel.Operational, Keywords = Keywords.WorkersHost)]
+        public void HostStart(string currentDomain)
+        {
+            this.WriteEvent(2001, currentDomain);
+        }
+
+        /// <summary>
+        /// The host stop.
+        /// </summary>
+        /// <param name="currentDomain">
+        /// The current Domain.
+        /// </param>
+        [Event(2002, Message = "{0} Worker host: Stop", Level = EventLevel.Informational, Channel = EventChannel.Operational, Keywords = Keywords.WorkersHost)]
+        public void HostStop(string currentDomain)
+        {
+            this.WriteEvent(2002, currentDomain);
+        }
+
+        /// <summary>
+        /// The host shutdown.
+        /// </summary>
+        [Event(2003, Message = "Worker host: Shutdown", Level = EventLevel.Informational, Channel = EventChannel.Operational, Keywords = Keywords.WorkersHost)]
+        public void HostShutdown()
+        {
+            this.WriteEvent(2003);
+        }
+
+        /// <summary>
+        /// The host pause.
+        /// </summary>
+        [Event(2004, Message = "Worker host: Pause", Level = EventLevel.Informational, Channel = EventChannel.Operational, Keywords = Keywords.WorkersHost)]
+        public void HostPause()
+        {
+            this.WriteEvent(2004);
+        }
+
+        /// <summary>
+        /// The host resume.
+        /// </summary>
+        [Event(2005, Message = "Worker host: Resume", Level = EventLevel.Informational, Channel = EventChannel.Operational, Keywords = Keywords.WorkersHost)]
+        public void HostResume()
+        {
+            this.WriteEvent(2005);
+        }
+
+        /// <summary>
+        /// The action delay.
+        /// </summary>
+        /// <param name="type">
+        /// The delay type.
+        /// </param>
+        /// <param name="actionType">
+        /// The action type.
+        /// </param>
+        /// <param name="seconds">
+        /// The seconds.
+        /// </param>
+        [Event(2106, Message = "The {1} delay on {0}: {2}", Level = EventLevel.Informational, Keywords = Keywords.WorkerAction, Opcode = EventOpcode.Suspend, Task = Tasks.WorkerAction)]
+        public void ActionDelay(string type, string actionType, int seconds)
+        {
+            this.WriteEvent(2106, type, actionType, seconds);
+        }
+
+        /// <summary>
+        /// The action cancel.
+        /// </summary>
+        /// <param name="type">
+        /// The cancel type.
+        /// </param>
+        /// <param name="actionType">
+        /// The action type.
+        /// </param>
+        [Event(2107, Message = "The {0}: canceled on {1}", Level = EventLevel.Warning, Keywords = Keywords.WorkerAction)]
+        public void ActionCancel(string type, string actionType)
+        {
+            this.WriteEvent(2107, type, actionType);
+        }
+
+        /// <summary>
+        /// The action start.
+        /// </summary>
+        /// <param name="actionType">
+        /// The action type.
+        /// </param>
+        [Event(2108, Message = "The {0} started", Level = EventLevel.Informational, Keywords = Keywords.WorkerAction, Opcode = EventOpcode.Start, Task = Tasks.WorkerAction)]
+        public void ActionStart(string actionType)
+        {
+            this.WriteEvent(2108, actionType);
+        }
+
+        /// <summary>
+        /// The action end.
+        /// </summary>
+        /// <param name="actionType">
+        /// The action type.
+        /// </param>
+        [Event(2109, Message = "The {0} started", Level = EventLevel.Informational, Keywords = Keywords.WorkerAction, Opcode = EventOpcode.Stop, Task = Tasks.WorkerAction)]
+        public void ActionEnd(string actionType)
+        {
+            this.WriteEvent(2109, actionType);
+        }
+
+        /// <summary>
+        /// The action failed.
+        /// </summary>
+        /// <param name="actionType">
+        /// The action type.
+        /// </param>
+        /// <param name="exceptionMessage">
+        /// The exception message.
+        /// </param>
+        /// <param name="exception">
+        /// The exception.
+        /// </param>
+        [Event(2110, Message = "The {0} failed: {1}", Level = EventLevel.Error, Keywords = Keywords.WorkerAction)]
+        public void ActionFailed(string actionType, string exceptionMessage, string exception)
+        {
+            this.WriteEvent(2110, actionType, exceptionMessage, exception);
+        }
+
+        /// <summary>
+        /// The action failed to reschedule.
+        /// </summary>
+        /// <param name="actionType">
+        /// The action type.
+        /// </param>
+        /// <param name="exceptionMessage">
+        /// The exception message.
+        /// </param>
+        /// <param name="exception">
+        /// The exception.
+        /// </param>
+        [Event(2111, Message = "The {0} unable to repeat task action: {1}", Level = EventLevel.Critical, Keywords = Keywords.WorkerAction | Keywords.WorkersHost)]
+        public void ActionFailedToReschedule(string actionType, string exceptionMessage, string exception)
+        {
+            this.WriteEvent(2111, actionType, exceptionMessage, exception);
+        }
+
+        /// <summary>
+        /// The action resume.
+        /// </summary>
+        /// <param name="type">
+        /// The type.
+        /// </param>
+        /// <param name="actionType">
+        /// The action type.
+        /// </param>
+        [Event(2112, Message = "The {1} resume from delay on {0}", Level = EventLevel.Informational, Keywords = Keywords.WorkerAction, Opcode = EventOpcode.Resume, Task = Tasks.WorkerAction)]
+        public void ActionResume(string type, string actionType)
+        {
+            this.WriteEvent(2112, type, actionType);
         }
 
         /// <summary>
