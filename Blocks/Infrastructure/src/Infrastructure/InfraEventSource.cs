@@ -201,7 +201,7 @@
         /// <param name="errorDialog">
         /// The error dialog.
         /// </param>
-        [Event(4, Message = "Run external process {0}. Token {1}", Level = EventLevel.Informational, Keywords = Keywords.Application)]
+        [Event(4, Message = "Run external process {0}. Token {1}", Level = EventLevel.Informational, Keywords = Keywords.ExternalProcess)]
         public void ExternalProcessRun(string fileName, string token, int milliseconds, string userName, bool createNoWindow, bool loadUserProfile, bool errorDialog)
         {
             this.WriteEvent(4, fileName, token, milliseconds, userName, createNoWindow, loadUserProfile, errorDialog);
@@ -222,7 +222,7 @@
         /// <param name="exception">
         /// The exception.
         /// </param>
-        [Event(5, Message = "External process failed {0}. Token {1} Message {2}", Level = EventLevel.Error, Keywords = Keywords.Application)]
+        [Event(5, Message = "External process failed {0}. Token {1} Message {2}", Level = EventLevel.Error, Keywords = Keywords.ExternalProcess)]
         public void ExternalProcessFailedToStart(string fileName, string token, string errorMessage, string exception)
         {
             this.WriteEvent(5, fileName, token, errorMessage, exception);
@@ -240,7 +240,7 @@
         /// <param name="output">
         /// The output.
         /// </param>
-        [Event(6, Message = "External process timeout {0}. Token {1}", Level = EventLevel.Warning, Keywords = Keywords.Application)]
+        [Event(6, Message = "External process timeout {0}. Token {1}", Level = EventLevel.Warning, Keywords = Keywords.ExternalProcess)]
         public void ExternalProcessTimeout(string fileName, string token, string output)
         {
             this.WriteEvent(6, fileName, token, output);
@@ -261,7 +261,7 @@
         /// <param name="output">
         /// The output.
         /// </param>
-        [Event(7, Message = "External process end {0}. Token {1}. Exit code {2}", Level = EventLevel.Warning, Keywords = Keywords.Application)]
+        [Event(7, Message = "External process end {0}. Token {1}. Exit code {2}", Level = EventLevel.Warning, Keywords = Keywords.ExternalProcess)]
         public void ExternalProcessEndWithError(string fileName, string token, int code, string output)
         {
             this.WriteEvent(7, fileName, token, code, output);
@@ -279,7 +279,7 @@
         /// <param name="output">
         /// The output.
         /// </param>
-        [Event(8, Message = "External process end {0}. Token {1}. Exit code {2}", Level = EventLevel.Informational, Keywords = Keywords.Application)]
+        [Event(8, Message = "External process end {0}. Token {1}. Exit code {2}", Level = EventLevel.Informational, Keywords = Keywords.ExternalProcess)]
         public void ExternalProcessEnd(string fileName, string token, string output)
         {
             this.WriteEvent(8, fileName, token, output);

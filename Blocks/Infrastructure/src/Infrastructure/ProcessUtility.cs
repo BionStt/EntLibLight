@@ -35,6 +35,7 @@
             {
                 throw new ArgumentNullException(nameof(processStartInfo));
             }
+
             output = null;
             timeout = timeout ?? TimeSpan.FromHours(1);
 
