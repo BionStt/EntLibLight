@@ -1,5 +1,5 @@
 
-namespace Infrastructure.Unity
+namespace EntLibExtensions.Infrastructure.Unity
 {
     using System;
 

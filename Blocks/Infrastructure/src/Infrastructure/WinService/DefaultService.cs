@@ -72,5 +72,48 @@
                 ServiceBase.Run(this);
             }
         }
+
+        /// <summary>
+        /// The on start.
+        /// </summary>
+        /// <param name="args">
+        /// The args.
+        /// </param>
+        protected override void OnStart(string[] args)
+        {
+            this.winService.OnStart(args);
+        }
+
+        /// <summary>
+        /// The on continue.
+        /// </summary>
+        protected override void OnContinue()
+        {
+            this.winService.OnContinue();
+        }
+
+        /// <summary>
+        /// The on pause.
+        /// </summary>
+        protected override void OnPause()
+        {
+            this.winService.OnPause();
+        }
+
+        /// <summary>
+        /// The on stop.
+        /// </summary>
+        protected override void OnStop()
+        {
+            this.winService.OnStop();
+        }
+
+        /// <summary>
+        /// The on shutdown.
+        /// </summary>
+        protected override void OnShutdown()
+        {
+            this.winService.OnShutdown();
+        }
     }
 }

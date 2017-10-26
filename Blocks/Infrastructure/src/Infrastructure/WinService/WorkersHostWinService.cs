@@ -9,6 +9,9 @@
     /// </summary>
     public class WorkersHostWinService : IWinService
     {
+        /// <summary>
+        /// The workers host.
+        /// </summary>
         private readonly IWorkersHost workersHost;
 
         /// <summary>
@@ -40,7 +43,7 @@
         }
 
         /// <summary>
-        /// The options.
+        /// Gets the options.
         /// </summary>
         public WinServiceOptions Options { get; }
 

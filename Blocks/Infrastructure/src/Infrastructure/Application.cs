@@ -1,6 +1,7 @@
 ﻿namespace EntLibExtensions.Infrastructure
 {
     using System;
+    using System.Configuration;
     using System.Threading.Tasks;
 
     using EntLibExtensions.Infrastructure.WinService;
@@ -43,10 +44,15 @@
         /// </param>
         public void RunApplication<T>(Func<string[], T> bootstrap, Action<string[], T> run)
         {
+            if (run == null)
+            {
+                throw new ArgumentNullException(nameof(run));
+            }
+
             InfraEventSource.Log.AppStartDefault();
             try
-            {                
-                T state = bootstrap(this.Args);
+            {
+                T state = bootstrap != null ? bootstrap(this.Args) : default(T);
                 run(this.Args, state);
             }
             catch (Exception e)
@@ -80,7 +86,12 @@
                 T state = bootstrap(this.Args);
 
                 Task task = run(this.Args, state);
-                
+                if (task == null)
+                {
+                    throw new InvalidOperationException(
+                        $"Unable to {nameof(this.RunApplicationAsync)} because invocation of {nameof(run)} returns null");
+                }
+
                 task.GetAwaiter().GetResult();
             }
             catch (Exception e)
@@ -120,7 +131,19 @@
                 delegate(string[] strings)
                     {
                         IWorkersProvider workersProvider = providerBootstrap(strings);
+                        if (workersProvider == null)
+                        {
+                            throw new InvalidOperationException(
+                                $"Unable to {nameof(RunWorkersHostService)} because invocation of {nameof(providerBootstrap)} returns null");
+                        }
+
                         WinServiceOptions options = optionsBootstrap(strings);
+                        if (options == null)
+                        {
+                            throw new InvalidOperationException(
+                                $"Unable to {nameof(RunWorkersHostService)} because invocation of {nameof(optionsBootstrap)} returns null");
+                        }
+
                         return new Tuple<IWorkersProvider, WinServiceOptions>(workersProvider, options);
                     },
                 RunWorkersHost);
@@ -142,8 +165,16 @@
                 delegate(string[] strings)
                     {
                         IWorkerActionFactory actionFactory = actionFactoryBootstrap(strings);
+                        const string SectionName = "workersHost";
+                        WorkerConfigurationSection configurationSection = ConfigurationManager.GetSection(SectionName) as WorkerConfigurationSection;
+
+                        if (configurationSection == null)
+                        {
+                            throw new InvalidOperationException($"Unable to find {SectionName} configuration section");
+                        }
+
                         return new ActionWorkersProvider(
-                            new WorkerConfigurationSection(),
+                            configurationSection,
                             actionFactory);
                     });
         }

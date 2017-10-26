@@ -13,10 +13,9 @@
 using System.Reflection;
 using System.Resources;
 using System.Runtime.InteropServices;
-using System.Security;
 
-[assembly: AssemblyTitle("Infrastructure Application Block - Unity integration")]
-[assembly: AssemblyDescription("Infrastructure Application Block- Unity integration")]
+[assembly: AssemblyTitle("Infrastructure Application Block Samples")]
+[assembly: AssemblyDescription("Infrastructure Application Block Samples")]
 
 [assembly: AssemblyVersion("1.0.1.0")]
 [assembly: AssemblyFileVersion("1.0.1.0")]
