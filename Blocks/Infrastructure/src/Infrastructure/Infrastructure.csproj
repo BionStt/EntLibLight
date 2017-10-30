@@ -94,6 +94,7 @@
       <Link>Infrastructure.licenseheader</Link>
     </None>
     <None Include="packages.config" />
+    <None Include="Infrastructure.nuspec" />
   </ItemGroup>
   <PropertyGroup>
     <DefineConstants Condition=" '$(SignAssembly)' == 'true' ">$(DefineConstants);SIGN</DefineConstants>

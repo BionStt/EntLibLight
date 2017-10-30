@@ -1,5 +1,7 @@
 ﻿namespace EntLibExtensions.Infrastructure.Samples
 {
+    using System;
+
     using EntLibExtensions.Infrastructure;
     using EntLibExtensions.Infrastructure.Unity;
     using EntLibExtensions.Infrastructure.WinService;
