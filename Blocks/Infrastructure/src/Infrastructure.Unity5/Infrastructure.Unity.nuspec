@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2013/05/nuspec.xsd">
+  <metadata>
+    <id>$id$</id>
+    <version>$version$</version>
+    <title>Infrastructure application block Unity integration.</title>
+    <authors>Ihar Yakimush</authors>
+    <owners>Ihar Yakimush</owners>    
+    <licenseUrl>https://github.com/IharYakimush/EntLibLight/blob/develop/LICENSE</licenseUrl>
+    <projectUrl>https://github.com/IharYakimush/EntLibLight</projectUrl>
+    <requireLicenseAcceptance>true</requireLicenseAcceptance>
+    <description>Unity container based implementation of: 
+    - IWorkerActionFactory</description>
+    <releaseNotes>Initial version.</releaseNotes>
+    <copyright>Copyright 2017</copyright>
+    <tags>EntLibExtensions Infrastructure Unity integration</tags>
+  </metadata>
+</package>

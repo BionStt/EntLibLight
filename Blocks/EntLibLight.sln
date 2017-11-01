@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+# Visual Studio 15
+VisualStudioVersion = 15.0.26730.16
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Exception Handling Application Block", "Exception Handling Application Block", "{BA30BD64-7E40-4022-8BF2-6E9822964491}"
 	ProjectSection(FolderStartupServices) = postProject
@@ -49,6 +49,10 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SemanticLogging.Elasticsearch", "SemanticLogging\Src\SemanticLogging.Elasticsearch\SemanticLogging.Elasticsearch.csproj", "{5F7F3BFE-6117-43C3-AABB-7195516D9F1C}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExceptionHandling", "ExceptionHandling\Src\ExceptionHandling\ExceptionHandling.csproj", "{935973CC-769B-4D8B-98B3-D404CC17138D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure Application Block", "Infrastructure Application Block", "{37ED1CD8-9C9A-4496-BB7B-EA2CFF5CA7A4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infrastructure", "Infrastructure\src\Infrastructure\Infrastructure.csproj", "{B5F06464-12E9-4A22-A83F-A4C20F81D00A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -144,6 +148,18 @@ Global
 		{935973CC-769B-4D8B-98B3-D404CC17138D}.Release|Any CPU.Build.0 = Release|Any CPU
 		{935973CC-769B-4D8B-98B3-D404CC17138D}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{935973CC-769B-4D8B-98B3-D404CC17138D}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{B5F06464-12E9-4A22-A83F-A4C20F81D00A}.Debug|.NET.ActiveCfg = Debug|Any CPU
+		{B5F06464-12E9-4A22-A83F-A4C20F81D00A}.Debug|.NET.Build.0 = Debug|Any CPU
+		{B5F06464-12E9-4A22-A83F-A4C20F81D00A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B5F06464-12E9-4A22-A83F-A4C20F81D00A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B5F06464-12E9-4A22-A83F-A4C20F81D00A}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{B5F06464-12E9-4A22-A83F-A4C20F81D00A}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{B5F06464-12E9-4A22-A83F-A4C20F81D00A}.Release|.NET.ActiveCfg = Release|Any CPU
+		{B5F06464-12E9-4A22-A83F-A4C20F81D00A}.Release|.NET.Build.0 = Release|Any CPU
+		{B5F06464-12E9-4A22-A83F-A4C20F81D00A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B5F06464-12E9-4A22-A83F-A4C20F81D00A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B5F06464-12E9-4A22-A83F-A4C20F81D00A}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{B5F06464-12E9-4A22-A83F-A4C20F81D00A}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -158,9 +174,11 @@ Global
 		{1735E7F3-65BA-4E29-B319-6C2CA03659D1} = {557F4B70-BFA9-4238-B18B-3E021635F266}
 		{5F7F3BFE-6117-43C3-AABB-7195516D9F1C} = {C764AAB6-7784-4D70-8114-AD6EC541729E}
 		{935973CC-769B-4D8B-98B3-D404CC17138D} = {BA30BD64-7E40-4022-8BF2-6E9822964491}
+		{B5F06464-12E9-4A22-A83F-A4C20F81D00A} = {37ED1CD8-9C9A-4496-BB7B-EA2CFF5CA7A4}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		EnterpriseLibraryConfigurationToolBinariesPathV6 = .nuget\..\packages\EnterpriseLibrary.TransientFaultHandling.6.0.1304.0\lib\portable-net45+win+wp8;.nuget\..\packages\EnterpriseLibrary.TransientFaultHandling.Data.6.0.1304.1\lib\NET45;.nuget\..\packages\EnterpriseLibrary.Common.6.0.1304.0\lib\NET45;.nuget\..\packages\EnterpriseLibrary.ExceptionHandling.6.0.1304.0\lib\NET45
+		SolutionGuid = {1AE95D5A-AF1A-4DC1-B0F8-85EE97D0AF50}
 	EndGlobalSection
 	GlobalSection(TextTemplating) = postSolution
 		TextTemplating = 1
