@@ -7,7 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infrastructure", "src\Infra
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infrastructure.Tests", "Tests\Infrastructure.Tests\Infrastructure.Tests.csproj", "{1C589A5C-006C-49E0-87EA-ABCA7E058CBF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infrastructure.Unity", "src\Infrastructure.Unity\Infrastructure.Unity.csproj", "{F875C603-1721-4468-B834-5EA7B04A78C4}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infrastructure.Unity5", "src\Infrastructure.Unity5\Infrastructure.Unity5.csproj", "{F875C603-1721-4468-B834-5EA7B04A78C4}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infrastructure.Samples", "Samples\Infrastructure.Samples\Infrastructure.Samples.csproj", "{D28A2D03-9345-42B9-88F1-14BDAD507579}"
 EndProject

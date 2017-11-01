@@ -93,7 +93,7 @@ namespace EntLibExtensions.Infrastructure.Workers.Implementation
             IWorkerActionFactory childFactory = null;
             try
             {
-                childFactory = this.workerActionFactory.CerateChildFactory();
+                childFactory = this.workerActionFactory.CreateChildFactory();
                 IWorkerAction workerAction = childFactory.Create(this.workerActionConfiguration.ActionType);
 
                 bool actionHasAnotherWork = workerAction.Run(this.Token, this.workerActionConfiguration.Parameters);
@@ -108,7 +108,7 @@ namespace EntLibExtensions.Infrastructure.Workers.Implementation
             }
             catch (OperationCanceledException exception)
             {
-                //check that cancellation issued by correct token
+                // check that cancellation issued by correct token
                 if (exception.CancellationToken == this.Token)
                 {
                     InfraEventSource.Log.ActionCancel("OperationCanceledException", workerActionTypeName);

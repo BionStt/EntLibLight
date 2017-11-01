@@ -1,4 +1,4 @@
-﻿namespace EntLibExtensions.Infrastructure.Unity
+﻿namespace EntLibExtensions.Infrastructure.Unity5
 {
     using System;
 

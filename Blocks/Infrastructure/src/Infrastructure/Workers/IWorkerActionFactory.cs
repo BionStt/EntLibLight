@@ -1,4 +1,3 @@
-
 namespace EntLibExtensions.Infrastructure.Workers
 {
     using System;
@@ -20,11 +19,11 @@ namespace EntLibExtensions.Infrastructure.Workers
         IWorkerAction Create(Type type);
 
         /// <summary>
-        /// The cerate child factory.
+        /// The create child factory.
         /// </summary>
         /// <returns>
         /// The <see cref="IWorkerActionFactory"/>.
         /// </returns>
-        IWorkerActionFactory CerateChildFactory();
+        IWorkerActionFactory CreateChildFactory();
     }
 }

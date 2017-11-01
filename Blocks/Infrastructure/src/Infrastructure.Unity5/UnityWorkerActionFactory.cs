@@ -1,11 +1,11 @@
 
-namespace EntLibExtensions.Infrastructure.Unity
+namespace EntLibExtensions.Infrastructure.Unity5
 {
     using System;
 
     using EntLibExtensions.Infrastructure.Workers;
 
-    using global::Unity;
+    using Unity;
 
     /// <summary>
     /// The worker action factory.
@@ -53,7 +53,7 @@ namespace EntLibExtensions.Infrastructure.Unity
         /// <returns>
         /// The <see cref="IWorkerActionFactory"/>.
         /// </returns>
-        public IWorkerActionFactory CerateChildFactory()
+        public IWorkerActionFactory CreateChildFactory()
         {
             return new UnityWorkerActionFactory(this.container.CreateChildContainer());
         }

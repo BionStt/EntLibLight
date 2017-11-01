@@ -3,7 +3,7 @@
     using System;
 
     using EntLibExtensions.Infrastructure;
-    using EntLibExtensions.Infrastructure.Unity;
+    using EntLibExtensions.Infrastructure.Unity5;
     using EntLibExtensions.Infrastructure.WinService;
     using EntLibExtensions.SemanticLogging;
 

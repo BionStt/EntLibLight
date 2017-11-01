@@ -33,7 +33,13 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="CommonServiceLocator, Version=2.0.1.0, Culture=neutral, PublicKeyToken=489b6accfaf20ef0, processorArchitecture=MSIL">
-      <HintPath>..\..\..\packages\Unity.5.0.2\lib\net45\CommonServiceLocator.dll</HintPath>
+      <HintPath>..\..\..\packages\Unity.5.1.2\lib\net45\CommonServiceLocator.dll</HintPath>
+    </Reference>
+    <Reference Include="EntLibExtensions.Infrastructure, Version=1.0.1.0, Culture=neutral, PublicKeyToken=c4ed0f3638558493, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\EntLibExtensions.Infrastructure.1.0.1.0\lib\net45\EntLibExtensions.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="EntLibExtensions.Infrastructure.Unity5, Version=1.0.1.0, Culture=neutral, PublicKeyToken=c4ed0f3638558493, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\EntLibExtensions.Infrastructure.Unity5.1.0.1.0\lib\net45\EntLibExtensions.Infrastructure.Unity5.dll</HintPath>
     </Reference>
     <Reference Include="EntLibExtensions.SemanticLogging, Version=1.0.1.0, Culture=neutral, PublicKeyToken=c4ed0f3638558493, processorArchitecture=MSIL">
       <HintPath>..\..\..\packages\EntLibExtensions.SemanticLogging.1.0.1\lib\net45\EntLibExtensions.SemanticLogging.dll</HintPath>
@@ -52,23 +58,26 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Xml" />
-    <Reference Include="Unity.Abstractions, Version=2.0.0.0, Culture=neutral, PublicKeyToken=6d32ff45e0ccc69f, processorArchitecture=MSIL">
-      <HintPath>..\..\..\packages\Unity.5.0.2\lib\net45\Unity.Abstractions.dll</HintPath>
+    <Reference Include="Unity.Abstractions, Version=2.1.1.0, Culture=neutral, PublicKeyToken=6d32ff45e0ccc69f, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\Unity.5.1.2\lib\net45\Unity.Abstractions.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.Configuration, Version=5.0.0.0, Culture=neutral, PublicKeyToken=6d32ff45e0ccc69f, processorArchitecture=MSIL">
-      <HintPath>..\..\..\packages\Unity.5.0.2\lib\net45\Unity.Configuration.dll</HintPath>
+    <Reference Include="Unity.Configuration, Version=5.0.2.0, Culture=neutral, PublicKeyToken=6d32ff45e0ccc69f, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\Unity.5.1.2\lib\net45\Unity.Configuration.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.Container, Version=5.0.0.0, Culture=neutral, PublicKeyToken=489b6accfaf20ef0, processorArchitecture=MSIL">
-      <HintPath>..\..\..\packages\Unity.5.0.2\lib\net45\Unity.Container.dll</HintPath>
+    <Reference Include="Unity.Container, Version=5.1.1.0, Culture=neutral, PublicKeyToken=489b6accfaf20ef0, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\Unity.5.1.2\lib\net45\Unity.Container.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.Interception, Version=5.0.0.0, Culture=neutral, PublicKeyToken=489b6accfaf20ef0, processorArchitecture=MSIL">
-      <HintPath>..\..\..\packages\Unity.5.0.2\lib\net45\Unity.Interception.dll</HintPath>
+    <Reference Include="Unity.Interception, Version=5.0.3.0, Culture=neutral, PublicKeyToken=489b6accfaf20ef0, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\Unity.5.1.2\lib\net45\Unity.Interception.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.Interception.Configuration, Version=5.0.0.0, Culture=neutral, PublicKeyToken=489b6accfaf20ef0, processorArchitecture=MSIL">
-      <HintPath>..\..\..\packages\Unity.5.0.2\lib\net45\Unity.Interception.Configuration.dll</HintPath>
+    <Reference Include="Unity.Interception.Configuration, Version=5.0.3.0, Culture=neutral, PublicKeyToken=489b6accfaf20ef0, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\Unity.5.1.2\lib\net45\Unity.Interception.Configuration.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.ServiceLocation, Version=2.0.0.0, Culture=neutral, PublicKeyToken=6d32ff45e0ccc69f, processorArchitecture=MSIL">
-      <HintPath>..\..\..\packages\Unity.5.0.2\lib\net45\Unity.ServiceLocation.dll</HintPath>
+    <Reference Include="Unity.RegistrationByConvention, Version=2.0.1.0, Culture=neutral, PublicKeyToken=489b6accfaf20ef0, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\Unity.5.1.2\lib\net45\Unity.RegistrationByConvention.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.ServiceLocation, Version=2.0.2.0, Culture=neutral, PublicKeyToken=489b6accfaf20ef0, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\Unity.5.1.2\lib\net45\Unity.ServiceLocation.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -82,17 +91,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\..\src\Infrastructure.Unity\Infrastructure.Unity.csproj">
-      <Project>{f875c603-1721-4468-b834-5ea7b04a78c4}</Project>
-      <Name>Infrastructure.Unity</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\src\Infrastructure\Infrastructure.csproj">
-      <Project>{b5f06464-12e9-4a22-a83f-a4c20f81d00a}</Project>
-      <Name>Infrastructure</Name>
-    </ProjectReference>
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\..\..\.nuget\nuget.targets" />

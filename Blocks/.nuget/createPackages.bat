@@ -6,4 +6,4 @@ nuget.exe pack "..\SemanticLogging\Src\SemanticLogging.Etw.WindowsService\Semant
 nuget.exe pack "..\ExceptionHandling\Src\ExceptionHandling\ExceptionHandling.csproj" -properties Configuration=Release -symbols -includereferencedprojects
 
 nuget.exe pack "..\Infrastructure\Src\Infrastructure\Infrastructure.csproj" -properties Configuration=Release -symbols
-nuget.exe pack "..\Infrastructure\Src\Infrastructure.Unity\Infrastructure.Unity.csproj" -properties Configuration=Release -symbols -includereferencedprojects
+nuget.exe pack "..\Infrastructure\Src\Infrastructure.Unity5\Infrastructure.Unity5.csproj" -properties Configuration=Release -symbols -includereferencedprojects
